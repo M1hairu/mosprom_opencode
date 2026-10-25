@@ -1,0 +1,200 @@
+/* Base components (components.tsx). Only tokens from tokens.css. */
+
+.logo {
+  width: auto;
+  flex: none;
+}
+
+/* Button of lassard.ru: at least --touch high, radius --r-1. primary — red plate. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  min-height: var(--touch);
+  min-width: var(--touch);
+  padding: var(--s-3) var(--s-5);
+  border: 1px solid transparent;
+  border-radius: var(--r-1);
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: var(--fs-m);
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.primary {
+  background: var(--c-red);
+  color: var(--c-white);
+}
+
+.primary:not(:disabled):hover,
+.primary:not(:disabled):active {
+  background: var(--c-red-dark);
+}
+
+/* Outline button of lassard.ru: graphite frame on white. */
+.secondary {
+  background: var(--c-white);
+  color: var(--c-graphite);
+  border-color: var(--c-graphite);
+}
+
+.secondary:not(:disabled):active {
+  background: var(--c-mist);
+}
+
+.wide {
+  width: 100%;
+}
+
+/* White card on the grey page, as the blocks of lassard.ru. */
+.card {
+  position: relative;
+  padding: var(--s-5) var(--s-4);
+  background: var(--c-white);
+  border-radius: var(--r-3);
+  box-shadow: var(--shadow);
+}
+
+.cardTitle {
+  margin: 0 0 var(--s-3);
+  font-size: var(--fs-l);
+}
+
+.title {
+  margin: 0 0 var(--s-4);
+}
+
+.title h1 {
+  margin: 0;
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.title p {
+  margin: var(--s-1) 0 0;
+  color: var(--c-dark);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-6) var(--s-4);
+  text-align: center;
+  color: var(--c-dark);
+}
+
+.emptyMark {
+  width: 96px;
+  height: 84px;
+  background: var(--pattern);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.emptyTitle {
+  margin: 0;
+  font-size: var(--fs-l);
+  font-weight: 600;
+  color: var(--text-strong, var(--c-graphite));
+}
+
+.emptyText {
+  margin: 0;
+  max-width: 36ch;
+}
+
+.offline {
+  margin: 0;
+  padding: var(--s-2) var(--s-4);
+  background: var(--c-graphite);
+  color: var(--c-white);
+  font-size: var(--fs-s);
+  font-weight: 600;
+  text-align: center;
+}
+
+.tabbar {
+  position: relative;
+  display: flex;
+  min-height: var(--tabbar-h);
+  padding-bottom: env(safe-area-inset-bottom);
+  background: var(--c-white);
+  border-top: 1px solid var(--c-light);
+}
+
+.tab {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: var(--tabbar-h);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: var(--s-1);
+  border: 0;
+  background: none;
+  color: var(--c-dark);
+  cursor: pointer;
+  touch-action: manipulation;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.tab[aria-current="page"] {
+  color: var(--c-red);
+}
+
+/* Active tab: red plate on the top edge; it slides from tab to tab. */
+.tabMarker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.tabMarker::before {
+  content: "";
+  position: absolute;
+  inset: 0 25%;
+  border-radius: 0 0 3px 3px;
+  background: var(--c-red);
+}
+
+.tabIcon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tab[aria-current="page"] .tabIcon {
+  transform: translateY(-2px) scale(1.08);
+}
+
+.tab:active .tabIcon {
+  transform: scale(0.86);
+  transition-duration: 0.1s;
+}
+
+.tabLabel {
+  max-width: 100%;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

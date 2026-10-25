@@ -1,0 +1,2094 @@
+{
+  "schemaVersion": 1,
+  "id": "plan_219_mirror_zoned",
+  "name": "Зал 219 «Шоурум» — зеркальный вариант (отражение схемы по оси x = 18 м) — зонирование",
+  "room": {
+    "id": "room_219",
+    "boundary": [
+      [
+        0,
+        0
+      ],
+      [
+        36,
+        0
+      ],
+      [
+        36,
+        17.85
+      ],
+      [
+        0,
+        17.85
+      ]
+    ],
+    "ceilingHeight_m": 7
+  },
+  "walls": [
+    {
+      "id": "w_south",
+      "from": [
+        36,
+        0
+      ],
+      "to": [
+        0,
+        0
+      ],
+      "thickness_m": 0.15,
+      "height_m": 7
+    },
+    {
+      "id": "w_east",
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        17.85
+      ],
+      "thickness_m": 0.15,
+      "height_m": 7
+    },
+    {
+      "id": "w_north",
+      "from": [
+        36,
+        17.85
+      ],
+      "to": [
+        0,
+        17.85
+      ],
+      "thickness_m": 0.15,
+      "height_m": 7
+    },
+    {
+      "id": "w_west",
+      "from": [
+        36,
+        0
+      ],
+      "to": [
+        36,
+        17.85
+      ],
+      "thickness_m": 0.15,
+      "height_m": 7
+    },
+    {
+      "id": "w_lab_s",
+      "from": [
+        0.0,
+        2.5
+      ],
+      "to": [
+        6.5,
+        2.5
+      ],
+      "thickness_m": 0.1,
+      "height_m": 7.0
+    },
+    {
+      "id": "w_lab_n",
+      "from": [
+        0.0,
+        7.0
+      ],
+      "to": [
+        6.5,
+        7.0
+      ],
+      "thickness_m": 0.1,
+      "height_m": 7.0
+    },
+    {
+      "id": "w_lab_e",
+      "from": [
+        6.5,
+        2.5
+      ],
+      "to": [
+        6.5,
+        7.0
+      ],
+      "thickness_m": 0.1,
+      "height_m": 7.0
+    },
+    {
+      "id": "w_meet_w",
+      "from": [
+        7.7,
+        0.0
+      ],
+      "to": [
+        7.7,
+        5.5
+      ],
+      "thickness_m": 0.1,
+      "height_m": 7.0
+    },
+    {
+      "id": "w_meet_n",
+      "from": [
+        7.7,
+        5.5
+      ],
+      "to": [
+        11.2,
+        5.5
+      ],
+      "thickness_m": 0.1,
+      "height_m": 7.0
+    },
+    {
+      "id": "w_meet_e",
+      "from": [
+        11.2,
+        0.0
+      ],
+      "to": [
+        11.2,
+        5.5
+      ],
+      "thickness_m": 0.1,
+      "height_m": 7.0
+    }
+  ],
+  "openings": [
+    {
+      "id": "op_north_1",
+      "wallId": "w_north",
+      "offset_m": 8.45,
+      "width_m": 1.45,
+      "kind": "door",
+      "sill_m": 0,
+      "height_m": 2.1
+    },
+    {
+      "id": "op_north_2",
+      "wallId": "w_north",
+      "offset_m": 26.4,
+      "width_m": 1.45,
+      "kind": "door",
+      "sill_m": 0,
+      "height_m": 2.1
+    },
+    {
+      "id": "op_south_1",
+      "wallId": "w_south",
+      "offset_m": 14.4,
+      "width_m": 2.05,
+      "kind": "entrance",
+      "sill_m": 0,
+      "height_m": 2.1
+    },
+    {
+      "id": "op_south_2",
+      "wallId": "w_south",
+      "offset_m": 31.45,
+      "width_m": 2,
+      "kind": "entrance",
+      "sill_m": 0,
+      "height_m": 2.1
+    },
+    {
+      "id": "op_glass_workshop",
+      "wallId": "w_east",
+      "offset_m": 7.0,
+      "width_m": 4.0,
+      "kind": "window",
+      "sill_m": 0.0,
+      "height_m": 3.5
+    },
+    {
+      "id": "op_lab_workshop",
+      "wallId": "w_east",
+      "offset_m": 5.0,
+      "width_m": 1.2,
+      "kind": "door",
+      "sill_m": 0.0,
+      "height_m": 2.1
+    },
+    {
+      "id": "op_lab_hall",
+      "wallId": "w_lab_n",
+      "offset_m": 4.6,
+      "width_m": 1.2,
+      "kind": "door",
+      "sill_m": 0.0,
+      "height_m": 2.1
+    },
+    {
+      "id": "op_lab_hatch",
+      "wallId": "w_lab_n",
+      "offset_m": 0.5,
+      "width_m": 0.6,
+      "kind": "window",
+      "sill_m": 0.9,
+      "height_m": 0.6
+    },
+    {
+      "id": "op_meeting",
+      "wallId": "w_meet_e",
+      "offset_m": 0.8,
+      "width_m": 1.2,
+      "kind": "door",
+      "sill_m": 0.0,
+      "height_m": 2.1
+    }
+  ],
+  "layers": [
+    {
+      "id": "l_building",
+      "name": "Здание: колонны",
+      "visible": true,
+      "locked": true,
+      "order": 0,
+      "typeId": null
+    },
+    {
+      "id": "l_zones",
+      "name": "Зоны",
+      "visible": true,
+      "locked": false,
+      "order": 1,
+      "typeId": null
+    },
+    {
+      "id": "l_exhibits",
+      "name": "Экспонаты и мебель",
+      "visible": true,
+      "locked": false,
+      "order": 2,
+      "typeId": null
+    }
+  ],
+  "zones": [
+    {
+      "id": "entrance",
+      "typeId": "zt_entrance",
+      "name": "Вход: хронология, масштаб, география",
+      "polygon": [
+        [
+          16.5,
+          0.0
+        ],
+        [
+          25.0,
+          0.0
+        ],
+        [
+          25.0,
+          9.5
+        ],
+        [
+          16.5,
+          9.5
+        ]
+      ],
+      "parentId": null,
+      "layerId": "l_zones",
+      "attributes": {}
+    },
+    {
+      "id": "crystals",
+      "typeId": "zt_expo",
+      "name": "Выращивание кристаллов",
+      "polygon": [
+        [
+          29.0,
+          11.0
+        ],
+        [
+          36.0,
+          11.0
+        ],
+        [
+          36.0,
+          17.85
+        ],
+        [
+          29.0,
+          17.85
+        ]
+      ],
+      "parentId": null,
+      "layerId": "l_zones",
+      "attributes": {}
+    },
+    {
+      "id": "quantrons",
+      "typeId": "zt_expo",
+      "name": "Квантроны",
+      "polygon": [
+        [
+          23.0,
+          11.0
+        ],
+        [
+          29.0,
+          11.0
+        ],
+        [
+          29.0,
+          17.85
+        ],
+        [
+          23.0,
+          17.85
+        ]
+      ],
+      "parentId": null,
+      "layerId": "l_zones",
+      "attributes": {}
+    },
+    {
+      "id": "diodes",
+      "typeId": "zt_expo",
+      "name": "Диоды",
+      "polygon": [
+        [
+          17.5,
+          11.0
+        ],
+        [
+          23.0,
+          11.0
+        ],
+        [
+          23.0,
+          17.85
+        ],
+        [
+          17.5,
+          17.85
+        ]
+      ],
+      "parentId": null,
+      "layerId": "l_zones",
+      "attributes": {}
+    },
+    {
+      "id": "laser_sources",
+      "typeId": "zt_expo",
+      "name": "Лазерные источники",
+      "polygon": [
+        [
+          12.5,
+          11.0
+        ],
+        [
+          17.5,
+          11.0
+        ],
+        [
+          17.5,
+          17.85
+        ],
+        [
+          12.5,
+          17.85
+        ]
+      ],
+      "parentId": null,
+      "layerId": "l_zones",
+      "attributes": {}
+    },
+    {
+      "id": "robots",
+      "typeId": "zt_expo",
+      "name": "Роботизированные ячейки и роботы",
+      "polygon": [
+        [
+          6.5,
+          11.0
+        ],
+        [
+          12.5,
+          11.0
+        ],
+        [
+          12.5,
+          17.85
+        ],
+        [
+          6.5,
+          17.85
+        ]
+      ],
+      "parentId": null,
+      "layerId": "l_zones",
+      "attributes": {}
+    },
+    {
+      "id": "engraving",
+      "typeId": "zt_expo",
+      "name": "Гравировка и маркировка",
+      "polygon": [
+        [
+          0.0,
+          11.0
+        ],
+        [
+          6.5,
+          11.0
+        ],
+        [
+          6.5,
+          17.85
+        ],
+        [
+          0.0,
+          17.85
+        ]
+      ],
+      "parentId": null,
+      "layerId": "l_zones",
+      "attributes": {}
+    },
+    {
+      "id": "cutting",
+      "typeId": "zt_view",
+      "name": "Лазерная резка: SMART и стекло в цех",
+      "polygon": [
+        [
+          0.0,
+          7.0
+        ],
+        [
+          6.5,
+          7.0
+        ],
+        [
+          6.5,
+          11.0
+        ],
+        [
+          0.0,
+          11.0
+        ]
+      ],
+      "parentId": null,
+      "layerId": "l_zones",
+      "attributes": {}
+    },
+    {
+      "id": "handheld",
+      "typeId": "zt_expo",
+      "name": "Ручные лазерные аппараты",
+      "polygon": [
+        [
+          6.5,
+          5.5
+        ],
+        [
+          12.0,
+          5.5
+        ],
+        [
+          12.0,
+          9.5
+        ],
+        [
+          6.5,
+          9.5
+        ]
+      ],
+      "parentId": null,
+      "layerId": "l_zones",
+      "attributes": {}
+    },
+    {
+      "id": "optomechanics",
+      "typeId": "zt_expo",
+      "name": "Оптомеханика",
+      "polygon": [
+        [
+          30.5,
+          0.0
+        ],
+        [
+          36.0,
+          0.0
+        ],
+        [
+          36.0,
+          9.5
+        ],
+        [
+          30.5,
+          9.5
+        ]
+      ],
+      "parentId": null,
+      "layerId": "l_zones",
+      "attributes": {}
+    },
+    {
+      "id": "edu_class",
+      "typeId": "zt_edu",
+      "name": "Проект «Лазерный класс»",
+      "polygon": [
+        [
+          25.0,
+          0.0
+        ],
+        [
+          30.5,
+          0.0
+        ],
+        [
+          30.5,
+          9.5
+        ],
+        [
+          25.0,
+          9.5
+        ]
+      ],
+      "parentId": null,
+      "layerId": "l_zones",
+      "attributes": {}
+    },
+    {
+      "id": "meeting",
+      "typeId": "zt_meeting",
+      "name": "Переговорная",
+      "polygon": [
+        [
+          7.7,
+          0.0
+        ],
+        [
+          11.2,
+          0.0
+        ],
+        [
+          11.2,
+          5.5
+        ],
+        [
+          7.7,
+          5.5
+        ]
+      ],
+      "parentId": null,
+      "layerId": "l_zones",
+      "attributes": {}
+    },
+    {
+      "id": "test_lab",
+      "typeId": "zt_demo",
+      "name": "Демо-зона",
+      "polygon": [
+        [
+          0.0,
+          2.5
+        ],
+        [
+          6.5,
+          2.5
+        ],
+        [
+          6.5,
+          7.0
+        ],
+        [
+          0.0,
+          7.0
+        ]
+      ],
+      "parentId": null,
+      "layerId": "l_zones",
+      "attributes": {}
+    }
+  ],
+  "objects": [
+    {
+      "id": "col_A1",
+      "typeId": "ot_column",
+      "label": "Колонна A1",
+      "position": [
+        36,
+        3.8
+      ],
+      "size_m": [
+        0.8,
+        0.8
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "col_A2",
+      "typeId": "ot_column",
+      "label": "Колонна A2",
+      "position": [
+        24,
+        3.8
+      ],
+      "size_m": [
+        0.8,
+        0.8
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "col_A3",
+      "typeId": "ot_column",
+      "label": "Колонна A3",
+      "position": [
+        12,
+        3.8
+      ],
+      "size_m": [
+        0.8,
+        0.8
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "col_A4",
+      "typeId": "ot_column",
+      "label": "Колонна A4",
+      "position": [
+        0,
+        3.8
+      ],
+      "size_m": [
+        0.8,
+        0.8
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "col_B1",
+      "typeId": "ot_column",
+      "label": "Колонна B1",
+      "position": [
+        36,
+        15.8
+      ],
+      "size_m": [
+        0.8,
+        0.8
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "col_B2",
+      "typeId": "ot_column",
+      "label": "Колонна B2",
+      "position": [
+        24,
+        15.8
+      ],
+      "size_m": [
+        0.8,
+        0.8
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "col_B3",
+      "typeId": "ot_column",
+      "label": "Колонна B3",
+      "position": [
+        12,
+        15.8
+      ],
+      "size_m": [
+        0.8,
+        0.8
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "col_B4",
+      "typeId": "ot_column",
+      "label": "Колонна B4",
+      "position": [
+        0,
+        15.8
+      ],
+      "size_m": [
+        0.8,
+        0.8
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "ex_vgf",
+      "typeId": "ot_vgf",
+      "label": "Миниатюра установки VGF «Листопад» в масштабе 1:5, под стеклом",
+      "position": [
+        32.0,
+        15.0
+      ],
+      "size_m": [
+        0.5,
+        0.5
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.5,
+      "zoneId": "crystals",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_gaas",
+      "typeId": "ot_showcase",
+      "label": "Витрина с образцами",
+      "position": [
+        34.0,
+        12.5
+      ],
+      "size_m": [
+        1.2,
+        0.6
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.2,
+      "zoneId": "crystals",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_growth_video",
+      "typeId": "ot_wall_screen",
+      "label": "Экран на стене",
+      "position": [
+        32.5,
+        17.65
+      ],
+      "size_m": [
+        2.0,
+        0.2
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 2.5,
+      "zoneId": "crystals",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_quantrons_1",
+      "typeId": "ot_showcase",
+      "label": "Витрина с образцами",
+      "position": [
+        26.0,
+        13.0
+      ],
+      "size_m": [
+        1.2,
+        0.6
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.2,
+      "zoneId": "quantrons",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_quantrons_2",
+      "typeId": "ot_showcase",
+      "label": "Витрина с образцами",
+      "position": [
+        26.2,
+        15.6
+      ],
+      "size_m": [
+        1.2,
+        0.6
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.2,
+      "zoneId": "quantrons",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_diodes_1",
+      "typeId": "ot_showcase",
+      "label": "Витрина с образцами",
+      "position": [
+        19.5,
+        13.0
+      ],
+      "size_m": [
+        1.2,
+        0.6
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.2,
+      "zoneId": "diodes",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_diodes_2",
+      "typeId": "ot_showcase",
+      "label": "Витрина с образцами",
+      "position": [
+        21.0,
+        15.6
+      ],
+      "size_m": [
+        1.2,
+        0.6
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.2,
+      "zoneId": "diodes",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_diodes_video",
+      "typeId": "ot_wall_screen",
+      "label": "Экран на стене",
+      "position": [
+        19.5,
+        17.65
+      ],
+      "size_m": [
+        2.0,
+        0.2
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 2.5,
+      "zoneId": "diodes",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_fl9000",
+      "typeId": "ot_ls_fl9000",
+      "label": "Миниатюра LS-FL9000 в масштабе 1:5, под стеклом",
+      "position": [
+        14.0,
+        13.0
+      ],
+      "size_m": [
+        0.36,
+        0.42
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.24,
+      "zoneId": "laser_sources",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_fl20000",
+      "typeId": "ot_ls_fl20000",
+      "label": "Миниатюра LS-FL20000 в масштабе 1:5, под стеклом",
+      "position": [
+        15.5,
+        15.8
+      ],
+      "size_m": [
+        0.5,
+        0.44
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.32,
+      "zoneId": "laser_sources",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_ndyag",
+      "typeId": "ot_ndyag",
+      "label": "Миниатюра лазера Nd:YAG в масштабе 1:5, под стеклом",
+      "position": [
+        16.5,
+        12.5
+      ],
+      "size_m": [
+        0.39,
+        0.26
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.03,
+      "zoneId": "laser_sources",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_robot_cell",
+      "typeId": "ot_robot_cell",
+      "label": "Миниатюра ячейки робота с гравёром в масштабе 1:5, под стеклом",
+      "position": [
+        8.5,
+        13.0
+      ],
+      "size_m": [
+        0.8,
+        0.8
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.44,
+      "zoneId": "robots",
+      "layerId": "l_exhibits",
+      "attributes": {
+        "live": false
+      }
+    },
+    {
+      "id": "ex_graver_compact",
+      "typeId": "ot_graver_table",
+      "label": "GRAVER COMPACT на столе, без питания",
+      "position": [
+        2.5,
+        12.5
+      ],
+      "size_m": [
+        1.2,
+        0.8
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.0,
+      "zoneId": "engraving",
+      "layerId": "l_exhibits",
+      "attributes": {
+        "live": false
+      }
+    },
+    {
+      "id": "ex_graver_portal",
+      "typeId": "ot_graver_portal",
+      "label": "GRAVER PORTAL, без питания",
+      "position": [
+        4.8,
+        14.5
+      ],
+      "size_m": [
+        1.2,
+        1.0
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.8,
+      "zoneId": "engraving",
+      "layerId": "l_exhibits",
+      "attributes": {
+        "live": false
+      }
+    },
+    {
+      "id": "ex_engraving_samples",
+      "typeId": "ot_showcase",
+      "label": "Витрина с образцами",
+      "position": [
+        3.0,
+        17.5
+      ],
+      "size_m": [
+        2.0,
+        0.5
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.2,
+      "zoneId": "engraving",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_timeline",
+      "typeId": "ot_panel",
+      "label": "Стенд-панель",
+      "position": [
+        17.2,
+        5.0
+      ],
+      "size_m": [
+        0.4,
+        4.5
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7.0,
+      "zoneId": "entrance",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_map",
+      "typeId": "ot_panel",
+      "label": "Стенд-панель",
+      "position": [
+        20.7,
+        7.0
+      ],
+      "size_m": [
+        4.0,
+        0.4
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7.0,
+      "zoneId": "entrance",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_scale",
+      "typeId": "ot_panel",
+      "label": "Стенд-панель",
+      "position": [
+        22.1,
+        3.8
+      ],
+      "size_m": [
+        0.4,
+        3.0
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7.0,
+      "zoneId": "entrance",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_multi_hero",
+      "typeId": "ot_multi_hero",
+      "label": "MULTI HERO, без питания",
+      "position": [
+        8.4,
+        7.2
+      ],
+      "size_m": [
+        1.17,
+        0.706
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.12,
+      "zoneId": "handheld",
+      "layerId": "l_exhibits",
+      "attributes": {
+        "live": false
+      }
+    },
+    {
+      "id": "ex_cleaner_prom",
+      "typeId": "ot_cleaner_prom",
+      "label": "CLEANER PROM, без питания",
+      "position": [
+        10.8,
+        7.2
+      ],
+      "size_m": [
+        1.17,
+        0.706
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.119,
+      "zoneId": "handheld",
+      "layerId": "l_exhibits",
+      "attributes": {
+        "live": false
+      }
+    },
+    {
+      "id": "ex_welder_mini",
+      "typeId": "ot_welder_mini",
+      "label": "WELDER MINI на подставке, без питания",
+      "position": [
+        9.0,
+        9.15
+      ],
+      "size_m": [
+        0.8,
+        0.6
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.0,
+      "zoneId": "handheld",
+      "layerId": "l_exhibits",
+      "attributes": {
+        "live": false
+      }
+    },
+    {
+      "id": "ex_smart_base",
+      "typeId": "ot_smart_base",
+      "label": "Миниатюра SMART BASE в масштабе 1:5, под стеклом",
+      "position": [
+        4.0,
+        9.3
+      ],
+      "size_m": [
+        0.55,
+        0.55
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.44,
+      "zoneId": "cutting",
+      "layerId": "l_exhibits",
+      "attributes": {
+        "live": false
+      }
+    },
+    {
+      "id": "ex_demo_graver",
+      "typeId": "ot_graver_3d",
+      "label": "Закрытый гравёр GRAVER 3D, без питания",
+      "position": [
+        2.0,
+        6.5
+      ],
+      "size_m": [
+        0.8,
+        0.8
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.6,
+      "zoneId": "test_lab",
+      "layerId": "l_exhibits",
+      "attributes": {
+        "live": false
+      }
+    },
+    {
+      "id": "ex_clean_zone",
+      "typeId": "ot_clean_zone",
+      "label": "Ограждённый участок демо-зоны, без луча",
+      "position": [
+        5.15,
+        3.85
+      ],
+      "size_m": [
+        2.5,
+        2.5
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 2.5,
+      "zoneId": "test_lab",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_meeting_table",
+      "typeId": "ot_meeting_table",
+      "label": "Стол переговоров на 8 мест",
+      "position": [
+        9.45,
+        2.6
+      ],
+      "size_m": [
+        1.2,
+        2.4
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 0.75,
+      "zoneId": "meeting",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_meeting_screen",
+      "typeId": "ot_wall_screen",
+      "label": "Экран на стене",
+      "position": [
+        9.45,
+        5.35
+      ],
+      "size_m": [
+        1.6,
+        0.15
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 2.5,
+      "zoneId": "meeting",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_sim_desk_1",
+      "typeId": "ot_sim_desk",
+      "label": "Парта оператора с симулятором",
+      "position": [
+        27.0,
+        6.5
+      ],
+      "size_m": [
+        1.4,
+        0.8
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 0.75,
+      "zoneId": "edu_class",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_sim_desk_2",
+      "typeId": "ot_sim_desk",
+      "label": "Парта оператора с симулятором",
+      "position": [
+        27.0,
+        4.0
+      ],
+      "size_m": [
+        1.4,
+        0.8
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 0.75,
+      "zoneId": "edu_class",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_edu_screen",
+      "typeId": "ot_wall_screen",
+      "label": "Экран на стене",
+      "position": [
+        27.75,
+        0.2
+      ],
+      "size_m": [
+        2.0,
+        0.2
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 2.5,
+      "zoneId": "edu_class",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_optical_table",
+      "typeId": "ot_optical_table",
+      "label": "Оптический стол",
+      "position": [
+        33.2,
+        5.5
+      ],
+      "size_m": [
+        2.4,
+        1.2
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 0.9,
+      "zoneId": "optomechanics",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_mirea",
+      "typeId": "ot_kit_stand",
+      "label": "Стойка: набор МИРЭА или ламинарная станция",
+      "position": [
+        31.15,
+        2.0
+      ],
+      "size_m": [
+        1.2,
+        0.8
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.9,
+      "zoneId": "optomechanics",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    },
+    {
+      "id": "ex_laminar",
+      "typeId": "ot_kit_stand",
+      "label": "Стойка: набор МИРЭА или ламинарная станция",
+      "position": [
+        33.86,
+        1.9
+      ],
+      "size_m": [
+        1.66,
+        1.14
+      ],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 1.9,
+      "zoneId": "optomechanics",
+      "layerId": "l_exhibits",
+      "attributes": {}
+    }
+  ],
+  "catalog": {
+    "version": "plan219-zoned-1",
+    "objectTypes": [
+      {
+        "id": "ot_column",
+        "label": "Несущая колонна",
+        "category": "Конструкции",
+        "defaultSize_m": [
+          0.8,
+          0.8
+        ],
+        "defaultHeight_m": 7,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "circle",
+        "color": "#8C8C8C",
+        "attributes": [],
+        "provenance": "Слайд 6 кейса: серые кружки — несущие колонны, 2 ряда по 4. Размер 0,8 м — замер значка на схеме, оценка. Высота 7 м — высота потолка из кейса."
+      },
+      {
+        "id": "ot_vgf",
+        "label": "Миниатюра установки VGF «Листопад» в масштабе 1:5, под стеклом",
+        "category": "Кристаллы",
+        "defaultSize_m": [
+          0.5,
+          0.5
+        ],
+        "defaultHeight_m": 1.5,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#4F4F4F",
+        "attributes": [],
+        "provenance": "Миниатюра 1:5 (D-001). Габариты установки не опубликованы (research/notes/lassard_facts.md, раздел 2); 1,5 × 1,5 × 2,5 м — оценка, модель 300 × 300 × 500 мм. Подиум со стеклом: модель + 0,1 м с каждой стороны — оценка."
+      },
+      {
+        "id": "ot_showcase",
+        "label": "Витрина с образцами",
+        "category": "Экспозиция",
+        "defaultSize_m": [
+          1.2,
+          0.6
+        ],
+        "defaultHeight_m": 1.2,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#F1F3F5",
+        "attributes": [],
+        "provenance": "Размер витрины — оценка команды."
+      },
+      {
+        "id": "ot_wall_screen",
+        "label": "Экран на стене",
+        "category": "Экспозиция",
+        "defaultSize_m": [
+          2.0,
+          0.2
+        ],
+        "defaultHeight_m": 2.5,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#F1F3F5",
+        "attributes": [],
+        "provenance": "Размер экрана — оценка команды."
+      },
+      {
+        "id": "ot_panel",
+        "label": "Стенд-панель",
+        "category": "Экспозиция",
+        "defaultSize_m": [
+          4.0,
+          0.4
+        ],
+        "defaultHeight_m": 7.0,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#F1F3F5",
+        "attributes": [],
+        "provenance": "Размер стенда — оценка команды."
+      },
+      {
+        "id": "ot_ls_fl9000",
+        "label": "Миниатюра LS-FL9000 в масштабе 1:5, под стеклом",
+        "category": "Лазерные источники",
+        "defaultSize_m": [
+          0.36,
+          0.42
+        ],
+        "defaultHeight_m": 1.24,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#4F4F4F",
+        "attributes": [],
+        "provenance": "Миниатюра 1:5 (D-001): модель 160 × 220 × 240 мм от 800 × 1100 × 1200 мм, официально (research/notes/lassard_facts.md, раздел 2). Подиум со стеклом: модель + 0,1 м с каждой стороны — оценка."
+      },
+      {
+        "id": "ot_ls_fl20000",
+        "label": "Миниатюра LS-FL20000 в масштабе 1:5, под стеклом",
+        "category": "Лазерные источники",
+        "defaultSize_m": [
+          0.5,
+          0.44
+        ],
+        "defaultHeight_m": 1.32,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#4F4F4F",
+        "attributes": [],
+        "provenance": "Миниатюра 1:5 (D-001): модель 300 × 240 × 324 мм от 1500 × 1200 × 1620 мм, официально (research/notes/lassard_facts.md, раздел 2). Подиум со стеклом: модель + 0,1 м с каждой стороны — оценка."
+      },
+      {
+        "id": "ot_ndyag",
+        "label": "Миниатюра лазера Nd:YAG в масштабе 1:5, под стеклом",
+        "category": "Лазерные источники",
+        "defaultSize_m": [
+          0.39,
+          0.26
+        ],
+        "defaultHeight_m": 1.03,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#4F4F4F",
+        "attributes": [],
+        "provenance": "Миниатюра 1:5 (D-001): модель 187 × 59 × 30 мм от лазера 933 × 296 × 149 мм, официально (research/notes/lassard_facts.md, раздел 2). Подиум со стеклом: модель + 0,1 м с каждой стороны — оценка."
+      },
+      {
+        "id": "ot_robot_cell",
+        "label": "Миниатюра ячейки робота с гравёром в масштабе 1:5, под стеклом",
+        "category": "Роботы",
+        "defaultSize_m": [
+          0.8,
+          0.8
+        ],
+        "defaultHeight_m": 1.44,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#4F4F4F",
+        "attributes": [
+          {
+            "key": "beam",
+            "label": "Луч",
+            "type": "string",
+            "required": false,
+            "default": "open"
+          }
+        ],
+        "provenance": "Миниатюра 1:5 (D-001). Габариты ячейки не опубликованы (research/notes/lassard_facts.md, раздел 2); 3 × 3 × 2,2 м с ограждением — оценка, модель 600 × 600 × 440 мм. Подиум со стеклом: модель + 0,1 м с каждой стороны — оценка."
+      },
+      {
+        "id": "ot_graver_table",
+        "label": "GRAVER COMPACT на столе, без питания",
+        "category": "Гравировка",
+        "defaultSize_m": [
+          1.2,
+          0.8
+        ],
+        "defaultHeight_m": 1.0,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#4F4F4F",
+        "attributes": [
+          {
+            "key": "beam",
+            "label": "Луч",
+            "type": "string",
+            "required": false,
+            "default": "open"
+          }
+        ],
+        "provenance": "Основание 524–527 мм, высота 825–1003 мм (research/notes/lassard_facts.md, раздел 2); стол 1,2 × 0,8 м — оценка."
+      },
+      {
+        "id": "ot_graver_portal",
+        "label": "GRAVER PORTAL, без питания",
+        "category": "Гравировка",
+        "defaultSize_m": [
+          1.2,
+          1.0
+        ],
+        "defaultHeight_m": 1.8,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#4F4F4F",
+        "attributes": [
+          {
+            "key": "beam",
+            "label": "Луч",
+            "type": "string",
+            "required": false,
+            "default": "closed"
+          }
+        ],
+        "provenance": "Габариты не опубликованы, стол 950 × 750 мм (research/notes/lassard_facts.md, раздел 2). 1,2 × 1,0 м — оценка."
+      },
+      {
+        "id": "ot_graver_3d",
+        "label": "Закрытый гравёр GRAVER 3D, без питания",
+        "category": "Демо-зона",
+        "defaultSize_m": [
+          0.8,
+          0.8
+        ],
+        "defaultHeight_m": 1.6,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#8F1E1E",
+        "attributes": [
+          {
+            "key": "beam",
+            "label": "Луч",
+            "type": "string",
+            "required": false,
+            "default": "closed"
+          }
+        ],
+        "provenance": "Гравёр без питания, луча нет (D-001). У GRAVER 3D габаритов нет (research/notes/lassard_facts.md, раздел 2). 0,8 × 0,8 м — оценка."
+      },
+      {
+        "id": "ot_clean_zone",
+        "label": "Ограждённый участок демо-зоны, без луча",
+        "category": "Демо-зона",
+        "defaultSize_m": [
+          2.5,
+          2.5
+        ],
+        "defaultHeight_m": 2.5,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#8F1E1E",
+        "attributes": [],
+        "provenance": "Луча и лазерной чистки нет (D-001). Что стоит за ограждением — [СПРОСИТЬ] эксперта ЛАССАРД. 2,5 × 2,5 м — оценка."
+      },
+      {
+        "id": "ot_smart_base",
+        "label": "Миниатюра SMART BASE в масштабе 1:5, под стеклом",
+        "category": "Резка",
+        "defaultSize_m": [
+          0.55,
+          0.55
+        ],
+        "defaultHeight_m": 1.44,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#4F4F4F",
+        "attributes": [
+          {
+            "key": "beam",
+            "label": "Луч",
+            "type": "string",
+            "required": false,
+            "default": "closed"
+          }
+        ],
+        "provenance": "Миниатюра 1:5 (D-001): модель 350 × 350 × 440 мм от 1750 × 1750 × 2200 мм, официально (research/notes/lassard_facts.md, раздел 2); не поле 800 × 800 мм (TRAP-3). Подиум со стеклом: модель + 0,1 м с каждой стороны — оценка. Резки в зале нет."
+      },
+      {
+        "id": "ot_multi_hero",
+        "label": "MULTI HERO, без питания",
+        "category": "Ручные аппараты",
+        "defaultSize_m": [
+          1.17,
+          0.706
+        ],
+        "defaultHeight_m": 1.12,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#4F4F4F",
+        "attributes": [
+          {
+            "key": "beam",
+            "label": "Луч",
+            "type": "string",
+            "required": false,
+            "default": "open"
+          }
+        ],
+        "provenance": "1170 × 706 × 1119 мм по чертежу каталога (research/notes/lassard_facts.md, раздел 2)."
+      },
+      {
+        "id": "ot_cleaner_prom",
+        "label": "CLEANER PROM, без питания",
+        "category": "Ручные аппараты",
+        "defaultSize_m": [
+          1.17,
+          0.706
+        ],
+        "defaultHeight_m": 1.119,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#4F4F4F",
+        "attributes": [
+          {
+            "key": "beam",
+            "label": "Луч",
+            "type": "string",
+            "required": false,
+            "default": "open"
+          }
+        ],
+        "provenance": "1170 × 706 × 1119 мм, официально (research/notes/lassard_facts.md, раздел 2)."
+      },
+      {
+        "id": "ot_welder_mini",
+        "label": "WELDER MINI на подставке, без питания",
+        "category": "Ручные аппараты",
+        "defaultSize_m": [
+          0.8,
+          0.6
+        ],
+        "defaultHeight_m": 1.0,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#4F4F4F",
+        "attributes": [
+          {
+            "key": "beam",
+            "label": "Луч",
+            "type": "string",
+            "required": false,
+            "default": "open"
+          }
+        ],
+        "provenance": "640 × 400 × 660 мм, официально (research/notes/lassard_facts.md, раздел 2); подставка 0,8 × 0,6 м — оценка."
+      },
+      {
+        "id": "ot_optical_table",
+        "label": "Оптический стол",
+        "category": "Оптомеханика",
+        "defaultSize_m": [
+          2.4,
+          1.2
+        ],
+        "defaultHeight_m": 0.9,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#4F4F4F",
+        "attributes": [],
+        "provenance": "Размер стола — оценка команды, на opto.lassard.ru не сверен."
+      },
+      {
+        "id": "ot_kit_stand",
+        "label": "Стойка: набор МИРЭА или ламинарная станция",
+        "category": "Оптомеханика",
+        "defaultSize_m": [
+          1.2,
+          0.8
+        ],
+        "defaultHeight_m": 1.9,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#4F4F4F",
+        "attributes": [],
+        "provenance": "МИРЭА: размер — оценка команды. ex_laminar: 66LB-ALM 1660 × 1140 мм, минимальный вариант (research/notes/lassard_facts.md, раздел 3); высота не опубликована, 1,9 м — оценка."
+      },
+      {
+        "id": "ot_sim_desk",
+        "label": "Парта оператора с симулятором",
+        "category": "Лазерный класс",
+        "defaultSize_m": [
+          1.4,
+          0.8
+        ],
+        "defaultHeight_m": 0.75,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#F1F3F5",
+        "attributes": [],
+        "provenance": "Парта есть в составе «Лазерного класса» (lassard_facts.md, раздел 4); размер — оценка."
+      },
+      {
+        "id": "ot_meeting_table",
+        "label": "Стол переговоров на 8 мест",
+        "category": "Переговоры",
+        "defaultSize_m": [
+          2.4,
+          1.2
+        ],
+        "defaultHeight_m": 0.75,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "rect",
+        "color": "#F1F3F5",
+        "attributes": [],
+        "provenance": "Размер — оценка команды."
+      }
+    ],
+    "zoneTypes": [
+      {
+        "id": "zt_entrance",
+        "label": "Входная зона (Ф2.2)",
+        "color": "#F2C94C",
+        "attributes": []
+      },
+      {
+        "id": "zt_expo",
+        "label": "Экспозиция (Ф2.2)",
+        "color": "#9AD0F5",
+        "attributes": []
+      },
+      {
+        "id": "zt_view",
+        "label": "Точка у стекла в цех (Ф2.2)",
+        "color": "#6FCF97",
+        "attributes": []
+      },
+      {
+        "id": "zt_edu",
+        "label": "Образовательная зона (Ф2.2)",
+        "color": "#BB9AF7",
+        "attributes": []
+      },
+      {
+        "id": "zt_meeting",
+        "label": "Переговорная (Ф2.2)",
+        "color": "#F2994A",
+        "attributes": []
+      },
+      {
+        "id": "zt_demo",
+        "label": "Демо-зона, класс [СПРОСИТЬ]",
+        "color": "#EB5757",
+        "attributes": []
+      }
+    ],
+    "layerTypes": [],
+    "rules": []
+  },
+  "extensions": {
+    "plan219": {
+      "variant": "mirror",
+      "source": "task/img/floor-plan.png — схема помещения 219 со слайда 6 кейса; task/case.md, слайд 6",
+      "units": "метры; X вправо, Y вверх; формат PlanDocument pochta, schemaVersion 1",
+      "scale": {
+        "method": "шаг колонн 12 м (2 квадрата сетки по 6 м, слайд 6), не контур зала",
+        "columnPitch_m": 12,
+        "pxPerMetre": 23.81,
+        "origin": "x = 0 — ось правого ряда колонн и правой стены схемы (после отражения); y = 0 — ось нижней стены схемы"
+      },
+      "hall_m": {
+        "width": 36,
+        "depth": 17.85,
+        "status": "замер по схеме"
+      },
+      "area": {
+        "case_m2": 626,
+        "caseSource": "task/case.md, слайд 6",
+        "byWallAxes_m2": 642.6,
+        "status": "оценка",
+        "note": "Площадь по осям стен больше площади кейса на 16,6 м² (2,7 %). Причина неизвестна [СПРОСИТЬ]. При стенах 0,15 м площадь внутри стен — 634,5 м² (оценка: 35,85 × 17,7), это тоже больше 626 м². В расчётах берём 626 м² из кейса."
+      },
+      "walls": {
+        "fixedIds": [
+          "w_south",
+          "w_east",
+          "w_north",
+          "w_west"
+        ],
+        "removableIds": [
+          "w_part_v1",
+          "w_part_v2",
+          "w_part_v3",
+          "w_part_h1",
+          "w_part_h2"
+        ],
+        "note": "Контур зала убирать нельзя. 3 вертикальные и 2 горизонтальные зелёные перегородки внутри зала можно убрать (слайд 6)."
+      },
+      "columns": {
+        "count": "2 ряда по 4",
+        "note": "Колонны A1, A4, B1, B4 стоят на оси боковой стены, как на схеме. Валидатор pochta помечает их OBJECT_OUTSIDE_ROOM и OBJECT_HITS_WALL: в формате нет колонны в стене. Это не ошибка замера."
+      },
+      "openings": {
+        "op_north_1": {
+          "crossedOutRed": true,
+          "status": "проём перечёркнут красным на схеме; смысл креста неизвестен [СПРОСИТЬ]"
+        },
+        "op_north_2": {
+          "crossedOutRed": true,
+          "status": "проём перечёркнут красным на схеме; смысл креста неизвестен [СПРОСИТЬ]"
+        },
+        "op_south_1": {
+          "crossedOutRed": false,
+          "status": "открытый проём в нижней стене; тип «вход» — допущение команды"
+        },
+        "op_south_2": {
+          "crossedOutRed": false,
+          "status": "открытый проём в нижней стене; тип «вход» — допущение команды"
+        }
+      },
+      "workshop": {
+        "wallId": "w_east",
+        "status": "запасной вариант: цех за правой стеной схемы (w_east); в этом файле она слева, x = 0. Стена w_west в этом файле лежит справа, x = 36. Решение команды — цех за w_west (plan-219.json; эксперт ЛАССАРД, 24.10)"
+      },
+      "estimates": [
+        "толщина наружных стен 0,15 м и перегородок 0,1 м — оценка, на схеме нет",
+        "высота перегородок 7 м (до потолка) — оценка, на схеме нет",
+        "высота проёмов 2,1 м — оценка, на схеме нет",
+        "колонна 0,8 × 0,8 м — замер значка на схеме (≈ 0,84 м), оценка",
+        "координаты по схеме округлены до 0,05 м; точность замера ≈ ±0,05 м (1 пиксель = 0,042 м)"
+      ],
+      "zoning": "есть, см. extensions.zoning219 и concept/01-layout.md",
+      "mirror": {
+        "of": "plan-219.json",
+        "transform": "x' = 36 − x, y' = y",
+        "axis": "вертикальная ось x = 18 м: левая и правая стены схемы меняются местами",
+        "ids": "идентификаторы те же, что в plan-219.json; w_west здесь лежит справа (x = 36), w_east — слева (x = 0)",
+        "why": "Запасной план, если цех справа. Отражение по x переносит на другую сторону боковые стены без проёмов. Верхняя стена с перечёркнутыми проёмами и нижняя стена с входами остаются на месте."
+      }
+    },
+    "zoning219": {
+      "task": "#23",
+      "doc": "concept/01-layout.md",
+      "variant": "mirror",
+      "workshopWallId": "w_east",
+      "removedWallIds": [
+        "w_part_v1",
+        "w_part_v2",
+        "w_part_v3",
+        "w_part_h1",
+        "w_part_h2"
+      ],
+      "route": [
+        "entrance",
+        "crystals",
+        "quantrons",
+        "diodes",
+        "laser_sources",
+        "robots",
+        "engraving",
+        "handheld",
+        "cutting",
+        "test_lab",
+        "meeting"
+      ],
+      "sideStops": [
+        "optomechanics",
+        "edu_class"
+      ],
+      "mainEntranceId": "op_south_1",
+      "exits": {
+        "confirmed": [
+          "op_south_1",
+          "op_south_2"
+        ],
+        "candidate": "op_north_2",
+        "candidateStatus": "проём перечёркнут на схеме; можно ли открыть его как эвакуационный выход — [СПРОСИТЬ]"
+      },
+      "zones": {
+        "entrance": {
+          "slide3Row": null,
+          "fireClass": "Ф2.2",
+          "area_m2": 80.75,
+          "routeStep": 1
+        },
+        "crystals": {
+          "slide3Row": 1,
+          "fireClass": "Ф2.2",
+          "area_m2": 47.95,
+          "routeStep": 2
+        },
+        "quantrons": {
+          "slide3Row": 2,
+          "fireClass": "Ф2.2",
+          "area_m2": 41.1,
+          "routeStep": 3
+        },
+        "diodes": {
+          "slide3Row": 3,
+          "fireClass": "Ф2.2",
+          "area_m2": 37.68,
+          "routeStep": 4
+        },
+        "laser_sources": {
+          "slide3Row": 4,
+          "fireClass": "Ф2.2",
+          "area_m2": 34.25,
+          "routeStep": 5
+        },
+        "robots": {
+          "slide3Row": 5,
+          "fireClass": "Ф2.2",
+          "area_m2": 41.1,
+          "routeStep": 6
+        },
+        "engraving": {
+          "slide3Row": 6,
+          "fireClass": "Ф2.2",
+          "area_m2": 44.53,
+          "routeStep": 7
+        },
+        "cutting": {
+          "slide3Row": 7,
+          "fireClass": "Ф2.2",
+          "area_m2": 26.0,
+          "routeStep": 9
+        },
+        "handheld": {
+          "slide3Row": 8,
+          "fireClass": "Ф2.2",
+          "area_m2": 22.0,
+          "routeStep": 8
+        },
+        "optomechanics": {
+          "slide3Row": 9,
+          "fireClass": "Ф2.2",
+          "area_m2": 52.25,
+          "routeStep": null
+        },
+        "edu_class": {
+          "slide3Row": 10,
+          "fireClass": "Ф2.2",
+          "area_m2": 52.25,
+          "routeStep": null
+        },
+        "meeting": {
+          "slide3Row": null,
+          "fireClass": "Ф2.2",
+          "area_m2": 19.25,
+          "routeStep": 11
+        },
+        "test_lab": {
+          "slide3Row": null,
+          "fireClass": "[СПРОСИТЬ]; в 05-safety принят Ф5.1",
+          "area_m2": 29.25,
+          "routeStep": 10
+        }
+      },
+      "walls": {
+        "w_lab_s": "стекло, противопожарная преграда EIW 45 (решение концепции, 05-safety 4.4), без лазерного слоя: луча в зоне нет (D-001)",
+        "w_lab_n": "стекло, противопожарная преграда EIW 45 (решение концепции, 05-safety 4.4), без лазерного слоя: луча в зоне нет (D-001)",
+        "w_lab_e": "стекло, противопожарная преграда EIW 45 (решение концепции, 05-safety 4.4), без лазерного слоя: луча в зоне нет (D-001)",
+        "w_meet_w": "перегородка переговорной, высота 7 м, до потолка (#185, эксперт ЛАССАРД, ЧП2)",
+        "w_meet_n": "перегородка переговорной, высота 7 м, до потолка (#185, эксперт ЛАССАРД, ЧП2)",
+        "w_meet_e": "перегородка переговорной, высота 7 м, до потолка (#185, эксперт ЛАССАРД, ЧП2)"
+      },
+      "openings": {
+        "op_glass_workshop": "светопрозрачная перегородка в цех: EIW 45 + лазерный фильтр (05-safety 3.5); участок — оценка",
+        "op_lab_workshop": "запасной выход демо-зоны в цех — не подтверждён [СПРОСИТЬ] (05-safety 4.3)",
+        "op_lab_hall": "дверь демо-зоны в зал, только персонал; луча в демо-зоне нет (D-001)",
+        "op_lab_hatch": "окно передачи образцов: гость отдаёт и получает образец, внутрь не входит; окно E 30 в преграде EIW 45 (05-safety 3.5, проверить)",
+        "op_meeting": "дверь переговорной, открывается наружу"
+      },
+      "gallery": "нет: галерею над цехом не закладываем (рекомендация, concept/01-layout.md, раздел 8)",
+      "checks": {
+        "command": "python3 scripts/plan_zones.py --check",
+        "zoneAreaSum_m2": 528.36,
+        "zoneOverlaps": 0,
+        "columnClashes": 0,
+        "narrowPassages": 0,
+        "candidateExit": "op_north_2",
+        "maxPathHall_m": 23.0,
+        "maxPathHallWithCandidate_m": 23.0,
+        "maxPathHallWithBothNorthDoors_m": 16.0,
+        "maxPathTestLab_m": 17.3,
+        "exitSpacingConfirmed_m": 15.0,
+        "exitSpacingConfirmedFarEdges_m": 19.05,
+        "exitSpacingWithCandidate_m": 20.44,
+        "halfDiagonal_m": 20.09,
+        "pathMethod": "сетка 0,2 м, 8 соседей, отступ 0,3 м от препятствий; длина не короче реальной"
+      }
+    }
+  }
+}

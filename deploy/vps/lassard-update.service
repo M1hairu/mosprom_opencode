@@ -1,0 +1,8 @@
+[Unit]
+Description=ЛАССАРД — выкладка origin/main (IR630/mosprom)
+
+[Service]
+Type=oneshot
+ExecStart=%h/apps/lassard/deploy/update.sh
+# A hung git fetch or npm ci must not hold the lock for ever.
+TimeoutStartSec=15min

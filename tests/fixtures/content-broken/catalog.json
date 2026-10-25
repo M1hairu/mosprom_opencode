@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "items": [
+    {"id": "welder_mini", "name": "WELDER MINI", "category": "welding", "size_mm": {"length": 640, "width": 400, "height": 660}, "estimate": false, "laser_class": "4", "beam": "open", "source": "Каталог ЛАССАРД 2026", "in_current_showroom": false, "plan_type": "ot_welder_mini"}
+  ]
+}

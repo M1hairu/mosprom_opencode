@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "routes": [
+    {
+      "role": "students",
+      "title": "Школьники и студенты",
+      "duration_max_min": 5,
+      "steps": [
+        {"zone": "handheld", "minutes": 5, "message": "Посмотрите сварку."},
+        {"zone": "lobby", "minutes": 5, "message": "Холл."}
+      ]
+    }
+  ]
+}

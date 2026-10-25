@@ -1,0 +1,19 @@
+# API of the showroom: FastAPI on 127.0.0.1:8450. Caddy serves the pages (lassard.caddy).
+# Database: role and database lassard in the user PostgreSQL of the server. Password — only in ~/apps/lassard/.env.
+[Unit]
+Description=ЛАССАРД — API шоурума (uvicorn :8450)
+After=valaroma-postgres.service
+Wants=valaroma-postgres.service
+
+[Service]
+WorkingDirectory=%h/apps/lassard/repo/backend
+EnvironmentFile=%h/apps/lassard/.env
+EnvironmentFile=-%h/apps/lassard/sha.env
+# Migrations first: the API never starts on an old schema.
+ExecStartPre=%h/apps/lassard/repo/backend/.venv/bin/alembic upgrade head
+ExecStart=%h/apps/lassard/repo/backend/.venv/bin/uvicorn api.main:app --host 127.0.0.1 --port 8450 --proxy-headers
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

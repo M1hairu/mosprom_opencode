@@ -1,0 +1,15 @@
+# Build context: backend/, web/ and canonical content/ sources (Dockerfile).
+*
+!backend/
+!web/
+!content/
+# Local private sandbox stays excluded; keep the explicit allowlist above.
+experiments/
+backend/.venv
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+web/node_modules
+web/dist
+web/test-results
+web/playwright-report

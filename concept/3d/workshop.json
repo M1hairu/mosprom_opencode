@@ -1,0 +1,18 @@
+{
+  "note": "Цех — иллюстрация за стеклом, не проект. Сторону цеха выбрали сами (эксперт ЛАССАРД, 24.10); план цеха неизвестен [СПРОСИТЬ]. Стена цеха — w_west, как в content/plan-219-zoned.json (extensions.plan219.workshop.wallId). Глубина 12 м, состав и расстановка — допущение команды. Резка образца клиента — на SMART BASE в цехе (D-001). Координаты — метры плана, x < 0. Поворот — против часовой стрелки, как в Blender; фасад смотрит на -Y при 0, на +X (к стеклу) при 90.",
+  "wallId": "w_west",
+  "depth_m": 12.0,
+  "sources": {
+    "F": "research/notes/lassard_facts.md, §2 (каталог ЛАССАРД 2026)",
+    "EST": "оценка команды: размера в источниках нет"
+  },
+  "objects": [
+    {"id": "ws_smart_base", "kind": "machine", "label": "SMART BASE в цехе: резка образца клиента", "position": [-2.6, 8.6], "size_m": [1.75, 1.75], "height_m": 2.2, "rotation_deg": 90, "src": "F"},
+    {"id": "ws_lfilter_smart", "kind": "unit", "label": "LFILTER SMART", "position": [-2.6, 10.6], "size_m": [0.92, 0.955], "height_m": 1.475, "rotation_deg": 90, "src": "F"},
+    {"id": "ws_leader", "kind": "machine", "label": "LEADER", "position": [-8.6, 8.9], "size_m": [10.2, 2.5], "height_m": 2.315, "rotation_deg": 90, "src": "F"},
+    {"id": "ws_lfilter_leader", "kind": "unit", "label": "LFILTER LEADER", "position": [-8.6, 15.4], "size_m": [2.1, 1.0], "height_m": 2.375, "rotation_deg": 90, "src": "F"},
+    {"id": "ws_smart_xl", "kind": "machine", "label": "SMART XL 1300×1300 в сборке", "position": [-3.5, 14.6], "size_m": [2.2, 3.0], "height_m": 2.02, "rotation_deg": 90, "src": "F"},
+    {"id": "ws_bench_1", "kind": "table", "label": "Верстак сборки", "position": [-2.2, 4.0], "size_m": [2.0, 0.9], "height_m": 0.9, "rotation_deg": 90, "src": "EST"},
+    {"id": "ws_bench_2", "kind": "table", "label": "Верстак настройки", "position": [-5.4, 4.0], "size_m": [2.0, 0.9], "height_m": 0.9, "rotation_deg": 90, "src": "EST"}
+  ]
+}

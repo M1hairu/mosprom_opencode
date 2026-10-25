@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "catalog.json — экспонаты ЛАССАРД",
+  "description": "Станки и изделия для зон, плана и подбора станка. Неизвестное пишем явно: null в laser_class, beam, size_mm или в одном измерении. Габарит — полный size_mm + size_source, иначе estimate: true + estimate_basis (G4). Цена, рабочее поле и мощность — только с источником.",
+  "type": "object",
+  "required": ["version", "items"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {"type": "integer", "enum": [1]},
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "category", "size_mm", "estimate", "laser_class", "beam", "source", "in_current_showroom"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9_.-]+$"},
+          "name": {"type": "string"},
+          "category": {
+            "type": "string",
+            "enum": ["cutting", "engraving", "welding", "cleaning", "hardening", "optomechanics", "component", "ventilation", "education"]
+          },
+          "size_mm": {
+            "type": ["object", "null"],
+            "description": "Длина × ширина × высота, мм, как в источнике. null — габарит не опубликован; null в измерении — измерение не опубликовано.",
+            "required": ["length", "width", "height"],
+            "additionalProperties": false,
+            "properties": {
+              "length": {"type": ["number", "null"], "minimum": 0.001},
+              "width": {"type": ["number", "null"], "minimum": 0.001},
+              "height": {"type": ["number", "null"], "minimum": 0.001}
+            }
+          },
+          "size_source": {"type": "string", "description": "Откуда габарит: URL или документ и страница."},
+          "size_alt": {
+            "type": "array",
+            "description": "Другие опубликованные габариты с источником (например, сайт и каталог расходятся).",
+            "items": {
+              "type": "object",
+              "required": ["size_mm", "size_source"],
+              "additionalProperties": false,
+              "properties": {
+                "size_mm": {
+                  "type": "object",
+                  "required": ["length", "width", "height"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "length": {"type": "number", "minimum": 0.001},
+                    "width": {"type": "number", "minimum": 0.001},
+                    "height": {"type": "number", "minimum": 0.001}
+                  }
+                },
+                "size_source": {"type": "string"}
+              }
+            }
+          },
+          "estimate": {"type": "boolean", "description": "true — габарит оценочный или неполный; интерфейс показывает метку «оценка»."},
+          "estimate_basis": {"type": "string", "description": "Основание оценки."},
+          "laser_class": {"type": ["string", "null"], "enum": ["1", "1M", "2", "2M", "3R", "3B", "4", "none", null], "description": "null — класс не опубликован."},
+          "beam": {"type": ["string", "null"], "enum": ["open", "closed", null], "description": "null — неизвестно."},
+          "work_area_mm": {
+            "type": "object",
+            "description": "Рабочее поле, мм.",
+            "required": ["length", "width", "source"],
+            "additionalProperties": false,
+            "properties": {
+              "length": {"type": "number", "minimum": 0.001},
+              "width": {"type": "number", "minimum": 0.001},
+              "source": {"type": "string"}
+            }
+          },
+          "power_w": {
+            "type": "object",
+            "description": "Мощность лазера, Вт: диапазон исполнений; одно значение — min = max.",
+            "required": ["min", "max", "source"],
+            "additionalProperties": false,
+            "properties": {
+              "min": {"type": "number", "minimum": 0},
+              "max": {"type": "number", "minimum": 0},
+              "source": {"type": "string"}
+            }
+          },
+          "price_from": {
+            "type": "object",
+            "required": ["value_rub", "source"],
+            "additionalProperties": false,
+            "properties": {
+              "value_rub": {"type": "number", "minimum": 0},
+              "source": {"type": "string"},
+              "date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}
+            }
+          },
+          "source": {"type": "string", "description": "Карточка изделия: URL или документ."},
+          "in_current_showroom": {"type": "boolean", "description": "true — экспонат есть в действующем шоуруме."},
+          "plan_type": {"type": "string", "description": "id типа объекта в catalog.objectTypes плана (PlanDocument, content/plan-219*.json). Связывает экспонат с объектами плана; lint проверяет, что тип есть в плане."},
+          "note": {"type": "string", "description": "Пояснение: неизвестный класс или луч, расхождение источников, [СПРОСИТЬ]."}
+        }
+      }
+    }
+  }
+}

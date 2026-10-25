@@ -1,0 +1,18 @@
+# Automatic HTTPS (Let's Encrypt) for SITE_ADDRESS; "localhost" gets the Caddy internal CA.
+{
+	email {$ACME_EMAIL}
+}
+
+{$SITE_ADDRESS} {
+	# Deployed commit: scripts/deploy.sh compares it with origin/main.
+	handle /version.txt {
+		header Content-Type "text/plain; charset=utf-8"
+		header Cache-Control "no-store"
+		respond "{$GIT_SHA}"
+	}
+
+	# nginx in the web image serves the SPA and proxies /api/ to api.
+	handle {
+		reverse_proxy web:80
+	}
+}

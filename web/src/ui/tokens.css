@@ -1,0 +1,141 @@
+/* Design tokens of all 5 surfaces. Style of lassard.ru (owner's sites; the jury allowed their fonts
+   and photos, 24.10) on the brandbook palette (task/brandbook.md, page numbers of the PDF).
+   Global stylesheet: main.tsx imports it once. Components use only these variables. */
+
+/* Montserrat — headings, as on lassard.ru and in the brandbook (p. 28); Inter — text, as on
+   lassard.ru. Both OFL: fonts/OFL.txt, fonts/OFL-Inter.txt. */
+@font-face { font-family: "Montserrat"; font-weight: 400; font-display: swap; src: url("./fonts/montserrat-cyrillic-400-normal.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Montserrat"; font-weight: 400; font-display: swap; src: url("./fonts/montserrat-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Montserrat"; font-weight: 600; font-display: swap; src: url("./fonts/montserrat-cyrillic-600-normal.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Montserrat"; font-weight: 600; font-display: swap; src: url("./fonts/montserrat-latin-600-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Montserrat"; font-weight: 700; font-display: swap; src: url("./fonts/montserrat-cyrillic-700-normal.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Montserrat"; font-weight: 700; font-display: swap; src: url("./fonts/montserrat-latin-700-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Montserrat"; font-weight: 800; font-display: swap; src: url("./fonts/montserrat-cyrillic-800-normal.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Montserrat"; font-weight: 800; font-display: swap; src: url("./fonts/montserrat-latin-800-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Inter"; font-weight: 400; font-display: swap; src: url("./fonts/inter-cyrillic-400-normal.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Inter"; font-weight: 400; font-display: swap; src: url("./fonts/inter-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Inter"; font-weight: 500; font-display: swap; src: url("./fonts/inter-cyrillic-500-normal.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Inter"; font-weight: 500; font-display: swap; src: url("./fonts/inter-latin-500-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Inter"; font-weight: 600; font-display: swap; src: url("./fonts/inter-cyrillic-600-normal.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Inter"; font-weight: 600; font-display: swap; src: url("./fonts/inter-latin-600-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+:root {
+  /* Palette: brandbook p. 27 + the shades lassard.ru uses. */
+  --c-red: #dd191c;
+  /* Pressed red of the site buttons. */
+  --c-red-dark: #9a0305;
+  /* Graphite of lassard.ru: text and dark showcase blocks (white, red, graphite). */
+  --c-graphite: #26262e;
+  --c-dark: #606060;
+  --c-grey: #868686;
+  --c-light: #e3e3e6;
+  --c-teal: #a7d1c8;
+  --c-white: #ffffff;
+  /* Page background of lassard.ru. */
+  --c-mist: #f6f6f6;
+  /* Background of product photos on lassard.ru. */
+  --c-tile: #f1f5f5;
+  /* Green of «на складе» on lassard.ru: status «on line». */
+  --c-ok: #00941e;
+
+  --font: "Inter", Verdana, system-ui, sans-serif;
+  --font-head: "Montserrat", Verdana, system-ui, sans-serif;
+  --fs-s: 0.875rem;
+  --fs-m: 1rem;
+  --fs-l: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-xxl: 2rem;
+
+  /* Spacing on a 4 px step. */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+
+  /* Radii of lassard.ru: buttons, tiles, cards and showcase blocks. */
+  --r-1: 6px;
+  --r-2: 12px;
+  --r-3: 16px;
+  /* Brand lines go at 243° (p. 32). */
+  --line-angle: 243deg;
+
+  /* Touch target: at least 44 px (task #54); we take 48 px. */
+  --touch: 48px;
+  --tabbar-h: 64px;
+
+  --shadow: 0 1px 2px rgb(38 38 46 / 0.04), 0 6px 20px rgb(38 38 46 / 0.06);
+
+  /* Triangle pattern (p. 29): red, grey and outline triangles. Tile 48 × 42 px. */
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='42'%3E%3Cpath d='M0 42 24 0 48 42Z' fill='%23dd191c'/%3E%3Cpath d='M24 0 48 42 72 0Z M-24 0 0 42 24 0Z' fill='%23d9d9d9'/%3E%3Cpath d='M12 34 24 13 36 34Z' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: var(--fs-m);
+  line-height: 1.45;
+  color: var(--c-graphite);
+  background: var(--c-mist);
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-head);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--c-graphite);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

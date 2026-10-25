@@ -1,0 +1,132 @@
+/* Zone screen 16:9 (Screen.tsx) inside ScreenShell: graphite showcase, sizes in vh. */
+
+/* Not positioned on purpose: the backdrop and the scrim fill the whole .screenMain (the box between
+   the top bar and the stripes), past its 8vh side padding. */
+.layout {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 6vh;
+  padding: 4vh 0;
+  text-align: left;
+}
+
+/* Render of the zone behind the splash: edge to edge, full brightness. */
+.backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Graphite from the left under the text, clear at the QR side: the picture is not dimmed as a whole. */
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(38 38 46 / 0.9) 0%,
+    rgb(38 38 46 / 0.78) 45%,
+    rgb(38 38 46 / 0.3) 65%,
+    rgb(38 38 46 / 0) 85%
+  );
+  pointer-events: none;
+}
+
+.text {
+  position: relative;
+}
+
+.text h1 {
+  margin: 0 0 3vh;
+  font-size: 7vh;
+}
+
+.kicker {
+  margin: 0 0 1.5vh;
+  color: rgb(255 255 255 / 0.7);
+  font-size: 2.4vh;
+  font-weight: 500;
+}
+
+.lead {
+  margin: 0;
+  max-width: 40ch;
+  font-family: var(--font-head);
+  font-size: 3.2vh;
+  font-weight: 600;
+}
+
+.lines {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* The longest route (entrance, 4 steps) must fit above the stripes at 1280 × 720. */
+  font-size: 2.3vh;
+  line-height: 1.3;
+}
+
+.lines li + li {
+  margin-top: 1.1vh;
+}
+
+.lines li::before {
+  content: "";
+  display: inline-block;
+  width: 1.2vh;
+  height: 1.2vh;
+  margin-right: 1.6vh;
+  border-radius: 50%;
+  background: var(--c-red);
+  vertical-align: middle;
+}
+
+.qr {
+  position: relative;
+  justify-self: end;
+  width: 36vh;
+  margin: 0;
+  padding: 2.4vh;
+  border-radius: 2vh;
+  background: var(--c-white);
+  color: var(--c-graphite);
+  text-align: center;
+}
+
+.qrCode {
+  width: 100%;
+  height: auto;
+}
+
+.qr figcaption {
+  margin-top: 1.6vh;
+  font-size: 2vh;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Exhibit photo on the light tile of lassard.ru. */
+.photo {
+  position: relative;
+  justify-self: end;
+  width: 100%;
+  max-height: 64vh;
+  object-fit: contain;
+  border-radius: 2vh;
+  background: var(--c-tile);
+}
+
+.status {
+  position: absolute;
+  left: 0;
+  bottom: 2vh;
+  margin: 0;
+  padding: 1vh 2vh;
+  border-radius: 1vh;
+  background: var(--c-red-dark);
+  color: var(--c-white);
+  font-size: 2.2vh;
+}

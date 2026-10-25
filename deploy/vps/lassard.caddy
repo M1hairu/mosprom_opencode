@@ -1,0 +1,37 @@
+# ~/etc/lassard.caddy — the showroom on the team VPS, imported from ~/etc/Caddyfile.
+# SPA pages come from ~/apps/lassard/www (link to a release), /api/* goes to uvicorn 127.0.0.1:8450.
+# Main address — lassard.nedovost.org (A record at REG.RU); sslip.io works without DNS.
+lassard.nedovost.org, lassard.5-129-231-165.sslip.io {
+	log {
+		output file /home/takopi/logs/caddy/lassard.access.log {
+			roll_size 20MiB
+			roll_keep 3
+		}
+		format json
+	}
+	encode zstd gzip
+
+	handle /api/* {
+		# SSE of the zone screen and the tablet: no buffering.
+		reverse_proxy 127.0.0.1:8450 {
+			flush_interval -1
+		}
+	}
+
+	# Build files have a hash in the name. A missing one is 404, not index.html: the browser must not
+	# keep a page under a script name for a year.
+	handle /assets/* {
+		root * /home/takopi/apps/lassard/www
+		@exists file
+		header @exists Cache-Control "public, max-age=31536000, immutable"
+		file_server
+	}
+
+	# SPA routes (/guide, /screen/<zone>, ...) get index.html; a new release shows at once.
+	handle {
+		root * /home/takopi/apps/lassard/www
+		header Cache-Control "no-cache"
+		try_files {path} /index.html
+		file_server
+	}
+}

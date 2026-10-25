@@ -1,0 +1,560 @@
+/* Page change of the «Оптика» theme (opticWipe.ts). Global: the overlay lives in <body>.
+   Timing of phase "in": the set appears at 0–200 ms, the beam runs from 150 ms for 620 ms
+   (opticWipe.ts sets each ray's --d and --dur), the halves stay closed until phase "out". */
+
+@property --optic-f {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+
+.optic {
+  --bar: clamp(30px, 8.5vh, 72px);
+  --ink: rgb(38 38 46 / 0.78);
+  overflow: hidden;
+  font-family: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+/* Two halves of the optical table: a breadboard of mounting holes, a ruler on the cut edge. */
+.optic__half {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background:
+    radial-gradient(circle at 12px 12px, rgb(38 38 46 / 0.13) 1.3px, transparent 1.8px) 0 0 / 24px 24px,
+    linear-gradient(180deg, #f7f8fa, #eef0f3);
+  will-change: transform;
+}
+
+.optic__half--top {
+  top: 0;
+  height: var(--seam);
+  background:
+    repeating-linear-gradient(90deg, rgb(38 38 46 / 0.28) 0 1px, transparent 1px 60px) bottom / 100% 12px no-repeat,
+    repeating-linear-gradient(90deg, rgb(38 38 46 / 0.16) 0 1px, transparent 1px 12px) bottom / 100% 6px no-repeat,
+    radial-gradient(circle at 12px 12px, rgb(38 38 46 / 0.13) 1.3px, transparent 1.8px) 0 0 / 24px 24px,
+    linear-gradient(180deg, #f7f8fa, #eef0f3);
+}
+
+.optic__half--bottom {
+  top: var(--seam);
+  bottom: 0;
+  background:
+    repeating-linear-gradient(90deg, rgb(38 38 46 / 0.28) 0 1px, transparent 1px 60px) top / 100% 12px no-repeat,
+    repeating-linear-gradient(90deg, rgb(38 38 46 / 0.16) 0 1px, transparent 1px 12px) top / 100% 6px no-repeat,
+    radial-gradient(circle at 12px 12px, rgb(38 38 46 / 0.13) 1.3px, transparent 1.8px) 0 0 / 24px 24px,
+    linear-gradient(180deg, #eef0f3, #f7f8fa);
+}
+
+/* Beam on the cut edge of each half: it rides the edge when the halves part. */
+.optic__edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6a5c, #fff 30%, #fff 70%, #ff6a5c);
+  box-shadow:
+    0 0 10px 2px rgb(255 80 60 / 0.9),
+    0 0 40px 10px rgb(221 25 28 / 0.45);
+  opacity: 0;
+  transform-origin: left center;
+}
+
+.optic__half--top .optic__edge {
+  bottom: -1px;
+}
+
+.optic__half--bottom .optic__edge {
+  top: -1px;
+}
+
+.optic[data-phase="in"] .optic__half--top {
+  animation: optic-close-top 0.32s cubic-bezier(0.7, 0, 0.3, 1) both;
+}
+
+.optic[data-phase="in"] .optic__half--bottom {
+  animation: optic-close-bottom 0.32s cubic-bezier(0.7, 0, 0.3, 1) both;
+}
+
+.optic[data-phase="out"] .optic__half--top {
+  animation: optic-open-top 0.46s cubic-bezier(0.65, 0, 0.2, 1) 0.06s both;
+}
+
+.optic[data-phase="out"] .optic__half--bottom {
+  animation: optic-open-bottom 0.46s cubic-bezier(0.65, 0, 0.2, 1) 0.06s both;
+}
+
+.optic[data-phase="out"] .optic__edge {
+  animation: optic-edge 0.52s linear both;
+}
+
+/* Intro of the start page: no optics, the cut runs across first, then the halves part. */
+.optic[data-intro] .optic__stage,
+.optic[data-intro] .optic__flash {
+  display: none;
+}
+
+.optic[data-intro] .optic__edge {
+  animation: optic-edge-draw 0.18s cubic-bezier(0.5, 0, 0.2, 1) both, optic-edge 0.52s linear 0.18s both;
+}
+
+.optic[data-intro] .optic__half--top,
+.optic[data-intro] .optic__half--bottom {
+  animation-delay: 0.2s;
+}
+
+/* The optics: SVG over the table. The camera pushes in to the scanner during the shot. */
+.optic__stage {
+  position: absolute;
+  inset: 0;
+  transform-origin: var(--cut-x) var(--seam);
+  will-change: transform, opacity;
+}
+
+.optic__stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, transparent 55%, rgb(38 38 46 / 0.08));
+}
+
+.optic[data-phase="in"] .optic__stage {
+  animation: optic-push 0.8s cubic-bezier(0.45, 0, 0.55, 1) both;
+}
+
+.optic[data-phase="out"] .optic__stage {
+  animation: optic-exit 0.26s cubic-bezier(0.5, 0, 1, 1) both;
+}
+
+.optic__svg {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+}
+
+.optic__ghost {
+  fill: none;
+  stroke: rgb(38 38 46 / 0.3);
+  stroke-width: 1;
+  stroke-dasharray: 2 5;
+  animation: optic-fade 0.2s ease-out 0.04s both;
+}
+
+.optic__part {
+  animation: optic-pop 0.28s cubic-bezier(0.2, 0.8, 0.2, 1) 0.05s both;
+}
+
+.optic__body {
+  fill: #fff;
+  stroke: rgb(38 38 46 / 0.5);
+  stroke-width: 1;
+}
+
+.optic__aperture {
+  fill: #dd191c;
+}
+
+.optic__mount {
+  fill: #e8ebef;
+  stroke: rgb(38 38 46 / 0.4);
+  stroke-width: 0.8;
+}
+
+.optic__mirror {
+  fill: url(#optic-silver);
+  stroke: rgb(38 38 46 / 0.55);
+  stroke-width: 0.8;
+}
+
+.optic__mirror--thin {
+  fill: none;
+  stroke: #7d8592;
+  stroke-width: 1.6;
+}
+
+.optic__cube {
+  fill: rgb(207 224 238 / 0.55);
+  stroke: rgb(38 38 46 / 0.45);
+  stroke-width: 0.9;
+}
+
+.optic__lens {
+  fill: url(#optic-glass);
+  stroke: rgb(38 38 46 / 0.5);
+  stroke-width: 0.9;
+}
+
+.optic__part--lens .optic__lens {
+  animation: optic-lit 0.5s ease-out var(--d) both;
+}
+
+.optic__lensRim {
+  stroke: rgb(38 38 46 / 0.2);
+  stroke-width: 0.6;
+  stroke-dasharray: 2 2;
+}
+
+.optic__led {
+  fill: #c9ced6;
+  animation: optic-led 0.15s linear var(--d) both;
+}
+
+.optic__label {
+  fill: rgb(38 38 46 / 0.62);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+}
+
+.optic__label--in {
+  fill: rgb(38 38 46 / 0.8);
+  font-size: 8.5px;
+  font-weight: 700;
+}
+
+.optic__glint {
+  fill: url(#optic-hot);
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: optic-glint 0.4s ease-out var(--d) both;
+}
+
+/* The beam: a wide red glow, a red body and a white-hot core, drawn by stroke-dashoffset. */
+.optic__ray line {
+  fill: none;
+  stroke-linecap: round;
+  animation: optic-draw var(--dur) linear var(--d) both;
+}
+
+/* Two soft layers instead of a blur filter: a blur per frame is too heavy for a phone. */
+.optic__halo {
+  stroke: #dd191c;
+  stroke-opacity: 0.07;
+  stroke-width: 18;
+}
+
+.optic__glow {
+  stroke: #ff3b2f;
+  stroke-opacity: 0.16;
+  stroke-width: 7;
+}
+
+.optic__mid {
+  stroke: #ff3b2f;
+  stroke-opacity: 0.92;
+  stroke-width: 3;
+}
+
+.optic__core {
+  stroke: #fff;
+  stroke-width: 1.2;
+}
+
+.optic__ray--cut .optic__halo {
+  stroke-opacity: 0.1;
+  stroke-width: 34;
+}
+
+.optic__ray--cut .optic__glow {
+  stroke-opacity: 0.22;
+  stroke-width: 12;
+}
+
+.optic__ray--cut .optic__mid {
+  stroke-width: 4;
+}
+
+.optic__ray--cut .optic__core {
+  stroke-width: 1.8;
+}
+
+.optic__env {
+  fill: rgb(221 25 28 / 0.2);
+  animation: optic-fade var(--dur) linear var(--d) both;
+}
+
+/* Flash on the cut when the halves part. */
+.optic__flash {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--seam) - 140px);
+  height: 280px;
+  background:
+    radial-gradient(ellipse 60% 50% at var(--cut-x) 50%, rgb(255 255 255 / 0.95), transparent 70%),
+    linear-gradient(180deg, transparent, rgb(255 236 232 / 0.85) 46%, #fff 50%, rgb(255 236 232 / 0.85) 54%, transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.optic[data-phase="out"] .optic__flash {
+  animation: optic-flash 0.34s ease-out both;
+}
+
+/* Film grain over the whole frame. */
+.optic__grain {
+  position: absolute;
+  inset: -60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.06;
+  animation: optic-grain 0.4s steps(4) infinite;
+}
+
+/* Letterbox bars: light, with the scene slate and the timecode. */
+.optic__bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: var(--bar);
+  padding: 0 max(16px, env(safe-area-inset-left));
+  background: #fff;
+  color: var(--ink);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.optic__bar--top {
+  top: 0;
+  padding-top: env(safe-area-inset-top);
+  box-shadow: 0 1px 0 rgb(38 38 46 / 0.12);
+}
+
+.optic__bar--bottom {
+  bottom: 0;
+  padding-bottom: env(safe-area-inset-bottom);
+  box-shadow: 0 -1px 0 rgb(38 38 46 / 0.12);
+}
+
+.optic__bar--top::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 48px;
+  height: 2px;
+  background: #dd191c;
+}
+
+.optic__title {
+  overflow: hidden;
+  color: #26262e;
+  font-size: 12px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+}
+
+.optic__tc::after {
+  content: counter(optic-f, decimal-leading-zero);
+  counter-reset: optic-f var(--optic-f);
+  animation: optic-tc 1.4s steps(34) both;
+}
+
+.optic[data-phase="in"] .optic__bar--top,
+.optic[data-intro] .optic__bar--top {
+  animation: optic-bar-top-in 0.38s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.optic[data-phase="in"] .optic__bar--bottom,
+.optic[data-intro] .optic__bar--bottom {
+  animation: optic-bar-bottom-in 0.38s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.optic[data-phase="out"]:not([data-intro]) .optic__bar--top {
+  animation: optic-bar-top-out 0.36s cubic-bezier(0.6, 0, 0.8, 0.4) 0.16s both;
+}
+
+.optic[data-phase="out"]:not([data-intro]) .optic__bar--bottom {
+  animation: optic-bar-bottom-out 0.36s cubic-bezier(0.6, 0, 0.8, 0.4) 0.16s both;
+}
+
+.optic[data-intro] .optic__bar {
+  animation-direction: reverse;
+  animation-delay: 0.2s;
+}
+
+@keyframes optic-close-top {
+  from {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes optic-close-bottom {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes optic-open-top {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes optic-open-bottom {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes optic-edge {
+  0%,
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes optic-edge-draw {
+  from {
+    opacity: 1;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes optic-push {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  20% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes optic-exit {
+  from {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.18);
+  }
+}
+
+@keyframes optic-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes optic-pop {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@keyframes optic-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes optic-glint {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  25% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+
+@keyframes optic-lit {
+  0% {
+    stroke: rgb(38 38 46 / 0.5);
+  }
+  30% {
+    stroke: #dd191c;
+  }
+  100% {
+    stroke: rgb(221 25 28 / 0.55);
+  }
+}
+
+@keyframes optic-led {
+  to {
+    fill: #dd191c;
+  }
+}
+
+@keyframes optic-flash {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.3);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(1.6);
+  }
+}
+
+@keyframes optic-grain {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-23px, 17px);
+  }
+  50% {
+    transform: translate(31px, -9px);
+  }
+  75% {
+    transform: translate(-11px, -29px);
+  }
+}
+
+@keyframes optic-tc {
+  to {
+    --optic-f: 34;
+  }
+}
+
+@keyframes optic-bar-top-in {
+  from {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes optic-bar-bottom-in {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes optic-bar-top-out {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes optic-bar-bottom-out {
+  to {
+    transform: translateY(100%);
+  }
+}

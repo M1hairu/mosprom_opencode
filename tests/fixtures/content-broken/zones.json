@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "zones": [
+    {
+      "id": "handheld",
+      "name": "Ручные лазерные аппараты",
+      "exhibits": ["welder_mini"],
+      "display": "Сварка на образце в общем зале.",
+      "safety": {"restricted": true, "interlock": false, "notes": ["Дистанция 2 м."]},
+      "status": "maintenance",
+      "carries": ["history"],
+      "messages": ["Сварка за 5 минут."]
+    }
+  ]
+}

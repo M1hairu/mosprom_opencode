@@ -1,0 +1,430 @@
+/* Guide on the phone (pages/Guide.tsx), in the style of lassard.ru. Only tokens from tokens.css. */
+
+/* Graphite block: the zone showcase. */
+.showcase {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--s-4);
+  border-radius: var(--r-3);
+  background: var(--c-graphite);
+  color: var(--c-white);
+}
+
+.showcaseView {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 720 / 390;
+  object-fit: cover;
+}
+
+/* The frame stays clean (#305): the text stands under it, on graphite. */
+.showcaseView {
+  display: block;
+}
+
+.showcaseText h2 {
+  margin: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.showcaseText {
+  padding: var(--s-4);
+}
+
+.showcaseText h2 {
+  font-size: var(--fs-xl);
+}
+
+.kicker {
+  margin: 0 0 var(--s-1);
+  color: rgb(255 255 255 / 0.7);
+  font-size: var(--fs-s);
+  font-weight: 500;
+}
+
+/* Exhibit photo on the light tile of lassard.ru: a light machine on graphite. */
+.exhibit {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin: 0 var(--s-4) var(--s-4);
+  padding: var(--s-2);
+  border-radius: var(--r-2);
+  background: rgb(255 255 255 / 0.08);
+}
+
+.exhibit img {
+  flex: none;
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  border-radius: var(--r-1);
+  background: var(--c-tile);
+}
+
+.exhibit figcaption {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.exhibit strong {
+  font-family: var(--font-head);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.exhibit span {
+  color: rgb(255 255 255 / 0.7);
+  font-size: var(--fs-s);
+}
+
+.stop {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.stop p {
+  margin: 0;
+}
+
+.lead {
+  font-family: var(--font-head);
+  font-weight: 600;
+}
+
+.meta {
+  margin: 0;
+  color: var(--c-dark);
+  font-size: var(--fs-s);
+}
+
+.meta a {
+  /* Tap area of 32 px around a small link; the negative margin keeps the line height (#363). */
+  display: inline-block;
+  padding: 9px 0;
+  margin: -9px 0;
+}
+
+.notice {
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-1);
+  background: #fff2f2;
+  color: var(--c-red-dark);
+}
+
+.nav {
+  display: flex;
+  gap: var(--s-3);
+  margin-top: var(--s-4);
+}
+
+.nav > * {
+  flex: 1 1 0;
+}
+
+.hall {
+  margin: 0 0 var(--s-4);
+  overflow: hidden;
+  border-radius: var(--r-3);
+  background: var(--c-graphite);
+}
+
+.hallHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  color: var(--c-white);
+}
+
+.hallHeader strong,
+.hallHeader span {
+  display: block;
+}
+
+.hallHeader span {
+  margin-top: var(--s-1);
+  color: rgb(255 255 255 / 0.75);
+  font-size: var(--fs-s);
+}
+
+.hallHeader button {
+  flex: none;
+  min-height: 44px;
+  padding: var(--s-2) var(--s-3);
+  border: 1px solid rgb(255 255 255 / 0.45);
+  border-radius: var(--r-2);
+  background: transparent;
+  color: var(--c-white);
+  cursor: pointer;
+}
+
+.hallScroll {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  background: var(--c-mist);
+}
+
+.hall svg {
+  display: block;
+  width: 100%;
+  min-width: 1040px;
+  height: auto;
+  background: var(--c-mist);
+}
+
+.hall svg.hallOverview {
+  min-width: 0;
+}
+
+.hallRoom {
+  fill: var(--c-white);
+  stroke: var(--c-graphite);
+  stroke-width: 0.1;
+}
+
+.hallZone,
+.hallOff,
+.hallHere {
+  stroke: var(--c-white);
+  stroke-width: 0.12;
+}
+
+.hallZone {
+  fill: var(--c-light);
+  cursor: pointer;
+}
+
+.hallOff {
+  fill: var(--c-mist);
+  stroke: var(--c-light);
+}
+
+.hallHere {
+  fill: rgb(221 25 28 / 0.18);
+  cursor: pointer;
+}
+
+.hallPath {
+  fill: none;
+  stroke: var(--c-red);
+  stroke-width: 0.075;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hallArrow {
+  fill: none;
+  stroke: var(--c-red);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hallLinks {
+  pointer-events: none;
+}
+
+.hallPin,
+.hallPinHere {
+  cursor: pointer;
+}
+
+.hallPin:focus,
+.hallPinHere:focus {
+  outline: none;
+}
+
+.hallPin:focus-visible circle,
+.hallPinHere:focus-visible circle {
+  stroke: var(--c-red);
+  stroke-width: 0.18;
+}
+
+.hallPin circle {
+  fill: var(--c-graphite);
+}
+
+.hallPinHere circle {
+  fill: var(--c-red);
+}
+
+.hallNumber {
+  fill: var(--c-white);
+  font-size: 0.6px;
+  font-weight: 700;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.hallLabel {
+  fill: var(--c-graphite);
+  font-size: 0.43px;
+  font-weight: 650;
+  text-anchor: middle;
+}
+
+.hallInactive .hallLabel {
+  fill: var(--c-dark);
+  font-weight: 400;
+}
+
+.hall figcaption {
+  display: grid;
+  gap: var(--s-2);
+  padding: var(--s-3) var(--s-4);
+  color: rgb(255 255 255 / 0.8);
+  font-size: var(--fs-s);
+}
+
+.hallLegend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  color: var(--c-white);
+}
+
+.hallLegend i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--c-red);
+}
+
+.hallLegend b {
+  margin-left: var(--s-3);
+  color: var(--c-red);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.hallHint {
+  color: rgb(255 255 255 / 0.65);
+}
+
+.map,
+.facts,
+.seen {
+  margin: 0 0 var(--s-4);
+  padding: 0;
+  list-style: none;
+}
+
+.map li + li {
+  margin-top: var(--s-2);
+}
+
+.mapItem {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  width: 100%;
+  min-height: 56px;
+  padding: var(--s-2) var(--s-4);
+  border: 0;
+  border-radius: var(--r-2);
+  background: var(--c-white);
+  box-shadow: var(--shadow);
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.mapItem[aria-current="step"] {
+  box-shadow: inset 0 0 0 2px var(--c-red), var(--shadow);
+}
+
+.mapNum {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--c-graphite);
+  color: var(--c-white);
+  font-size: var(--fs-s);
+  font-weight: 600;
+}
+
+.mapItem[aria-current="step"] .mapNum {
+  background: var(--c-red);
+}
+
+.mapName {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-head);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.facts li {
+  padding: var(--s-4);
+  border-radius: var(--r-2);
+  background: var(--c-white);
+  box-shadow: var(--shadow);
+}
+
+.facts li + li {
+  margin-top: var(--s-2);
+}
+
+.facts p {
+  margin: 0;
+}
+
+.facts a {
+  color: var(--c-red);
+}
+
+.seen li + li {
+  margin-top: var(--s-1);
+}
+
+/* One column on every screen (#341): the side part dissolves and the buttons go under the story. */
+.desk {
+  display: flex;
+  flex-direction: column;
+}
+
+.deskSide {
+  display: contents;
+}
+
+.deskSide > .nav {
+  order: 1;
+}
+
+@media (min-width: 1024px) {
+  /* «Карта» (#334): the hall takes the full width and fits it, the stops go under it. */
+  .mapPage .hall svg {
+    min-width: 0;
+  }
+
+  .mapPage .hallHeader button,
+  .mapPage .hallHint {
+    display: none;
+  }
+
+  .facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-3);
+  }
+
+  .facts li + li {
+    margin-top: 0;
+  }
+
+  .narrow {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,447 @@
+/* Zone story of the guide (ZoneStory.tsx): light, in the style of lassard.ru — white and mist,
+   graphite text, red for numbers, nodes and accents. Only tokens from tokens.css. */
+
+.story {
+  --line: var(--c-light);
+  --text-2: var(--c-dark);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-6);
+  padding: var(--s-6) var(--s-4) var(--s-5);
+  border-radius: var(--r-3);
+  background: var(--c-white);
+  box-shadow: var(--shadow);
+  color: var(--c-graphite);
+  overflow: hidden;
+}
+
+.story p,
+.story ul,
+.story ol,
+.story h3 {
+  margin: 0;
+}
+
+/* Key phrase of the zone: large, with a red beam on the left. */
+.lead {
+  position: relative;
+  padding-left: var(--s-4);
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.lead::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--c-red);
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--c-red);
+  font-family: var(--font-head);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* Big numbers: two columns; an odd first tile takes the row. */
+.tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-2);
+  padding: 0;
+  list-style: none;
+}
+
+.tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  padding: var(--s-4) var(--s-3) var(--s-3);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--c-red);
+  border-radius: var(--r-2);
+  background: var(--c-white);
+  overflow: hidden;
+}
+
+.tile[data-wide="true"] {
+  grid-column: 1 / -1;
+  padding: var(--s-5) var(--s-4) var(--s-4);
+  background: var(--c-mist);
+}
+
+.prefix {
+  color: var(--text-2);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.big {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 6px;
+  font-family: var(--font-head);
+  font-size: 1.85rem;
+  font-weight: 800;
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.tile[data-wide="true"] .big {
+  font-size: 3.4rem;
+  color: var(--c-red);
+}
+
+.unit {
+  color: var(--c-red);
+  font-size: 0.5em;
+  letter-spacing: 0;
+}
+
+.caption {
+  margin-top: var(--s-1);
+  color: var(--text-2);
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+.captionOnly {
+  font-family: var(--font-head);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.source {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin-top: var(--s-2);
+  color: var(--c-grey);
+  font-size: 0.7rem;
+}
+
+.source a {
+  /* Tap area of 32 px around a small link; the negative margin keeps the line height (#363). */
+  display: inline-block;
+  padding: 9px 0;
+  margin: -9px 0;
+  color: inherit;
+  text-underline-offset: 2px;
+}
+
+.check {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 6px;
+  font-size: 0.7rem;
+  font-weight: 400;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--c-dark);
+}
+
+/* Timeline of years: a beam draws down through red nodes. */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+  padding: 0 0 0 var(--s-6);
+  list-style: none;
+}
+
+.timeline::before,
+.timeline::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--line);
+}
+
+.timeline::after {
+  background: var(--c-graphite);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1.4s var(--ease) 0.2s;
+}
+
+.timeline[data-in]::after {
+  transform: scaleY(1);
+}
+
+.timeline > li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.node {
+  position: absolute;
+  left: calc(-1 * var(--s-6));
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--c-light);
+  border-radius: 50%;
+  background: var(--c-white);
+  transition: border-color 0.4s, background 0.4s, box-shadow 0.4s;
+  transition-delay: calc(0.3s + var(--i) * 0.6s);
+}
+
+.timeline[data-in] .node {
+  border-color: var(--c-red);
+  background: var(--c-red);
+  box-shadow: 0 0 0 4px rgb(221 25 28 / 0.15);
+}
+
+.year {
+  color: var(--c-red);
+  font-family: var(--font-head);
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.yearText {
+  color: var(--text-2);
+}
+
+/* Notes: short lines with a red dash. */
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: 0;
+  list-style: none;
+}
+
+.notes > li {
+  position: relative;
+  padding-left: var(--s-4);
+}
+
+.notes > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 8px;
+  height: 2px;
+  background: var(--c-red);
+}
+
+.num {
+  color: var(--c-red);
+  font-weight: 700;
+}
+
+.item {
+  font-weight: 600;
+}
+
+.next {
+  display: flex;
+  gap: var(--s-3);
+  align-items: baseline;
+  padding: var(--s-3) var(--s-4);
+  border: 1px dashed var(--c-red);
+  border-radius: var(--r-2);
+  background: #fff7f7;
+}
+
+.nextLabel {
+  flex: none;
+  color: var(--c-red);
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Safety rules: second to the story, but always in view. */
+.rules {
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  background: var(--c-mist);
+}
+
+.rulesTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-bottom: var(--s-2) !important;
+  font-size: var(--fs-s);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.rulesTitle svg {
+  width: 18px;
+  height: 18px;
+  color: var(--c-red);
+}
+
+.rules ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: 0;
+  list-style: none;
+}
+
+.rules li {
+  position: relative;
+  padding-left: var(--s-4);
+  font-size: 0.88rem;
+}
+
+.rules li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-red);
+}
+
+/* «Что в зоне»: folded list of what stands in the zone. */
+.inZone {
+  border-top: 1px solid var(--line);
+  padding-top: var(--s-3);
+}
+
+.inZone summary {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 44px;
+  cursor: pointer;
+  font-family: var(--font-head);
+  font-weight: 700;
+  list-style: none;
+}
+
+.inZone summary::-webkit-details-marker {
+  display: none;
+}
+
+.inZone summary::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-left: auto;
+  border-right: 2px solid var(--c-red);
+  border-bottom: 2px solid var(--c-red);
+  transform: rotate(45deg);
+  transition: transform 0.3s var(--ease);
+}
+
+.inZone[open] summary::after {
+  transform: rotate(-135deg);
+}
+
+.count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--c-red);
+  color: var(--c-white);
+  font-size: 0.75rem;
+}
+
+.inZone ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  margin-top: var(--s-2) !important;
+  padding: 0;
+  list-style: none;
+}
+
+.inZone li {
+  padding: var(--s-3);
+  border-radius: var(--r-1);
+  background: var(--c-mist);
+  font-size: 0.9rem;
+}
+
+.inZone[open] li {
+  animation: drop-in 0.4s var(--ease) both;
+}
+
+/* Reveal on scroll, staggered by --i. */
+.story [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+
+.story [data-reveal][data-in] {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes drop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .inZone[open] li {
+    animation: none;
+  }
+}

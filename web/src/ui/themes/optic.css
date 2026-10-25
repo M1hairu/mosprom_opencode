@@ -1,0 +1,184 @@
+/* Theme «Оптика» (data-theme="optic"): a light optical lab — the breadboard of an optical
+   table, glass cards with a hairline frame, a red beam under the headings and on the buttons.
+   Its signature is the page change: a film shot of the beam through mirrors and lenses
+   (home/opticWipe.ts). Global file: selectors are [data-theme="optic"] .<file>_<class>
+   (vite.config.ts, generateScopedName). */
+
+:root[data-theme="optic"] {
+  --c-mist: #f7f8fa;
+  --font-mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, monospace;
+  --r-1: 8px;
+  --r-2: 10px;
+  --r-3: 14px;
+  --shadow: 0 1px 0 rgb(255 255 255 / 0.9) inset, 0 0 0 1px rgb(38 38 46 / 0.1), 0 8px 24px rgb(38 38 46 / 0.06);
+  --hair: rgb(38 38 46 / 0.12);
+  /* Breadboard: a mounting hole every 24 px. */
+  --holes: radial-gradient(circle at 12px 12px, rgb(38 38 46 / 0.09) 1.2px, transparent 1.7px) 0 0 / 24px 24px;
+  /* Glass of the cards: a cool highlight at the top edge. */
+  --glass: linear-gradient(180deg, rgb(236 243 250 / 0.9), rgb(255 255 255 / 0) 42px), var(--c-white);
+  /* Beam: a white-hot core in a red glow. */
+  --beam: linear-gradient(90deg, transparent, #ff6a5c 10%, #fff 50%, #ff6a5c 90%, transparent);
+  --beam-glow: 0 0 6px 1px rgb(255 80 60 / 0.7), 0 0 18px 4px rgb(221 25 28 / 0.25);
+}
+
+[data-theme="optic"] body {
+  background: var(--holes), var(--c-mist);
+}
+
+/* Small labels: monospace, as the marks on optical mounts. */
+[data-theme="optic"] :is(
+  .home_kicker, .home_eyebrow, .home_stepN, .home_tileMore, .ui_tabLabel, .zone_label, .zone_prefix,
+  .zone_source, .zone_nextLabel, .guide_kicker, .guide_meta, .guide_mapNum, .screen_kicker
+) {
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+}
+
+/* ------------------------------------------------------------------ shared components */
+
+[data-theme="optic"] :is(.ui_card, .zone_story) {
+  border: 1px solid var(--hair);
+  background: var(--glass);
+  box-shadow: var(--shadow);
+}
+
+[data-theme="optic"] .ui_primary {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgb(221 25 28 / 0.22);
+}
+
+/* The beam runs along the bottom edge of a primary button. */
+[data-theme="optic"] :is(.ui_primary, .home_primary)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--beam);
+  opacity: 0.85;
+  transform: scaleX(0.35);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+[data-theme="optic"] :is(.ui_primary, .home_primary):hover::after,
+[data-theme="optic"] :is(.ui_primary, .home_primary):focus-visible::after {
+  transform: scaleX(1);
+}
+
+[data-theme="optic"] .ui_secondary {
+  border: 1px solid var(--hair);
+  background: var(--glass);
+  box-shadow: none;
+}
+
+[data-theme="optic"] .ui_tabbar {
+  border-top: 1px solid var(--hair);
+  background: rgb(255 255 255 / 0.92);
+}
+
+/* Tab marker: a short beam with a glow. */
+[data-theme="optic"] .ui_tabMarker::before {
+  height: 2px;
+  background: var(--beam);
+  box-shadow: var(--beam-glow);
+}
+
+/* ------------------------------------------------------------------ shells */
+
+[data-theme="optic"] :is(.shells_phoneBar, .shells_bar) {
+  border-bottom: 1px solid var(--hair);
+  background: rgb(255 255 255 / 0.9);
+}
+
+/* ------------------------------------------------------------------ start page */
+
+[data-theme="optic"] .home_backdrop {
+  background: var(--holes), #f7f8fa;
+}
+
+[data-theme="optic"] .home_bar[data-scrolled="true"] {
+  background: rgb(255 255 255 / 0.9);
+  box-shadow: 0 1px 0 var(--hair);
+}
+
+[data-theme="optic"] .home_kicker {
+  color: var(--c-red);
+  font-size: 0.75rem;
+}
+
+[data-theme="optic"] .home_primary {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="optic"] .home_ghost {
+  border: 1px solid var(--hair);
+  background: var(--glass);
+  box-shadow: var(--shadow);
+}
+
+[data-theme="optic"] .home_ghost:hover {
+  border-color: rgb(221 25 28 / 0.5);
+  color: var(--c-red);
+}
+
+/* Section labels: a beam segment before the eyebrow. */
+[data-theme="optic"] .home_eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  margin-right: var(--s-3);
+  vertical-align: middle;
+  background: var(--beam);
+  box-shadow: var(--beam-glow);
+}
+
+[data-theme="optic"] .home_tile {
+  border: 1px solid var(--hair);
+  background: var(--glass);
+  box-shadow: var(--shadow);
+}
+
+[data-theme="optic"] .home_tile:hover {
+  border-color: rgb(221 25 28 / 0.35);
+}
+
+[data-theme="optic"] .home_fact {
+  border: 1px solid var(--hair);
+  background: var(--glass);
+}
+
+/* Page change of the other themes is not used here: opticWipe.ts draws its own overlay. */
+
+/* ------------------------------------------------------------------ guide */
+
+[data-theme="optic"] :is(.guide_mapItem, .guide_facts li, .zone_tile) {
+  border: 1px solid var(--hair);
+  background: var(--glass);
+}
+
+[data-theme="optic"] .guide_mapItem[aria-current="step"] {
+  border-color: rgb(221 25 28 / 0.45);
+  box-shadow: inset 3px 0 0 var(--c-red);
+}
+
+/* The rule after a zone label fades out like a beam leaving the frame. */
+[data-theme="optic"] .zone_label::after {
+  height: 2px;
+  background: linear-gradient(90deg, var(--c-red), #ff6a5c 20%, rgb(221 25 28 / 0));
+}
+
+/* ------------------------------------------------------------------ planner */
+
+[data-theme="optic"] .planner_view3d {
+  border: 1px solid var(--hair);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="optic"] :is(.ui_primary, .home_primary)::after {
+    transition: none;
+  }
+}

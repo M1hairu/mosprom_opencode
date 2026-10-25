@@ -1,0 +1,296 @@
+/* Shells of the surfaces (shells.tsx). Each shell takes the whole window and has no
+   horizontal scroll: content scrolls inside its main area. */
+
+/* Logo link and the home button: the same in every shell. */
+.homeLink {
+  display: inline-flex;
+  border-radius: var(--r-1);
+}
+
+.homeLink:focus-visible,
+.homeButton:focus-visible {
+  outline: 2px solid var(--c-red);
+  outline-offset: 2px;
+}
+
+/* Pushed to the right edge of the bar; never squeezed out of a narrow bar. */
+.homeButton {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  flex-shrink: 0;
+  min-height: var(--touch);
+  padding: 0 var(--s-4);
+  border-radius: var(--r-1);
+  background: var(--c-red);
+  color: var(--c-white);
+  font-size: var(--fs-m);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.homeButton:hover {
+  background: var(--c-red-dark);
+}
+
+/* Phone */
+.phone {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--c-mist);
+}
+
+.phoneBar {
+  display: flex;
+  align-items: center;
+  padding: var(--s-2) var(--s-4);
+  padding-top: calc(var(--s-2) + env(safe-area-inset-top));
+  background: var(--c-white);
+  border-bottom: 1px solid var(--c-light);
+}
+
+.phoneMain {
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--s-4);
+}
+
+/* No tab bar (the role question of the guide): keep the content above the iOS gesture area. */
+.phoneMain:last-child {
+  padding-bottom: calc(var(--s-4) + env(safe-area-inset-bottom));
+}
+
+/* Desktop (#305): the tabs stand in the top bar as one row of icon + label, the content keeps
+   a 1440 px column. The marker plate goes to the lower edge of the bar. */
+@media (min-width: 1024px) {
+  .phoneMain {
+    padding: var(--s-5);
+  }
+
+  .phonePane {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .phoneTabs {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-self: stretch;
+    margin: calc(-1 * var(--s-2)) 0;
+  }
+
+  .phoneTabs > nav {
+    width: min(640px, 100%);
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  .phoneTabs > nav > span:first-child {
+    top: auto;
+    bottom: 0;
+  }
+
+  .phoneTabs > nav > span:first-child::before {
+    border-radius: 3px 3px 0 0;
+  }
+
+  .phoneTabs button {
+    flex-direction: row;
+    gap: var(--s-2);
+    min-height: 64px;
+  }
+
+  .phoneTabs button span:last-child {
+    font-size: var(--fs-m);
+  }
+}
+
+/* Content of one tab: it slides in from the side of the tab that was pressed. */
+.phonePane[data-dir="next"] {
+  animation: pane-next 0.38s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.phonePane[data-dir="back"] {
+  animation: pane-back 0.38s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes pane-next {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+}
+
+@keyframes pane-back {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phonePane {
+    animation: none !important;
+  }
+}
+
+/* Top bar of the desktop */
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  min-height: 56px;
+  padding: 0 var(--s-5);
+  background: var(--c-white);
+  box-shadow: 0 1px 0 var(--c-light);
+}
+
+/* Zone screen 16:9. Sizes in vh: the same layout on 1280 × 720 and 1920 × 1080. */
+.screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* Graphite showcase: the light machines of the hall stand out on it (white, red, graphite). */
+  background: var(--c-graphite);
+  color: var(--c-white);
+  /* Strong text of the components (EmptyState title) turns white on graphite. */
+  --text-strong: var(--c-white);
+  /* The same tokens, scaled to the viewport height: components keep their proportions. */
+  --fs-m: 2.6vh;
+  --fs-l: 4vh;
+  font-size: var(--fs-m);
+}
+
+.screenBar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vh 4vh;
+  background: var(--c-white);
+  color: var(--c-graphite);
+}
+
+/* Zone name on a red plate, next to the home button at the right edge. */
+.screenZone + .homeButton {
+  margin-left: 2vh;
+}
+
+.screenZone {
+  margin-left: auto;
+  padding: 1vh 3vh;
+  background: var(--c-red);
+  color: var(--c-white);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 3vh;
+  border-radius: 0.8vh;
+}
+
+/* Phone: a long zone name is cut, the home button stays on screen (#312). The hall screen
+   (1920 px) keeps the full name. */
+@media (max-width: 640px) {
+  .screenBar {
+    gap: var(--s-2);
+    padding: var(--s-2) var(--s-3);
+  }
+
+  .screenZone {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.screenMain {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8vh;
+  text-align: center;
+}
+
+.screenMain h1 {
+  margin: 0 0 2vh;
+  font-size: 7vh;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Brand lines at 243° (p. 32) along the bottom edge. */
+.screenLines {
+  height: 3vh;
+  background: repeating-linear-gradient(
+    var(--line-angle),
+    var(--c-red) 0 1.2vh,
+    transparent 1.2vh 2.4vh,
+    var(--c-light) 2.4vh 3vh,
+    transparent 3vh 4.8vh
+  );
+}
+
+.watermark {
+  position: absolute;
+  /* Above .screenMain (z-index 1), so a full-bleed picture of the zone does not hide it. */
+  z-index: 1;
+  right: 4vh;
+  bottom: 2vh;
+  font-size: 30vh;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--c-white);
+  opacity: 0.05;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Desktop */
+.desktop {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* Phone (the jury opens links on 360–430 px): the bar keeps the logo and the button (#312). */
+@media (max-width: 640px) {
+  .bar {
+    gap: var(--s-3);
+    padding-right: var(--s-3);
+  }
+}
+
+/* The page decides its own scroll: /planner fits the window. */
+.desktopMain {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+/* Content column of a desktop page that scrolls (/admin). */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--s-5);
+}

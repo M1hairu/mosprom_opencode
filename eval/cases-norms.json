@@ -1,0 +1,79 @@
+{
+  "about": "eval (а), D-012: планы зала 219 с известными нарушениями норм и чистые планы. База — content/plan-219.json и общий слой ниже. Случай добавляет объекты (add), убирает элементы по id (remove), задаёт extensions (extensions). Нарушение поймано, когда в находках есть каждый код из expect. Чистый план (expect пуст) ложно помечен, когда есть хотя бы одна находка. Объекты и зоны выдуманы для проверки.",
+  "base": "content/plan-219.json",
+  "common": {
+    "layers": [
+      {"id": "l_exhibits", "name": "Экспозиция", "visible": true, "locked": false, "order": 1}
+    ],
+    "objectTypes": [
+      {"id": "ot_stand", "label": "Стенд", "category": "Экспозиция"},
+      {"id": "ot_cleaner", "label": "Ручной аппарат лазерной чистки", "category": "cleaning",
+       "attributes": [{"key": "beam", "label": "Луч", "type": "string", "required": false, "default": "open"}]},
+      {"id": "ot_engraver", "label": "Закрытый гравёр", "category": "engraving",
+       "attributes": [{"key": "beam", "label": "Луч", "type": "string", "required": false, "default": "closed"}]},
+      {"id": "ot_smart_base", "label": "SMART BASE", "category": "cutting",
+       "attributes": [{"key": "beam", "label": "Луч", "type": "string", "required": false, "default": "open"}]}
+    ],
+    "zoneTypes": [{"id": "zt_area", "label": "Зона"}],
+    "walls": [
+      {"id": "w_demo_n", "from": [5.45, 8.55], "to": [7.85, 8.55], "thickness_m": 0.1, "height_m": 7}
+    ],
+    "openings": [
+      {"id": "op_demo", "wallId": "w_demo_n", "offset_m": 0.6, "width_m": 1.2, "kind": "door", "sill_m": 0, "height_m": 2.1}
+    ],
+    "zones": [
+      {"id": "z_hall", "typeId": "zt_area", "name": "Зал", "parentId": null, "layerId": "l_exhibits", "attributes": {},
+       "polygon": [[0, 0], [36, 0], [36, 17.85], [0, 17.85]]},
+      {"id": "z_demo", "typeId": "zt_area", "name": "Демо-зона", "parentId": "z_hall", "layerId": "l_exhibits",
+       "attributes": {"fireBarrier": "EIW 45", "interlock": true},
+       "polygon": [[0, 0], [7.85, 0], [7.85, 8.55], [0, 8.55]]}
+    ]
+  },
+  "cases": [
+    {"id": "C1", "title": "Зал с демо-зоной без экспонатов", "expect": []},
+    {"id": "C2", "title": "Стенд в зале", "expect": [],
+     "add": {"objects": [{"id": "stand", "typeId": "ot_stand", "position": [14, 9], "size_m": [2, 1]}]}},
+    {"id": "C5", "title": "TRAP-4: ручная чистка с открытым лучом в зале без питания", "expect": [],
+     "add": {"objects": [{"id": "cleaner", "typeId": "ot_cleaner", "position": [14, 9], "size_m": [1, 1], "attributes": {"live": false}}]}},
+    {"id": "C6", "title": "Вместимость 30 человек, два выхода по 1,0 м", "expect": [],
+     "remove": ["op_north_1", "op_north_2", "op_south_1"], "extensions": {"safety": {"capacity": 30}},
+     "add": {"openings": [{"id": "op_south_1", "wallId": "w_south", "offset_m": 14.4, "width_m": 1.0, "kind": "entrance", "sill_m": 0, "height_m": 2.1}]}},
+    {"id": "C7", "title": "D-001: гравёр и ручная чистка стоят без питания в демо-зоне", "expect": [],
+     "add": {"objects": [{"id": "engraver", "typeId": "ot_engraver", "position": [2, 5], "size_m": [1, 1], "attributes": {"live": false}},
+                         {"id": "cleaner", "typeId": "ot_cleaner", "position": [5, 5], "size_m": [1, 1], "attributes": {"live": false}}]}},
+
+    {"id": "V1", "title": "TRAP-4: ручная чистка с открытым лучом в зале посетителей, питание не указано", "expect": ["OPEN_BEAM_OUTSIDE_INTERLOCK"],
+     "add": {"objects": [{"id": "cleaner", "typeId": "ot_cleaner", "position": [14, 9], "size_m": [1, 1]}]}},
+    {"id": "V2", "title": "TRAP-4: SMART BASE с открытым лучом включён в зале", "expect": ["OPEN_BEAM_OUTSIDE_INTERLOCK"],
+     "add": {"objects": [{"id": "smart", "typeId": "ot_smart_base", "position": [23, 9], "size_m": [2.5, 1.6], "attributes": {"live": true}}]}},
+    {"id": "V3", "title": "D-001: резка вживую в демо-зоне", "expect": ["LIVE_PROCESS_FORBIDDEN"],
+     "add": {"objects": [{"id": "smart", "typeId": "ot_smart_base", "position": [4, 5], "size_m": [2.5, 1.6], "attributes": {"live": true}}]}},
+    {"id": "V4", "title": "G15: гравёр работает в зале вне отсека с преградой", "expect": ["LASER_ZONE_NO_FIRE_BARRIER"],
+     "add": {"objects": [{"id": "engraver", "typeId": "ot_engraver", "position": [14, 9], "size_m": [1, 1], "attributes": {"live": true}}]}},
+    {"id": "V5", "title": "G15: демо-зона открыта в зал — нет стены с дверью", "expect": ["LASER_ZONE_NO_FIRE_BARRIER"],
+     "remove": ["w_demo_n", "op_demo"],
+     "add": {"objects": [{"id": "engraver", "typeId": "ot_engraver", "position": [4, 5], "size_m": [1, 1], "attributes": {"live": true}}]}},
+    {"id": "V6", "title": "Стенд стоит на колонне A2", "expect": ["OBJECT_COLLISION"],
+     "add": {"objects": [{"id": "stand", "typeId": "ot_stand", "position": [12, 4.3], "size_m": [2, 1]}]}},
+    {"id": "V7", "title": "Стенд загораживает вход op_south_1", "expect": ["OBJECT_BLOCKS_OPENING"],
+     "add": {"objects": [{"id": "stand", "typeId": "ot_stand", "position": [15.4, 0.7], "size_m": [1.5, 0.8]}]}},
+    {"id": "V8", "title": "Стенд пересекает перегородку", "expect": ["OBJECT_HITS_WALL"],
+     "add": {"objects": [{"id": "stand", "typeId": "ot_stand", "position": [19.2, 10], "size_m": [2, 1]}]}},
+    {"id": "V9", "title": "Стенд выше потолка 7 м", "expect": ["OBJECT_ABOVE_CEILING"],
+     "add": {"objects": [{"id": "stand", "typeId": "ot_stand", "position": [14, 9], "size_m": [2, 1], "height_m": 7.5}]}},
+    {"id": "V10", "title": "G17: вместимость 60 человек, один выход", "expect": ["EXITS_TOO_FEW"],
+     "remove": ["op_north_1", "op_north_2", "op_south_2"], "extensions": {"safety": {"capacity": 60}}},
+    {"id": "V11", "title": "G17: вместимость не указана, вход 0,9 м", "expect": ["EXIT_TOO_NARROW"],
+     "remove": ["op_south_2"],
+     "add": {"openings": [{"id": "op_south_2", "wallId": "w_south", "offset_m": 31.45, "width_m": 0.9, "kind": "entrance", "sill_m": 0, "height_m": 2.1}]}},
+    {"id": "V12", "title": "G16: один выход в северо-западном углу, путь из юго-восточного угла больше 30 м", "expect": ["EXIT_TOO_FAR"],
+     "remove": ["op_north_2", "op_south_1", "op_south_2"], "extensions": {"safety": {"capacity": 30}}},
+    {"id": "V13", "title": "G17: проход 0,65 м между перегородкой и стендом — единственный путь к выходу", "expect": ["PASSAGE_TOO_NARROW"],
+     "remove": ["op_north_1", "op_north_2", "op_south_1"],
+     "add": {"objects": [{"id": "stand", "typeId": "ot_stand", "position": [29.2, 6.6], "size_m": [1.4, 1]}]}},
+    {"id": "V14", "title": "D-001: закрытый гравёр работает вживую даже в замкнутой демо-зоне", "expect": ["LIVE_PROCESS_FORBIDDEN"],
+     "add": {"objects": [{"id": "engraver", "typeId": "ot_engraver", "position": [4, 5], "size_m": [1, 1], "attributes": {"live": true}}]}},
+    {"id": "V15", "title": "D-001, TRAP-4: ручная чистка с открытым лучом работает вживую даже в зоне с блокировкой двери", "expect": ["LIVE_PROCESS_FORBIDDEN"],
+     "add": {"objects": [{"id": "cleaner", "typeId": "ot_cleaner", "position": [4, 5], "size_m": [1, 1], "attributes": {"live": true}}]}}
+  ]
+}

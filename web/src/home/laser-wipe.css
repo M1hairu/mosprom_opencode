@@ -1,0 +1,116 @@
+/* Overlay of the laser page change (LaserLink.tsx). Global: the overlay lives in <body>. */
+
+.laser-wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.laser-wipe__panel {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 70%, rgb(221 25 28 / 0.12) 100%),
+    repeating-linear-gradient(243deg, transparent 0 22px, rgb(38 38 46 / 0.04) 22px 23px),
+    #f6f6f6;
+  clip-path: inset(0 0 100% 0);
+}
+
+.laser-wipe__beam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff6a5c 12%, #fff 50%, #ff6a5c 88%, transparent);
+  box-shadow:
+    0 0 12px 3px rgb(255 80 60 / 0.9),
+    0 0 48px 14px rgb(221 25 28 / 0.55),
+    0 0 120px 40px rgb(221 25 28 / 0.25);
+  opacity: 0;
+}
+
+.laser-wipe[data-phase="in"] .laser-wipe__panel {
+  animation: laser-wipe-cover 0.52s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+.laser-wipe[data-phase="in"] .laser-wipe__beam {
+  animation: laser-wipe-beam 0.52s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+.laser-wipe[data-phase="out"] .laser-wipe__panel {
+  clip-path: inset(0);
+  animation: laser-wipe-reveal 0.7s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+.laser-wipe[data-phase="out"] .laser-wipe__beam {
+  animation: laser-wipe-beam 0.7s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+@keyframes laser-wipe-cover {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes laser-wipe-reveal {
+  to {
+    clip-path: inset(100% 0 0 0);
+  }
+}
+
+@keyframes laser-wipe-beam {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+
+/* «Оптика»: the 3D film over the page (opticFilm.ts). It slides in from its side with a push,
+   leaves the way the camera flies, and the new page comes in to meet it (#root[data-film-in]). */
+.optic-film {
+  background: #f4f5f7;
+  overflow: hidden;
+  animation: optic-in-right 0.3s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+}
+
+.optic-film video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.optic-film[data-in="left"] { animation-name: optic-in-left; }
+.optic-film[data-in="down"] { animation-name: optic-in-down; }
+.optic-film[data-phase="out"] { animation: optic-out-left 0.42s cubic-bezier(0.6, 0, 0.8, 0.4) both; }
+.optic-film[data-phase="out"][data-out="right"] { animation-name: optic-out-right; }
+.optic-film[data-phase="out"][data-out="up"] { animation-name: optic-out-up; }
+
+.optic-film--flash {
+  background: radial-gradient(ellipse at 50% 50%, #fff 0 40%, #fff4f2 70%, #fde6e3 100%);
+  animation: optic-fade 0.42s ease-in both;
+}
+
+#root[data-film-in="left"] { animation: page-from-right 0.5s cubic-bezier(0.2, 0.9, 0.2, 1) both; }
+#root[data-film-in="right"] { animation: page-from-left 0.5s cubic-bezier(0.2, 0.9, 0.2, 1) both; }
+#root[data-film-in="up"] { animation: page-from-bottom 0.5s cubic-bezier(0.2, 0.9, 0.2, 1) both; }
+
+@keyframes optic-in-right { from { transform: translateX(100%) scale(1.08); } to { transform: none; } }
+@keyframes optic-in-left { from { transform: translateX(-100%) scale(1.08); } to { transform: none; } }
+@keyframes optic-in-down { from { transform: translateY(-100%) scale(1.08); } to { transform: none; } }
+@keyframes optic-out-left { to { transform: translateX(-100%) scale(0.94); opacity: 0.6; } }
+@keyframes optic-out-right { to { transform: translateX(100%) scale(0.94); opacity: 0.6; } }
+@keyframes optic-out-up { to { transform: translateY(-100%) scale(0.94); opacity: 0.6; } }
+@keyframes optic-fade { from { opacity: 1; } to { opacity: 0; } }
+@keyframes page-from-right { from { transform: translateX(28%) scale(0.97); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes page-from-left { from { transform: translateX(-28%) scale(0.97); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes page-from-bottom { from { transform: translateY(18%) scale(0.97); opacity: 0; } to { transform: none; opacity: 1; } }

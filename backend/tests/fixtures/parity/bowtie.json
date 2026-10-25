@@ -1,0 +1,803 @@
+{
+ "schemaVersion": 1,
+ "id": "plan_bowtie",
+ "name": "Самопересечения",
+ "room": {
+  "id": "room_main",
+  "boundary": [
+   [
+    0,
+    0
+   ],
+   [
+    20,
+    0
+   ],
+   [
+    20,
+    10
+   ],
+   [
+    0,
+    10
+   ]
+  ],
+  "ceilingHeight_m": 3.5
+ },
+ "walls": [
+  {
+   "id": "w_south",
+   "from": [
+    0,
+    0
+   ],
+   "to": [
+    20,
+    0
+   ],
+   "thickness_m": 0.2,
+   "height_m": 3.5
+  },
+  {
+   "id": "w_east",
+   "from": [
+    20,
+    0
+   ],
+   "to": [
+    20,
+    10
+   ],
+   "thickness_m": 0.2,
+   "height_m": 3.5
+  },
+  {
+   "id": "w_north",
+   "from": [
+    20,
+    10
+   ],
+   "to": [
+    0,
+    10
+   ],
+   "thickness_m": 0.2,
+   "height_m": 3.5
+  },
+  {
+   "id": "w_west",
+   "from": [
+    0,
+    10
+   ],
+   "to": [
+    0,
+    0
+   ],
+   "thickness_m": 0.2,
+   "height_m": 3.5
+  },
+  {
+   "id": "w_part",
+   "from": [
+    14,
+    10
+   ],
+   "to": [
+    14,
+    8.5
+   ],
+   "thickness_m": 0.1,
+   "height_m": 3
+  }
+ ],
+ "openings": [
+  {
+   "id": "op_entrance",
+   "wallId": "w_south",
+   "offset_m": 2,
+   "width_m": 2,
+   "kind": "entrance",
+   "sill_m": 0,
+   "height_m": 2.1
+  },
+  {
+   "id": "op_door",
+   "wallId": "w_east",
+   "offset_m": 6,
+   "width_m": 0.9,
+   "kind": "door",
+   "sill_m": 0,
+   "height_m": 2.1
+  },
+  {
+   "id": "op_window",
+   "wallId": "w_north",
+   "offset_m": 5,
+   "width_m": 2,
+   "kind": "window",
+   "sill_m": 0.9,
+   "height_m": 1.2
+  }
+ ],
+ "layers": [
+  {
+   "id": "l_base",
+   "name": "Основной",
+   "visible": true,
+   "locked": false,
+   "order": 0
+  }
+ ],
+ "zones": [
+  {
+   "id": "z_hall",
+   "typeId": "zt_hall",
+   "name": "Зал",
+   "polygon": [
+    [
+     0.5,
+     0.5
+    ],
+    [
+     19.5,
+     0.5
+    ],
+    [
+     19.5,
+     9.5
+    ],
+    [
+     0.5,
+     9.5
+    ]
+   ],
+   "parentId": null,
+   "layerId": "l_base",
+   "attributes": {}
+  },
+  {
+   "id": "z_demo",
+   "typeId": "zt_demo",
+   "name": "Демо",
+   "polygon": [
+    [
+     10,
+     2
+    ],
+    [
+     16,
+     8
+    ],
+    [
+     16,
+     2
+    ],
+    [
+     10,
+     8
+    ]
+   ],
+   "parentId": "z_hall",
+   "layerId": "l_base",
+   "attributes": {}
+  },
+  {
+   "id": "z_demo_out",
+   "typeId": "zt_demo",
+   "name": "Выступ демо",
+   "polygon": [
+    [
+     15,
+     3
+    ],
+    [
+     17,
+     3
+    ],
+    [
+     17,
+     4
+    ],
+    [
+     15,
+     4
+    ]
+   ],
+   "parentId": "z_demo",
+   "layerId": "l_base",
+   "attributes": {}
+  },
+  {
+   "id": "z_out",
+   "typeId": "zt_hall",
+   "name": "За стеной",
+   "polygon": [
+    [
+     18,
+     8
+    ],
+    [
+     21,
+     8
+    ],
+    [
+     21,
+     9
+    ],
+    [
+     18,
+     9
+    ]
+   ],
+   "parentId": null,
+   "layerId": "l_base",
+   "attributes": {}
+  },
+  {
+   "id": "z_twin_a",
+   "typeId": "zt_hall",
+   "name": "Близнец А",
+   "polygon": [
+    [
+     2,
+     6
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     2,
+     8
+    ]
+   ],
+   "parentId": "z_hall",
+   "layerId": "l_base",
+   "attributes": {}
+  },
+  {
+   "id": "z_twin_b",
+   "typeId": "zt_hall",
+   "name": "Близнец Б",
+   "polygon": [
+    [
+     2,
+     6
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     2,
+     8
+    ]
+   ],
+   "parentId": "z_hall",
+   "layerId": "l_base",
+   "attributes": {}
+  }
+ ],
+ "objects": [
+  {
+   "id": "t1",
+   "typeId": "ot_table",
+   "label": "Стол 1",
+   "position": [
+    12,
+    5
+   ],
+   "size_m": [
+    1.2,
+    0.6
+   ],
+   "rotation_deg": 30,
+   "base_m": 0,
+   "height_m": 0.75,
+   "zoneId": "z_demo",
+   "layerId": "l_base",
+   "attributes": {
+    "inventoryNumber": "INV-1",
+    "nextMaintenanceDate": "2026-10-20"
+   },
+   "outline": [
+    [
+     -0.5,
+     -0.5
+    ],
+    [
+     0.5,
+     0.5
+    ],
+    [
+     0.5,
+     -0.5
+    ],
+    [
+     -0.5,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "t2",
+   "typeId": "ot_table",
+   "label": "Стол 2",
+   "position": [
+    12.3,
+    5.2
+   ],
+   "size_m": [
+    1.2,
+    0.6
+   ],
+   "rotation_deg": 0,
+   "base_m": 0,
+   "height_m": 0.75,
+   "zoneId": "z_demo",
+   "layerId": "l_base",
+   "attributes": {
+    "inventoryNumber": " INV-1 ",
+    "nextMaintenanceDate": "30.10.2026"
+   }
+  },
+  {
+   "id": "t3",
+   "typeId": "ot_table",
+   "label": "Стол у стены",
+   "position": [
+    19.95,
+    5
+   ],
+   "size_m": [
+    1,
+    0.6
+   ],
+   "rotation_deg": 0,
+   "base_m": 0,
+   "height_m": 0.75,
+   "zoneId": "z_hall",
+   "layerId": "l_base",
+   "attributes": {}
+  },
+  {
+   "id": "t4",
+   "typeId": "ot_table",
+   "label": "Стол у входа",
+   "position": [
+    3,
+    0.8
+   ],
+   "size_m": [
+    1,
+    0.6
+   ],
+   "rotation_deg": 0,
+   "base_m": 0,
+   "height_m": 0.75,
+   "zoneId": "z_hall",
+   "layerId": "l_base",
+   "attributes": {
+    "inventoryNumber": "INV-4",
+    "nextMaintenanceDate": "2026-02-30"
+   }
+  },
+  {
+   "id": "t5",
+   "typeId": "ot_table",
+   "label": "Стол под ноутбук",
+   "position": [
+    7,
+    5
+   ],
+   "size_m": [
+    1.2,
+    0.8
+   ],
+   "rotation_deg": 0,
+   "base_m": 0,
+   "height_m": 0.75,
+   "zoneId": "z_hall",
+   "layerId": "l_base",
+   "attributes": {
+    "inventoryNumber": 1001,
+    "nextMaintenanceDate": "24.10.2026"
+   }
+  },
+  {
+   "id": "t6",
+   "typeId": "ot_table",
+   "label": "Стол у перегородки",
+   "position": [
+    14,
+    9
+   ],
+   "size_m": [
+    0.6,
+    0.6
+   ],
+   "rotation_deg": 0,
+   "base_m": 0,
+   "height_m": 0.75,
+   "zoneId": "z_hall",
+   "layerId": "l_base",
+   "attributes": {
+    "inventoryNumber": 12.5,
+    "nextMaintenanceDate": "2027-01-01"
+   }
+  },
+  {
+   "id": "lap1",
+   "typeId": "ot_laptop",
+   "label": "Ноутбук в воздухе",
+   "position": [
+    5,
+    5
+   ],
+   "size_m": [
+    0.35,
+    0.25
+   ],
+   "rotation_deg": 0,
+   "base_m": 0.75,
+   "height_m": 0.05,
+   "zoneId": "z_hall",
+   "layerId": "l_base",
+   "attributes": {
+    "inventoryNumber": "L-1"
+   }
+  },
+  {
+   "id": "lap2",
+   "typeId": "ot_laptop",
+   "label": "Ноутбук на столе",
+   "position": [
+    7,
+    5
+   ],
+   "size_m": [
+    0.35,
+    0.25
+   ],
+   "rotation_deg": 15,
+   "base_m": 0.75,
+   "height_m": 0.05,
+   "zoneId": "z_hall",
+   "layerId": "l_base",
+   "attributes": {
+    "inventoryNumber": "1001"
+   }
+  },
+  {
+   "id": "col",
+   "typeId": "ot_column",
+   "label": "Колонна",
+   "position": [
+    8,
+    8
+   ],
+   "size_m": [
+    0.5,
+    0.5
+   ],
+   "rotation_deg": 0,
+   "base_m": 0,
+   "height_m": 4,
+   "zoneId": "z_hall",
+   "layerId": "l_base",
+   "attributes": {}
+  },
+  {
+   "id": "sign",
+   "typeId": "ot_sign",
+   "label": "Указатель",
+   "position": [
+    3,
+    7
+   ],
+   "size_m": [
+    0.4,
+    0.4
+   ],
+   "rotation_deg": 90,
+   "base_m": 0,
+   "height_m": 0.75,
+   "zoneId": null,
+   "layerId": "l_base",
+   "attributes": {}
+  },
+  {
+   "id": "sign2",
+   "typeId": "ot_sign",
+   "label": "Указатель в углу",
+   "position": [
+    19.75,
+    0.25
+   ],
+   "size_m": [
+    0.2,
+    0.2
+   ],
+   "rotation_deg": 0,
+   "base_m": 0,
+   "height_m": 0.75,
+   "zoneId": null,
+   "layerId": "l_base",
+   "attributes": {}
+  },
+  {
+   "id": "term",
+   "typeId": "ot_terminal",
+   "label": "Терминал",
+   "position": [
+    9,
+    3
+   ],
+   "size_m": [
+    0.8,
+    0.6
+   ],
+   "rotation_deg": 45,
+   "base_m": 0,
+   "height_m": 0.75,
+   "zoneId": "z_hall",
+   "layerId": "l_base",
+   "attributes": {
+    "inventoryNumber": "T-1"
+   }
+  },
+  {
+   "id": "odd",
+   "typeId": "ot_table",
+   "label": "Стол-трапеция",
+   "position": [
+    5,
+    3
+   ],
+   "size_m": [
+    1.4,
+    0.8
+   ],
+   "rotation_deg": 200,
+   "base_m": 0,
+   "height_m": 0.75,
+   "zoneId": "z_hall",
+   "layerId": "l_base",
+   "attributes": {
+    "inventoryNumber": "INV-9"
+   },
+   "outline": [
+    [
+     -0.5004,
+     -0.5
+    ],
+    [
+     0.5,
+     -0.5
+    ],
+    [
+     0.25,
+     0.5003
+    ],
+    [
+     -0.25,
+     0.5003
+    ]
+   ]
+  }
+ ],
+ "catalog": {
+  "version": "1.0.0",
+  "objectTypes": [
+   {
+    "id": "ot_table",
+    "label": "Стол",
+    "category": "Мебель",
+    "defaultSize_m": [
+     1,
+     1
+    ],
+    "defaultHeight_m": 0.75,
+    "defaultBase_m": 0,
+    "physical": true,
+    "occupiesFloor": true,
+    "symbol": "rect",
+    "color": "#4C6EF5",
+    "attributes": [
+     {
+      "key": "inventoryNumber",
+      "label": "Инвентарный номер",
+      "type": "string",
+      "required": false
+     }
+    ],
+    "provenance": "Синтетическое допущение команды: план для проверки совпадения с pochta."
+   },
+   {
+    "id": "ot_laptop",
+    "label": "Ноутбук",
+    "category": "Мебель",
+    "defaultSize_m": [
+     1,
+     1
+    ],
+    "defaultHeight_m": 0.75,
+    "defaultBase_m": 0.75,
+    "physical": true,
+    "occupiesFloor": false,
+    "symbol": "rect",
+    "color": "#4C6EF5",
+    "attributes": [
+     {
+      "key": "inventoryNumber",
+      "label": "Инвентарный номер",
+      "type": "string",
+      "required": false
+     }
+    ],
+    "provenance": "Синтетическое допущение команды: план для проверки совпадения с pochta."
+   },
+   {
+    "id": "ot_column",
+    "label": "Колонна",
+    "category": "Мебель",
+    "defaultSize_m": [
+     1,
+     1
+    ],
+    "defaultHeight_m": 0.75,
+    "defaultBase_m": 0,
+    "physical": true,
+    "occupiesFloor": true,
+    "symbol": "circle",
+    "color": "#4C6EF5",
+    "attributes": [],
+    "provenance": "Синтетическое допущение команды: план для проверки совпадения с pochta."
+   },
+   {
+    "id": "ot_sign",
+    "label": "Указатель",
+    "category": "Мебель",
+    "defaultSize_m": [
+     1,
+     1
+    ],
+    "defaultHeight_m": 0.75,
+    "defaultBase_m": 0,
+    "physical": false,
+    "occupiesFloor": true,
+    "symbol": "triangle",
+    "color": "#4C6EF5",
+    "attributes": [],
+    "provenance": "Синтетическое допущение команды: план для проверки совпадения с pochta."
+   },
+   {
+    "id": "ot_terminal",
+    "label": "Терминал",
+    "category": "Мебель",
+    "defaultSize_m": [
+     1,
+     1
+    ],
+    "defaultHeight_m": 0.75,
+    "defaultBase_m": 0,
+    "physical": true,
+    "occupiesFloor": true,
+    "symbol": "rect",
+    "color": "#4C6EF5",
+    "attributes": [
+     {
+      "key": "inventoryNumber",
+      "label": "Инвентарный номер",
+      "type": "string",
+      "required": false
+     }
+    ],
+    "provenance": "Синтетическое допущение команды: план для проверки совпадения с pochta.",
+    "outline": [
+     [
+      -0.5,
+      -0.5
+     ],
+     [
+      0.5,
+      -0.5
+     ],
+     [
+      0.5,
+      0
+     ],
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0.5
+     ],
+     [
+      -0.5,
+      0.5
+     ]
+    ]
+   }
+  ],
+  "zoneTypes": [
+   {
+    "id": "zt_hall",
+    "label": "Зал",
+    "color": "#E7F5FF",
+    "attributes": []
+   },
+   {
+    "id": "zt_demo",
+    "label": "Демо",
+    "color": "#FFF3BF",
+    "attributes": []
+   }
+  ],
+  "rules": [
+   {
+    "id": "r_min",
+    "source": "team-assumption",
+    "rationale": "Проверка",
+    "kind": "count",
+    "zoneTypeId": "zt_demo",
+    "objectTypeId": "ot_table",
+    "scope": "direct",
+    "min": 3,
+    "max": null
+   },
+   {
+    "id": "r_inc",
+    "source": "team-assumption",
+    "rationale": "Проверка",
+    "kind": "count",
+    "zoneTypeId": "zt_demo",
+    "objectTypeId": "ot_table",
+    "scope": "inclusive",
+    "min": 5,
+    "max": null
+   },
+   {
+    "id": "r_max",
+    "source": "organizer-material",
+    "rationale": "Проверка",
+    "kind": "count",
+    "zoneTypeId": "zt_hall",
+    "objectTypeId": "ot_table",
+    "scope": "inclusive",
+    "min": null,
+    "max": 2
+   },
+   {
+    "id": "r_dist",
+    "source": "organizer-material",
+    "rationale": "Проверка",
+    "kind": "distance-to-entrance",
+    "objectTypeId": "ot_terminal",
+    "maxDistance_m": 3.5,
+    "entranceId": null
+   },
+   {
+    "id": "r_door",
+    "source": "team-assumption",
+    "rationale": "Проверка",
+    "kind": "distance-to-entrance",
+    "objectTypeId": "ot_column",
+    "maxDistance_m": 12.25,
+    "entranceId": "op_door"
+   }
+  ]
+ },
+ "extensions": {}
+}

@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "facts": [
+    {"id": "localization", "value": 80, "unit": "%", "text": "локализация 80 %", "case": {"slide": 3, "value": "уровень локализации достигает 80%"}},
+    {"id": "staff", "value": 600, "unit": "чел.", "text": "600+ сотрудников"}
+  ]
+}

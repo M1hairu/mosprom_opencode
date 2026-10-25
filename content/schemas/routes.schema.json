@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "routes.json — маршруты ролей",
+  "description": "6 аудиторий слайда 7 → шаги по зонам. Роль — один маршрут. Сумма минут ≤ duration_max_min; органы власти ≤ 40 мин (S4.1). Пропуск зоны — в skipped с причиной. Тексты без цифр: число — {{fact:<id>}}, экспонат — {{item:<id>}} (G1).",
+  "type": "object",
+  "required": [
+    "version",
+    "routes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
+    "routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "title",
+          "duration_max_min",
+          "steps"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "prospect",
+              "customer",
+              "education",
+              "government",
+              "students",
+              "media"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "duration_max_min": {
+            "type": "number",
+            "minimum": 1,
+            "description": "Длительность визита роли, минуты."
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "zone",
+                "minutes",
+                "message"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "zone": {
+                  "type": "string"
+                },
+                "minutes": {
+                  "type": "number",
+                  "minimum": 1
+                },
+                "message": {
+                  "type": "string"
+                }
+              }
+            },
+            "minItems": 1
+          },
+          "skipped": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "zone",
+                "reason"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "zone": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

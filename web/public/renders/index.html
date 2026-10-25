@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шоурум ЛАССАРД — рендеры</title>
+<style>
+  :root { --white:#fff; --mist:#f6f6f6; --graphite:#26262e; --red:#dd191c; --muted:#6b6b75; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--mist); color:var(--graphite); font:16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { background:var(--white); border-bottom:4px solid var(--red); padding:20px 16px; }
+  header h1 { margin:0 0 4px; font-size:24px; }
+  header p { margin:0; color:var(--muted); max-width:900px; }
+  main { padding:0 16px 16px; max-width:1600px; margin:0 auto; }
+  h2 { margin:24px 0 12px; font-size:20px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:16px; }
+  figure { margin:0; background:var(--white); border-radius:8px; overflow:hidden; box-shadow:0 1px 3px rgba(38,38,46,.12); }
+  figure.hero { max-width:960px; }
+  img, video { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; background:var(--graphite); }
+  figcaption { padding:10px 12px; font-size:14px; }
+  footer { padding:8px 16px 24px; color:var(--muted); font-size:13px; max-width:1600px; margin:0 auto; }
+  a { color:inherit; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Шоурум ЛАССАРД, зал 219 — рендеры концепции</h1>
+  <p>Видео и 38 кадров 1920×1080, Blender Cycles. Нажмите на кадр, чтобы открыть его целиком. <a href="/">На главную</a></p>
+</header>
+<main>
+<h2>Пролёт по залу</h2><figure class="v hero"><video controls playsinline preload="metadata" poster="video/flythrough_v5.webp" src="video/flythrough_v5_1.mp4" data-parts="[&quot;flythrough_v5_1.mp4&quot;, &quot;flythrough_v5_2.mp4&quot;, &quot;flythrough_v5_3.mp4&quot;]"></video><figcaption>Финальный пролёт v5, 1:42: зал целиком, все зоны, переговорная, демо-зона, вид в цех</figcaption></figure>
+<h2>Короткие пролёты по зонам</h2>
+<div class="grid">
+<figure class="v"><video controls playsinline preload="none" poster="video/S01_koridor.jpg" src="video/S01_koridor.mp4" data-parts="[&quot;S01_koridor.mp4&quot;]"></video><figcaption>Коридор</figcaption></figure>
+<figure class="v"><video controls playsinline preload="none" poster="video/S02_portal.jpg" src="video/S02_portal.mp4" data-parts="[&quot;S02_portal.mp4&quot;]"></video><figcaption>Портал входа</figcaption></figure>
+<figure class="v"><video controls playsinline preload="none" poster="video/S03_kristally.jpg" src="video/S03_kristally.mp4" data-parts="[&quot;S03_kristally.mp4&quot;]"></video><figcaption>Кристаллы</figcaption></figure>
+<figure class="v"><video controls playsinline preload="none" poster="video/S04_kvantrony.jpg" src="video/S04_kvantrony.mp4" data-parts="[&quot;S04_kvantrony.mp4&quot;]"></video><figcaption>Квантроны</figcaption></figure>
+<figure class="v"><video controls playsinline preload="none" poster="video/S05_diody.jpg" src="video/S05_diody.mp4" data-parts="[&quot;S05_diody.mp4&quot;]"></video><figcaption>Лазерный источник под колпаком</figcaption></figure>
+<figure class="v"><video controls playsinline preload="none" poster="video/S07_roboty.jpg" src="video/S07_roboty.mp4" data-parts="[&quot;S07_roboty.mp4&quot;]"></video><figcaption>Роботизированные ячейки</figcaption></figure>
+<figure class="v"><video controls playsinline preload="none" poster="video/S08_gravery.jpg" src="video/S08_gravery.mp4" data-parts="[&quot;S08_gravery.mp4&quot;]"></video><figcaption>Гравёры</figcaption></figure>
+<figure class="v"><video controls playsinline preload="none" poster="video/S09_ruchnye.jpg" src="video/S09_ruchnye.mp4" data-parts="[&quot;S09_ruchnye.mp4&quot;]"></video><figcaption>Ручные аппараты</figcaption></figure>
+<figure class="v"><video controls playsinline preload="none" poster="video/S10_optika.jpg" src="video/S10_optika.mp4" data-parts="[&quot;S10_optika.mp4&quot;]"></video><figcaption>Оптомеханика</figcaption></figure>
+<figure class="v"><video controls playsinline preload="none" poster="video/S12_zal.jpg" src="video/S12_zal.mp4" data-parts="[&quot;S12_zal.mp4&quot;]"></video><figcaption>Зал целиком</figcaption></figure>
+</div>
+<h2>Кадры</h2>
+<div class="grid">
+<figure><a href="01_koridor.webp"><img src="01_koridor_s.webp" alt="Коридор к залу 219: фото-лайтбоксы ведут к входу" loading="lazy" width="640" height="360"></a><figcaption>Коридор к залу 219: фото-лайтбоксы ведут к входу</figcaption></figure>
+<figure><a href="02_portal_front.webp"><img src="02_portal_front_s.webp" alt="Вход: портал LASSARD вокруг проёма 2,0 м" loading="lazy" width="640" height="360"></a><figcaption>Вход: портал LASSARD вокруг проёма 2,0 м</figcaption></figure>
+<figure><a href="03_portal_rakurs.webp"><img src="03_portal_rakurs_s.webp" alt="Вход: портал, дубовая облицовка, контурная подсветка" loading="lazy" width="640" height="360"></a><figcaption>Вход: портал, дубовая облицовка, контурная подсветка</figcaption></figure>
+<figure><a href="04_zal_ot_vhoda.webp"><img src="04_zal_ot_vhoda_s.webp" alt="Зал от входа: стойка гида и карта поставок" loading="lazy" width="640" height="360"></a><figcaption>Зал от входа: стойка гида и карта поставок</figcaption></figure>
+<figure><a href="05_zal_obzor_sverhu.webp"><img src="05_zal_obzor_sverhu_s.webp" alt="Обзор зала сверху от входа" loading="lazy" width="640" height="360"></a><figcaption>Обзор зала сверху от входа</figcaption></figure>
+<figure><a href="08_mediastena_istoriya.webp"><img src="08_mediastena_istoriya_s.webp" alt="Медиастена «История и масштаб»" loading="lazy" width="640" height="360"></a><figcaption>Медиастена «История и масштаб»</figcaption></figure>
+<figure><a href="10_zona_kristallov.webp"><img src="10_zona_kristallov_s.webp" alt="02 · Выращивание кристаллов" loading="lazy" width="640" height="360"></a><figcaption>02 · Выращивание кристаллов</figcaption></figure>
+<figure><a href="11_slitok_gaas.webp"><img src="11_slitok_gaas_s.webp" alt="Монокристалл GaAs в световой колонне" loading="lazy" width="640" height="360"></a><figcaption>Монокристалл GaAs в световой колонне</figcaption></figure>
+<figure><a href="12_podlozhki_gaas.webp"><img src="12_podlozhki_gaas_s.webp" alt="Подложки GaAs на подставках" loading="lazy" width="640" height="360"></a><figcaption>Подложки GaAs на подставках</figcaption></figure>
+<figure><a href="13_listopad.webp"><img src="13_listopad_s.webp" alt="Установка «Листопад», миниатюра 1:5" loading="lazy" width="640" height="360"></a><figcaption>Установка «Листопад», миниатюра 1:5</figcaption></figure>
+<figure><a href="14_kvantron.webp"><img src="14_kvantron_s.webp" alt="Квантрон QCW Nd:YAG и узел в разрезе" loading="lazy" width="640" height="360"></a><figcaption>Квантрон QCW Nd:YAG и узел в разрезе</figcaption></figure>
+<figure><a href="15_zona_kvantronov.webp"><img src="15_zona_kvantronov_s.webp" alt="03 · Квантроны" loading="lazy" width="640" height="360"></a><figcaption>03 · Квантроны</figcaption></figure>
+<figure><a href="16_diod_x20.webp"><img src="16_diod_x20_s.webp" alt="Лазерный диод LS-DL02-1-808: модель ×20 и диод в натуральную величину" loading="lazy" width="640" height="360"></a><figcaption>Лазерный диод LS-DL02-1-808: модель ×20 и диод в натуральную величину</figcaption></figure>
+<figure><a href="17_pyupitr_diody.webp"><img src="17_pyupitr_diody_s.webp" alt="Пюпитр зоны «Диоды»" loading="lazy" width="640" height="360"></a><figcaption>Пюпитр зоны «Диоды»</figcaption></figure>
+<figure><a href="18_ls_fl9000.webp"><img src="18_ls_fl9000_s.webp" alt="Источник LS-FL9000, миниатюра 1:5" loading="lazy" width="640" height="360"></a><figcaption>Источник LS-FL9000, миниатюра 1:5</figcaption></figure>
+<figure><a href="19_zona_istochnikov.webp"><img src="19_zona_istochnikov_s.webp" alt="05 · Лазерные источники" loading="lazy" width="640" height="360"></a><figcaption>05 · Лазерные источники</figcaption></figure>
+<figure><a href="20_kartochka_fl9000.webp"><img src="20_kartochka_fl9000_s.webp" alt="Карточка экспоната LS-FL9000" loading="lazy" width="640" height="360"></a><figcaption>Карточка экспоната LS-FL9000</figcaption></figure>
+<figure><a href="21_robot_yacheyka.webp"><img src="21_robot_yacheyka_s.webp" alt="Роботизированная ячейка LASERHARD, миниатюра 1:5" loading="lazy" width="640" height="360"></a><figcaption>Роботизированная ячейка LASERHARD, миниатюра 1:5</figcaption></figure>
+<figure><a href="22_zona_robotov.webp"><img src="22_zona_robotov_s.webp" alt="06 · Роботизированные ячейки" loading="lazy" width="640" height="360"></a><figcaption>06 · Роботизированные ячейки</figcaption></figure>
+<figure><a href="23_zona_gravirovki.webp"><img src="23_zona_gravirovki_s.webp" alt="07 · Гравировка и маркировка" loading="lazy" width="640" height="360"></a><figcaption>07 · Гравировка и маркировка</figcaption></figure>
+<figure><a href="24_graver_portal.webp"><img src="24_graver_portal_s.webp" alt="GRAVER PORTAL" loading="lazy" width="640" height="360"></a><figcaption>GRAVER PORTAL</figcaption></figure>
+<figure><a href="25_graver_compact.webp"><img src="25_graver_compact_s.webp" alt="GRAVER COMPACT" loading="lazy" width="640" height="360"></a><figcaption>GRAVER COMPACT</figcaption></figure>
+<figure><a href="26_smart_base_okno_v_ceh.webp"><img src="26_smart_base_okno_v_ceh_s.webp" alt="SMART BASE 1:5 и окно в цех" loading="lazy" width="640" height="360"></a><figcaption>SMART BASE 1:5 и окно в цех</figcaption></figure>
+<figure><a href="28_ruchnye_apparaty.webp"><img src="28_ruchnye_apparaty_s.webp" alt="Ручные лазерные аппараты" loading="lazy" width="640" height="360"></a><figcaption>Ручные лазерные аппараты</figcaption></figure>
+<figure><a href="29_multi_hero.webp"><img src="29_multi_hero_s.webp" alt="MULTI HERO" loading="lazy" width="640" height="360"></a><figcaption>MULTI HERO</figcaption></figure>
+<figure><a href="30_welder_mini.webp"><img src="30_welder_mini_s.webp" alt="WELDER MINI" loading="lazy" width="640" height="360"></a><figcaption>WELDER MINI</figcaption></figure>
+<figure><a href="31_optomehanika.webp"><img src="31_optomehanika_s.webp" alt="Оптомеханика" loading="lazy" width="640" height="360"></a><figcaption>Оптомеханика</figcaption></figure>
+<figure><a href="32_opticheskiy_stol.webp"><img src="32_opticheskiy_stol_s.webp" alt="Оптический стол" loading="lazy" width="640" height="360"></a><figcaption>Оптический стол</figcaption></figure>
+<figure><a href="33_lazernyy_klass.webp"><img src="33_lazernyy_klass_s.webp" alt="Лазерный класс" loading="lazy" width="640" height="360"></a><figcaption>Лазерный класс</figcaption></figure>
+<figure><a href="34_yuzhnaya_stena_foto.webp"><img src="34_yuzhnaya_stena_foto_s.webp" alt="Фотопанели на южной стене" loading="lazy" width="640" height="360"></a><figcaption>Фотопанели на южной стене</figcaption></figure>
+<figure><a href="35_peregovornaya.webp"><img src="35_peregovornaya_s.webp" alt="Переговорная" loading="lazy" width="640" height="360"></a><figcaption>Переговорная</figcaption></figure>
+<figure><a href="36_demo_zona.webp"><img src="36_demo_zona_s.webp" alt="Демо-зона за стеклом" loading="lazy" width="640" height="360"></a><figcaption>Демо-зона за стеклом</figcaption></figure>
+<figure><a href="37_final_obzor.webp"><img src="37_final_obzor_s.webp" alt="Общий план зала" loading="lazy" width="640" height="360"></a><figcaption>Общий план зала</figcaption></figure>
+<figure><a href="39_laytboksy_koridor.webp"><img src="39_laytboksy_koridor_s.webp" alt="Лайтбоксы в коридоре" loading="lazy" width="640" height="360"></a><figcaption>Лайтбоксы в коридоре</figcaption></figure>
+<figure><a href="41_akt1_umnee.webp"><img src="41_akt1_umnee_s.webp" alt="Акт 1 · «Умнее»" loading="lazy" width="640" height="360"></a><figcaption>Акт 1 · «Умнее»</figcaption></figure>
+<figure><a href="43_akt3_bystree.webp"><img src="43_akt3_bystree_s.webp" alt="Акт 3 · «Быстрее»" loading="lazy" width="640" height="360"></a><figcaption>Акт 3 · «Быстрее»</figcaption></figure>
+<figure><a href="44_kolpak_fl20000.webp"><img src="44_kolpak_fl20000_s.webp" alt="Источник LS-FL20000 под колпаком" loading="lazy" width="640" height="360"></a><figcaption>Источник LS-FL20000 под колпаком</figcaption></figure>
+<figure><a href="45_severnaya_stena.webp"><img src="45_severnaya_stena_s.webp" alt="Северная стена" loading="lazy" width="640" height="360"></a><figcaption>Северная стена</figcaption></figure>
+</div>
+</main>
+<footer>Фото на стенах и в лайтбоксах — иллюстрации, сгенерированные ИИ, не фото производства ЛАССАРД.
+Модели оборудования построены по фото с lassard.ru и упрощены.</footer>
+<script>
+// A long video is cut into parts under 5 MB: play them one after another.
+for (const v of document.querySelectorAll("video[data-parts]")) {
+  const parts = JSON.parse(v.dataset.parts);
+  let i = 0;
+  v.addEventListener("ended", () => {
+    if (++i >= parts.length) { i = 0; v.src = "video/" + parts[0]; return; }
+    v.src = "video/" + parts[i];
+    v.play();
+  });
+}
+</script>
+</body>
+</html>

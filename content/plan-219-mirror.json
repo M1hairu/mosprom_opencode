@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "id": "plan_219_mirror",
+  "name": "Зал 219 «Шоурум» — зеркальный вариант (отражение схемы по оси x = 18 м)",
+  "room": {
+    "id": "room_219",
+    "boundary": [
+      [0, 0],
+      [36, 0],
+      [36, 17.85],
+      [0, 17.85]
+    ],
+    "ceilingHeight_m": 7
+  },
+  "walls": [
+    {
+      "id": "w_south",
+      "from": [36, 0],
+      "to": [0, 0],
+      "thickness_m": 0.15,
+      "height_m": 7
+    },
+    {
+      "id": "w_east",
+      "from": [0, 0],
+      "to": [0, 17.85],
+      "thickness_m": 0.15,
+      "height_m": 7
+    },
+    {
+      "id": "w_north",
+      "from": [36, 17.85],
+      "to": [0, 17.85],
+      "thickness_m": 0.15,
+      "height_m": 7
+    },
+    {
+      "id": "w_west",
+      "from": [36, 0],
+      "to": [36, 17.85],
+      "thickness_m": 0.15,
+      "height_m": 7
+    },
+    {
+      "id": "w_part_v1",
+      "from": [28.15, 0],
+      "to": [28.15, 14.9],
+      "thickness_m": 0.1,
+      "height_m": 7
+    },
+    {
+      "id": "w_part_v2",
+      "from": [16.8, 3.65],
+      "to": [16.8, 17.85],
+      "thickness_m": 0.1,
+      "height_m": 7
+    },
+    {
+      "id": "w_part_v3",
+      "from": [8.2, 0],
+      "to": [8.2, 14.3],
+      "thickness_m": 0.1,
+      "height_m": 7
+    },
+    {
+      "id": "w_part_h1",
+      "from": [36, 8.55],
+      "to": [30.55, 8.55],
+      "thickness_m": 0.1,
+      "height_m": 7
+    },
+    {
+      "id": "w_part_h2",
+      "from": [6, 6],
+      "to": [0, 6],
+      "thickness_m": 0.1,
+      "height_m": 7
+    }
+  ],
+  "openings": [
+    {
+      "id": "op_north_1",
+      "wallId": "w_north",
+      "offset_m": 8.45,
+      "width_m": 1.45,
+      "kind": "door",
+      "sill_m": 0,
+      "height_m": 2.1
+    },
+    {
+      "id": "op_north_2",
+      "wallId": "w_north",
+      "offset_m": 26.4,
+      "width_m": 1.45,
+      "kind": "door",
+      "sill_m": 0,
+      "height_m": 2.1
+    },
+    {
+      "id": "op_south_1",
+      "wallId": "w_south",
+      "offset_m": 14.4,
+      "width_m": 2.05,
+      "kind": "entrance",
+      "sill_m": 0,
+      "height_m": 2.1
+    },
+    {
+      "id": "op_south_2",
+      "wallId": "w_south",
+      "offset_m": 31.45,
+      "width_m": 2,
+      "kind": "entrance",
+      "sill_m": 0,
+      "height_m": 2.1
+    }
+  ],
+  "layers": [
+    {
+      "id": "l_building",
+      "name": "Здание: колонны",
+      "visible": true,
+      "locked": true,
+      "order": 0,
+      "typeId": null
+    }
+  ],
+  "zones": [],
+  "objects": [
+    {
+      "id": "col_A1",
+      "typeId": "ot_column",
+      "label": "Колонна A1",
+      "position": [36, 3.8],
+      "size_m": [0.8, 0.8],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "col_A2",
+      "typeId": "ot_column",
+      "label": "Колонна A2",
+      "position": [24, 3.8],
+      "size_m": [0.8, 0.8],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "col_A3",
+      "typeId": "ot_column",
+      "label": "Колонна A3",
+      "position": [12, 3.8],
+      "size_m": [0.8, 0.8],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "col_A4",
+      "typeId": "ot_column",
+      "label": "Колонна A4",
+      "position": [0, 3.8],
+      "size_m": [0.8, 0.8],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "col_B1",
+      "typeId": "ot_column",
+      "label": "Колонна B1",
+      "position": [36, 15.8],
+      "size_m": [0.8, 0.8],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "col_B2",
+      "typeId": "ot_column",
+      "label": "Колонна B2",
+      "position": [24, 15.8],
+      "size_m": [0.8, 0.8],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "col_B3",
+      "typeId": "ot_column",
+      "label": "Колонна B3",
+      "position": [12, 15.8],
+      "size_m": [0.8, 0.8],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    },
+    {
+      "id": "col_B4",
+      "typeId": "ot_column",
+      "label": "Колонна B4",
+      "position": [0, 15.8],
+      "size_m": [0.8, 0.8],
+      "rotation_deg": 0,
+      "base_m": 0,
+      "height_m": 7,
+      "zoneId": null,
+      "layerId": "l_building",
+      "attributes": {},
+      "locked": true
+    }
+  ],
+  "catalog": {
+    "version": "plan219-1",
+    "objectTypes": [
+      {
+        "id": "ot_column",
+        "label": "Несущая колонна",
+        "category": "Конструкции",
+        "defaultSize_m": [0.8, 0.8],
+        "defaultHeight_m": 7,
+        "defaultBase_m": 0,
+        "physical": true,
+        "occupiesFloor": true,
+        "symbol": "circle",
+        "color": "#8C8C8C",
+        "attributes": [],
+        "provenance": "Слайд 6 кейса: серые кружки — несущие колонны, 2 ряда по 4. Размер 0,8 м — замер значка на схеме, оценка. Высота 7 м — высота потолка из кейса."
+      }
+    ],
+    "zoneTypes": [],
+    "layerTypes": [],
+    "rules": []
+  },
+  "extensions": {
+    "plan219": {
+      "variant": "mirror",
+      "source": "task/img/floor-plan.png — схема помещения 219 со слайда 6 кейса; task/case.md, слайд 6",
+      "units": "метры; X вправо, Y вверх; формат PlanDocument pochta, schemaVersion 1",
+      "scale": {
+        "method": "шаг колонн 12 м (2 квадрата сетки по 6 м, слайд 6), не контур зала",
+        "columnPitch_m": 12,
+        "pxPerMetre": 23.81,
+        "origin": "x = 0 — ось правого ряда колонн и правой стены схемы (после отражения); y = 0 — ось нижней стены схемы"
+      },
+      "hall_m": {
+        "width": 36,
+        "depth": 17.85,
+        "status": "замер по схеме"
+      },
+      "area": {
+        "case_m2": 626,
+        "caseSource": "task/case.md, слайд 6",
+        "byWallAxes_m2": 642.6,
+        "status": "оценка",
+        "note": "Площадь по осям стен больше площади кейса на 16,6 м² (2,7 %). Причина неизвестна [СПРОСИТЬ]. При стенах 0,15 м площадь внутри стен — 634,5 м² (оценка: 35,85 × 17,7), это тоже больше 626 м². В расчётах берём 626 м² из кейса."
+      },
+      "walls": {
+        "fixedIds": [
+          "w_south",
+          "w_east",
+          "w_north",
+          "w_west"
+        ],
+        "removableIds": [
+          "w_part_v1",
+          "w_part_v2",
+          "w_part_v3",
+          "w_part_h1",
+          "w_part_h2"
+        ],
+        "note": "Контур зала убирать нельзя. 3 вертикальные и 2 горизонтальные зелёные перегородки внутри зала можно убрать (слайд 6)."
+      },
+      "columns": {
+        "count": "2 ряда по 4",
+        "note": "Колонны A1, A4, B1, B4 стоят на оси боковой стены, как на схеме. Валидатор pochta помечает их OBJECT_OUTSIDE_ROOM и OBJECT_HITS_WALL: в формате нет колонны в стене. Это не ошибка замера."
+      },
+      "openings": {
+        "op_north_1": {
+          "crossedOutRed": true,
+          "status": "проём перечёркнут красным на схеме; смысл креста неизвестен [СПРОСИТЬ]"
+        },
+        "op_north_2": {
+          "crossedOutRed": true,
+          "status": "проём перечёркнут красным на схеме; смысл креста неизвестен [СПРОСИТЬ]"
+        },
+        "op_south_1": {
+          "crossedOutRed": false,
+          "status": "открытый проём в нижней стене; тип «вход» — допущение команды"
+        },
+        "op_south_2": {
+          "crossedOutRed": false,
+          "status": "открытый проём в нижней стене; тип «вход» — допущение команды"
+        }
+      },
+      "workshop": {
+        "wallId": "w_east",
+        "status": "запасной вариант: цех за правой стеной схемы (w_east); в этом файле она слева, x = 0. Стена w_west в этом файле лежит справа, x = 36. Решение команды — цех за w_west (plan-219.json; эксперт ЛАССАРД, 24.10)"
+      },
+      "estimates": [
+        "толщина наружных стен 0,15 м и перегородок 0,1 м — оценка, на схеме нет",
+        "высота перегородок 7 м (до потолка) — оценка, на схеме нет",
+        "высота проёмов 2,1 м — оценка, на схеме нет",
+        "колонна 0,8 × 0,8 м — замер значка на схеме (≈ 0,84 м), оценка",
+        "координаты по схеме округлены до 0,05 м; точность замера ≈ ±0,05 м (1 пиксель = 0,042 м)"
+      ],
+      "zoning": "нет; зонирование — задача #23",
+      "mirror": {
+        "of": "plan-219.json",
+        "transform": "x' = 36 − x, y' = y",
+        "axis": "вертикальная ось x = 18 м: левая и правая стены схемы меняются местами",
+        "ids": "идентификаторы те же, что в plan-219.json; w_west здесь лежит справа (x = 36), w_east — слева (x = 0)",
+        "why": "Запасной план, если цех справа. Отражение по x переносит на другую сторону боковые стены без проёмов. Верхняя стена с перечёркнутыми проёмами и нижняя стена с входами остаются на месте."
+      }
+    }
+  }
+}

@@ -1,0 +1,760 @@
+{
+ "before.json": [
+  {
+   "code": "RULE_TOO_FAR_FROM_ENTRANCE",
+   "severity": "error",
+   "message": "Объект «Терминал электронной очереди» в 6,62 м от главного входа при норме не более 3 м. Источник правила: материалы организаторов.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "eq_1"
+    },
+    {
+     "kind": "opening",
+     "id": "op_entrance"
+    }
+   ]
+  },
+  {
+   "code": "RULE_COUNT_BELOW_MIN",
+   "severity": "warning",
+   "message": "В зоне «Зона ожидания» 1 шт. «Скамья для ожидания» при минимуме 2 (без вложенных зон). Источник правила: справочник проекта.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_waiting"
+    }
+   ]
+  }
+ ],
+ "bowtie.json": [
+  {
+   "code": "POLYGON_UNUSABLE",
+   "severity": "error",
+   "message": "Контур зоны «Демо» пересекает сам себя: расчёты по нему невозможны.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_demo"
+    }
+   ]
+  },
+  {
+   "code": "POLYGON_UNUSABLE",
+   "severity": "error",
+   "message": "Контур объекта «Стол 1» пересекает сам себя: расчёты по нему невозможны.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t1"
+    }
+   ]
+  }
+ ],
+ "collision.json": [
+  {
+   "code": "OBJECT_OUTSIDE_ROOM",
+   "severity": "error",
+   "message": "Объект «За границей помещения» выходит за границы помещения.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "eq_outside"
+    },
+    {
+     "kind": "room",
+     "id": "room_main"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_OUTSIDE_ZONE",
+   "severity": "error",
+   "message": "Объект «За границей помещения» отнесён к зоне «Клиентская зона», но не лежит в ней целиком.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "eq_outside"
+    },
+    {
+     "kind": "zone",
+     "id": "z_client"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_COLLISION",
+   "severity": "error",
+   "message": "Объекты «Рабочее место 1» и «Пересекается с рабочим местом 1» занимают одно место.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "eq_work_1"
+    },
+    {
+     "kind": "object",
+     "id": "eq_work_2"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_DUPLICATE_INVENTORY_NUMBER",
+   "severity": "warning",
+   "message": "Инвентарный номер «ОПС-0001» у объекта «Пересекается с рабочим местом 1» уже присвоен объекту «Рабочее место 1»: у каждого предмета свой номер.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "eq_work_2"
+    },
+    {
+     "kind": "object",
+     "id": "eq_work_1"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_DUPLICATE_INVENTORY_NUMBER",
+   "severity": "warning",
+   "message": "Инвентарный номер «ОПС-0001» у объекта «За границей помещения» уже присвоен объекту «Рабочее место 1»: у каждого предмета свой номер.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "eq_outside"
+    },
+    {
+     "kind": "object",
+     "id": "eq_work_1"
+    }
+   ]
+  }
+ ],
+ "kitchen-sink.json": [
+  {
+   "code": "ZONE_OUTSIDE_PARENT",
+   "severity": "error",
+   "message": "Зона «Выступ демо» не лежит целиком в родительской зоне «Демо».",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_demo_out"
+    },
+    {
+     "kind": "zone",
+     "id": "z_demo"
+    }
+   ]
+  },
+  {
+   "code": "ZONE_OUTSIDE_ROOM",
+   "severity": "error",
+   "message": "Зона «За стеной» выходит за границы помещения.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_out"
+    },
+    {
+     "kind": "room",
+     "id": "room_main"
+    }
+   ]
+  },
+  {
+   "code": "ZONE_OVERLAPS_ZONE",
+   "severity": "warning",
+   "message": "Зоны «Зал» и «За стеной» пересекаются, не вкладываясь одна в другую: объекты в общей части не могут определить свою зону. Вложите одну в другую или разведите границы.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_hall"
+    },
+    {
+     "kind": "zone",
+     "id": "z_out"
+    }
+   ]
+  },
+  {
+   "code": "ZONE_OVERLAPS_ZONE",
+   "severity": "warning",
+   "message": "Зоны «Демо» и «Выступ демо» пересекаются, не вкладываясь одна в другую: объекты в общей части не могут определить свою зону. Вложите одну в другую или разведите границы.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_demo"
+    },
+    {
+     "kind": "zone",
+     "id": "z_demo_out"
+    }
+   ]
+  },
+  {
+   "code": "ZONE_OVERLAPS_ZONE",
+   "severity": "warning",
+   "message": "Зоны «Близнец А» и «Близнец Б» пересекаются, не вкладываясь одна в другую: объекты в общей части не могут определить свою зону. Вложите одну в другую или разведите границы.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_twin_a"
+    },
+    {
+     "kind": "zone",
+     "id": "z_twin_b"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_OUTSIDE_ROOM",
+   "severity": "error",
+   "message": "Объект «Стол у стены» выходит за границы помещения.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t3"
+    },
+    {
+     "kind": "room",
+     "id": "room_main"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_OUTSIDE_ZONE",
+   "severity": "error",
+   "message": "Объект «Стол у стены» отнесён к зоне «Зал», но не лежит в ней целиком.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t3"
+    },
+    {
+     "kind": "zone",
+     "id": "z_hall"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_COLLISION",
+   "severity": "error",
+   "message": "Объекты «Стол 1» и «Стол 2» занимают одно место.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t1"
+    },
+    {
+     "kind": "object",
+     "id": "t2"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_HITS_WALL",
+   "severity": "error",
+   "message": "Объект «Стол у стены» пересекает наружную стену.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t3"
+    },
+    {
+     "kind": "wall",
+     "id": "w_east"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_HITS_WALL",
+   "severity": "error",
+   "message": "Объект «Стол у перегородки» пересекает перегородку.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t6"
+    },
+    {
+     "kind": "wall",
+     "id": "w_part"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_BLOCKS_OPENING",
+   "severity": "error",
+   "message": "Объект «Стол у входа» загораживает проём главного входа: с обеих сторон нужно 0,90 м свободного пола.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t4"
+    },
+    {
+     "kind": "opening",
+     "id": "op_entrance"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_UNSUPPORTED",
+   "severity": "error",
+   "message": "Объект «Ноутбук в воздухе» висит на высоте 0,75 м: под ним нет стола, на котором он целиком помещается. Поставьте на стол.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "lap1"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_ABOVE_CEILING",
+   "severity": "error",
+   "message": "Объект «Колонна» поднимается до 4,00 м — выше потолка 3,50 м.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "col"
+    },
+    {
+     "kind": "room",
+     "id": "room_main"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_DUPLICATE_INVENTORY_NUMBER",
+   "severity": "warning",
+   "message": "Инвентарный номер «INV-1» у объекта «Стол 2» уже присвоен объекту «Стол 1»: у каждого предмета свой номер.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t2"
+    },
+    {
+     "kind": "object",
+     "id": "t1"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_DUPLICATE_INVENTORY_NUMBER",
+   "severity": "warning",
+   "message": "Инвентарный номер «1001» у объекта «Ноутбук на столе» уже присвоен объекту «Стол под ноутбук»: у каждого предмета свой номер.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "lap2"
+    },
+    {
+     "kind": "object",
+     "id": "t5"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_MISSING_INVENTORY_NUMBER",
+   "severity": "warning",
+   "message": "У объекта «Стол у стены» нет инвентарного номера: впишите номер с ярлыка предмета в карточке.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t3"
+    }
+   ]
+  },
+  {
+   "code": "MAINTENANCE_OVERDUE",
+   "severity": "warning",
+   "message": "ТО объекта «Стол 1» просрочено: срок 20.10.2026, прошло 4 дн. Правило команды: предупреждение за 14 дн. до даты «Следующее ТО».",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t1"
+    }
+   ]
+  },
+  {
+   "code": "MAINTENANCE_DUE_SOON",
+   "severity": "warning",
+   "message": "ТО объекта «Стол 2» через 6 дн.: срок 30.10.2026. Правило команды: предупреждение за 14 дн. до даты «Следующее ТО».",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t2"
+    }
+   ]
+  },
+  {
+   "code": "MAINTENANCE_DATE_INVALID",
+   "severity": "warning",
+   "message": "У объекта «Стол у входа» в поле «Следующее ТО» не дата: «2026-02-30». Впишите дату как 2026-10-18 или 18.10.2026.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t4"
+    }
+   ]
+  },
+  {
+   "code": "MAINTENANCE_DUE_SOON",
+   "severity": "warning",
+   "message": "ТО объекта «Стол под ноутбук» сегодня: срок 24.10.2026. Правило команды: предупреждение за 14 дн. до даты «Следующее ТО».",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t5"
+    }
+   ]
+  },
+  {
+   "code": "RULE_COUNT_BELOW_MIN",
+   "severity": "warning",
+   "message": "В зоне «Демо» 2 шт. «Стол» при минимуме 3 (без вложенных зон). Источник правила: справочник проекта.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_demo"
+    }
+   ]
+  },
+  {
+   "code": "RULE_COUNT_BELOW_MIN",
+   "severity": "warning",
+   "message": "В зоне «Выступ демо» 0 шт. «Стол» при минимуме 3 (без вложенных зон). Источник правила: справочник проекта.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_demo_out"
+    }
+   ]
+  },
+  {
+   "code": "RULE_COUNT_BELOW_MIN",
+   "severity": "warning",
+   "message": "В зоне «Демо» 2 шт. «Стол» при минимуме 5 (вместе с вложенными зонами). Источник правила: справочник проекта.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_demo"
+    }
+   ]
+  },
+  {
+   "code": "RULE_COUNT_ABOVE_MAX",
+   "severity": "error",
+   "message": "В зоне «Зал» 7 шт. «Стол» при максимуме 2 (вместе с вложенными зонами). Источник правила: материалы организаторов.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_hall"
+    }
+   ]
+  },
+  {
+   "code": "RULE_TOO_FAR_FROM_ENTRANCE",
+   "severity": "error",
+   "message": "Объект «Терминал» в 6,71 м от главного входа при норме не более 3,5 м. Источник правила: материалы организаторов.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "term"
+    },
+    {
+     "kind": "opening",
+     "id": "op_entrance"
+    }
+   ]
+  },
+  {
+   "code": "ZONE_AMBIGUOUS",
+   "severity": "warning",
+   "message": "Объект «Указатель» одинаково глубоко лежит в зонах: «Близнец А», «Близнец Б».",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "sign"
+    },
+    {
+     "kind": "zone",
+     "id": "z_twin_a"
+    },
+    {
+     "kind": "zone",
+     "id": "z_twin_b"
+    }
+   ]
+  },
+  {
+   "code": "ZONE_UNASSIGNED",
+   "severity": "warning",
+   "message": "Объект «Указатель в углу» не лежит целиком ни в одной зоне.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "sign2"
+    }
+   ]
+  }
+ ],
+ "minimal.json": [],
+ "nested.json": [],
+ "no-entrance.json": [
+  {
+   "code": "ZONE_OUTSIDE_PARENT",
+   "severity": "error",
+   "message": "Зона «Выступ демо» не лежит целиком в родительской зоне «Демо».",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_demo_out"
+    },
+    {
+     "kind": "zone",
+     "id": "z_demo"
+    }
+   ]
+  },
+  {
+   "code": "ZONE_OUTSIDE_ROOM",
+   "severity": "error",
+   "message": "Зона «За стеной» выходит за границы помещения.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_out"
+    },
+    {
+     "kind": "room",
+     "id": "room_main"
+    }
+   ]
+  },
+  {
+   "code": "ZONE_OVERLAPS_ZONE",
+   "severity": "warning",
+   "message": "Зоны «Зал» и «За стеной» пересекаются, не вкладываясь одна в другую: объекты в общей части не могут определить свою зону. Вложите одну в другую или разведите границы.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_hall"
+    },
+    {
+     "kind": "zone",
+     "id": "z_out"
+    }
+   ]
+  },
+  {
+   "code": "ZONE_OVERLAPS_ZONE",
+   "severity": "warning",
+   "message": "Зоны «Демо» и «Выступ демо» пересекаются, не вкладываясь одна в другую: объекты в общей части не могут определить свою зону. Вложите одну в другую или разведите границы.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_demo"
+    },
+    {
+     "kind": "zone",
+     "id": "z_demo_out"
+    }
+   ]
+  },
+  {
+   "code": "ZONE_OVERLAPS_ZONE",
+   "severity": "warning",
+   "message": "Зоны «Близнец А» и «Близнец Б» пересекаются, не вкладываясь одна в другую: объекты в общей части не могут определить свою зону. Вложите одну в другую или разведите границы.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_twin_a"
+    },
+    {
+     "kind": "zone",
+     "id": "z_twin_b"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_OUTSIDE_ROOM",
+   "severity": "error",
+   "message": "Объект «Стол у стены» выходит за границы помещения.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t3"
+    },
+    {
+     "kind": "room",
+     "id": "room_main"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_OUTSIDE_ZONE",
+   "severity": "error",
+   "message": "Объект «Стол у стены» отнесён к зоне «Зал», но не лежит в ней целиком.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t3"
+    },
+    {
+     "kind": "zone",
+     "id": "z_hall"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_COLLISION",
+   "severity": "error",
+   "message": "Объекты «Стол 1» и «Стол 2» занимают одно место.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t1"
+    },
+    {
+     "kind": "object",
+     "id": "t2"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_HITS_WALL",
+   "severity": "error",
+   "message": "Объект «Стол у стены» пересекает наружную стену.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t3"
+    },
+    {
+     "kind": "wall",
+     "id": "w_east"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_HITS_WALL",
+   "severity": "error",
+   "message": "Объект «Стол у перегородки» пересекает перегородку.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "t6"
+    },
+    {
+     "kind": "wall",
+     "id": "w_part"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_UNSUPPORTED",
+   "severity": "error",
+   "message": "Объект «Ноутбук в воздухе» висит на высоте 0,75 м: под ним нет стола, на котором он целиком помещается. Поставьте на стол.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "lap1"
+    }
+   ]
+  },
+  {
+   "code": "OBJECT_ABOVE_CEILING",
+   "severity": "error",
+   "message": "Объект «Колонна» поднимается до 4,00 м — выше потолка 3,50 м.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "col"
+    },
+    {
+     "kind": "room",
+     "id": "room_main"
+    }
+   ]
+  },
+  {
+   "code": "RULE_COUNT_BELOW_MIN",
+   "severity": "warning",
+   "message": "В зоне «Демо» 2 шт. «Стол» при минимуме 3 (без вложенных зон). Источник правила: справочник проекта.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_demo"
+    }
+   ]
+  },
+  {
+   "code": "RULE_COUNT_BELOW_MIN",
+   "severity": "warning",
+   "message": "В зоне «Выступ демо» 0 шт. «Стол» при минимуме 3 (без вложенных зон). Источник правила: справочник проекта.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_demo_out"
+    }
+   ]
+  },
+  {
+   "code": "RULE_COUNT_BELOW_MIN",
+   "severity": "warning",
+   "message": "В зоне «Демо» 2 шт. «Стол» при минимуме 5 (вместе с вложенными зонами). Источник правила: справочник проекта.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_demo"
+    }
+   ]
+  },
+  {
+   "code": "RULE_COUNT_ABOVE_MAX",
+   "severity": "error",
+   "message": "В зоне «Зал» 7 шт. «Стол» при максимуме 2 (вместе с вложенными зонами). Источник правила: материалы организаторов.",
+   "refs": [
+    {
+     "kind": "zone",
+     "id": "z_hall"
+    }
+   ]
+  },
+  {
+   "code": "RULE_ENTRANCE_MISSING",
+   "severity": "error",
+   "message": "Для «Терминал» требуется проверить расстояние до входа, но входов в плане нет. Источник правила: материалы организаторов.",
+   "refs": []
+  },
+  {
+   "code": "ZONE_AMBIGUOUS",
+   "severity": "warning",
+   "message": "Объект «Указатель» одинаково глубоко лежит в зонах: «Близнец А», «Близнец Б».",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "sign"
+    },
+    {
+     "kind": "zone",
+     "id": "z_twin_a"
+    },
+    {
+     "kind": "zone",
+     "id": "z_twin_b"
+    }
+   ]
+  },
+  {
+   "code": "ZONE_UNASSIGNED",
+   "severity": "warning",
+   "message": "Объект «Указатель в углу» не лежит целиком ни в одной зоне.",
+   "refs": [
+    {
+     "kind": "object",
+     "id": "sign2"
+    }
+   ]
+  }
+ ],
+ "outline.json": [],
+ "rotated.json": []
+}

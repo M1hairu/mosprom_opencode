@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "zones.json — зоны шоурума",
+  "description": "10 зон слайда 3 + вход, переговоры, испытательный блок. Тексты для посетителя без цифр: число — {{fact:<id>}}, имя экспоната — {{item:<id>}} (G1). G5 (луч класса 4) проверяет только POST /api/validate. Каждое из 5 сообщений слайда 10 несёт хотя бы одна зона (carries). Зона в maintenance — с заменой (S2).",
+  "type": "object",
+  "required": ["version", "zones"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {"type": "integer", "enum": [1]},
+    "zones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "exhibits", "display", "safety", "status", "carries", "messages"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": ["entrance", "crystals", "quantrons", "diodes", "laser_sources", "robots", "engraving", "cutting", "handheld", "optomechanics", "edu_class", "meeting", "test_lab"]
+          },
+          "name": {"type": "string"},
+          "exhibits": {"type": "array", "items": {"type": "string", "pattern": "^[a-z0-9_.-]+$"}},
+          "display": {"type": "string", "description": "Способ показа: работа станка, витрина, видео, симулятор."},
+          "safety": {
+            "type": "object",
+            "required": ["restricted", "interlock"],
+            "additionalProperties": false,
+            "properties": {
+              "restricted": {"type": "boolean", "description": "true — вход только с сопровождением."},
+              "interlock": {"type": "boolean", "description": "true — в зоне кабина с блокировкой двери. Роли students, media, government не входят в такую зону, в restricted и в test_lab."},
+              "notes": {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "status": {"type": "string", "enum": ["normal", "maintenance"]},
+          "maintenance": {
+            "type": "object",
+            "description": "Что показать, пока зона на обслуживании (S2). Обязательно при status: maintenance.",
+            "required": ["replacement"],
+            "additionalProperties": false,
+            "properties": {
+              "replacement": {"type": "string", "description": "Что видит посетитель вместо зоны: видео, образцы, другая зона."},
+              "zone": {"type": "string", "description": "id зоны-замены, если есть."}
+            }
+          },
+          "carries": {
+            "type": "array",
+            "description": "Сообщения слайда 10: масштаб, история, локализация, полный цикл, российское производство.",
+            "items": {"type": "string", "enum": ["scale", "history", "localization", "full_cycle", "russian_production"]}
+          },
+          "messages": {"type": "array", "items": {"type": "string"}, "description": "Тексты зоны для посетителя."}
+        }
+      }
+    }
+  }
+}

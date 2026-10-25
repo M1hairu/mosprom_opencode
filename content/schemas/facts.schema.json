@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "facts.json — реестр чисел ЛАССАРД",
+  "description": "Каждое число продукта, записки и слайдов. У факта есть источник: case, public или norm (G1). Число T8 (80, 400, 14400) требует public (G14). Проверяет scripts/check-content.py.",
+  "type": "object",
+  "required": ["version", "facts"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {"type": "integer", "enum": [1]},
+    "facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "value", "unit", "text"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9_.-]+$"},
+          "value": {"type": "number", "description": "Число для расчётов и сверки."},
+          "unit": {"type": "string", "description": "Единица: %, м², ед./год, шт. и т. п."},
+          "text": {"type": "string", "description": "Как писать число в продукте и на слайде."},
+          "case": {
+            "type": "object",
+            "description": "Число из кейса: номер слайда и формулировка кейса.",
+            "required": ["slide", "value"],
+            "additionalProperties": false,
+            "properties": {
+              "slide": {"type": "integer", "minimum": 1},
+              "value": {"type": "string"}
+            }
+          },
+          "public": {
+            "type": "object",
+            "description": "Публичный источник: адрес, дата публикации или проверки, значение в источнике.",
+            "required": ["url", "date", "value"],
+            "additionalProperties": false,
+            "properties": {
+              "url": {"type": "string", "pattern": "^https?://"},
+              "date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+              "value": {"type": "string"},
+              "note": {"type": "string"}
+            }
+          },
+          "norm": {
+            "type": "object",
+            "description": "Норма: документ и пункт.",
+            "required": ["doc", "clause"],
+            "additionalProperties": false,
+            "properties": {
+              "doc": {"type": "string"},
+              "clause": {"type": "string"},
+              "url": {"type": "string", "pattern": "^https?://"}
+            }
+          },
+          "check": {"type": "boolean", "description": "true — норму или число надо проверить; интерфейс показывает метку «уточняется»."}
+        }
+      }
+    }
+  }
+}

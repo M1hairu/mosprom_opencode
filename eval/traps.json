@@ -1,0 +1,44 @@
+[
+  {
+    "id": "TRAP-7",
+    "trap": "Публичная ссылка нужна до чек-поинта 2; репозиторий приватный",
+    "where": "S5; хостинг #8",
+    "evidence": "CLAUDE.md, «Ловушки данных»; регламент, слайд 13",
+    "consequence": "нет ссылки к 24.10 13:00 — выбывание; make deploy сверяет SHA сайта с origin/main"
+  },
+  {
+    "id": "TRAP-4",
+    "trap": "Луч 4 класса у ручных лазеров и SMART BASE",
+    "where": "зоны 7, 8 → S1–S3, S8; нормы #30",
+    "evidence": "CLAUDE.md, «Ловушки данных»; concept/05-safety.md, разделы 1 и 3.4; ГОСТ 31581-2012, п. 8.3.1",
+    "consequence": "открытый луч в зале посетителей — POST /api/validate даёт OPEN_BEAM_OUTSIDE_INTERLOCK (тесты test_TRAP_4_*, eval/cases-norms.json V1, V2); в content/catalog.json у ручных лазеров и открытых GRAVER beam: open (tests/test_catalog_traps.py)"
+  },
+  {
+    "id": "TRAP-3",
+    "trap": "У SMART BASE в каталоге только поле 800 × 800 мм",
+    "where": "габариты → S6; каталог #20",
+    "evidence": "CLAUDE.md, «Ловушки данных»; research/notes/lassard_facts.md, раздел 2; каталог 2026, стр. 4",
+    "consequence": "поле 800 × 800 мм принято за габарит станка — план занижает место под SMART BASE; тест tests/test_catalog_traps.py: Trap3SmartBaseFieldTest"
+  },
+  {
+    "id": "TRAP-8",
+    "trap": "Числа кейса против публичных (80 %, 400+, 14 400 м²)",
+    "where": "S7; facts #18, линт #32",
+    "evidence": "CLAUDE.md, «Ловушки данных»; кейс, слайд 3",
+    "consequence": "число T8 в content/facts.json без «public» — make lint красный (G14); тест tests/test_check_content.py: FactsTest.test_trap8_number_without_public_fails; content/facts.json: units_per_year (кейс 400+, сайт 100+) и localization (кейс 80 %, TAdviser 70 %) хранят оба значения (tests/test_facts.py: test_TRAP_8_*)"
+  },
+  {
+    "id": "TRAP-5",
+    "trap": "«30 станков» (слайд 3) против «30+ изделий» (слайд 9)",
+    "where": "S4, S7; линт #32",
+    "evidence": "CLAUDE.md, «Ловушки данных»; кейс, слайды 3 и 9; concept/00-analytics.md, §1",
+    "consequence": "гость слышит «30 видов станков» вместо «30+ изделий» — S4.4 не выполнен; тест tests/test_routes.py: Rendered.test_TRAP_5_rendered_says_products_not_machines (текст факта product_types, подставленный в маршруты)"
+  },
+  {
+    "id": "TRAP-6",
+    "trap": "Аудитории: 6 на слайде 7, 4 подробно на слайде 9",
+    "where": "S7; маршруты #22",
+    "evidence": "CLAUDE.md, «Ловушки данных»; кейс, слайды 7 и 9",
+    "consequence": "нет маршрута для школьников или медиа — аудитория слайда 7 без пути; тест tests/test_routes.py: Shape.test_TRAP_6_six_audiences_four_detailed"
+  }
+]

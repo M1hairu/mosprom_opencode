@@ -1,0 +1,1137 @@
+{
+ "version": 1,
+ "items": [
+  {
+   "id": "smart-base",
+   "name": "SMART BASE",
+   "category": "cutting",
+   "size_mm": {
+    "length": 1750,
+    "width": 1750,
+    "height": 2200
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 4, блок «Габариты»",
+   "estimate": false,
+   "laser_class": "4",
+   "beam": "closed",
+   "work_area_mm": {
+    "length": 800,
+    "width": 800,
+    "source": "https://lassard.ru/products/minpromtorg (SMART BASE 800×800); https://lassard.ru/products/equipment/cutting/sheets/smart-base"
+   },
+   "power_w": {
+    "min": 150,
+    "max": 3000,
+    "source": "https://lassard.ru/products/equipment/cutting/sheets/smart-base; https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 4 (непрерывные 1000–3000 Вт)"
+   },
+   "price_from": {
+    "value_rub": 11633305.78,
+    "source": "https://lassard.ru/products/equipment/cutting/sheets/smart-base"
+   },
+   "source": "https://lassard.ru/products/equipment/cutting/sheets/smart-base",
+   "in_current_showroom": true,
+   "plan_type": "ot_smart_base",
+   "note": "Рабочее поле 800×800 — это поле, не габарит станка (TRAP-3). Габарит 1750×1750×2200 — каталог 2026, стр. 4. Кабинетная защита, класс 4 — сайт. В зале стоит миниатюра 1:5 под стеклом (D-001); станок в полный размер и резка — только в цехе. Размеры size_mm — станка, не миниатюры."
+  },
+  {
+   "id": "smart-xl-1300x800",
+   "name": "SMART XL 1300×800",
+   "category": "cutting",
+   "size_mm": {
+    "length": 2900,
+    "width": 1400,
+    "height": 2000
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 4",
+   "estimate": false,
+   "laser_class": null,
+   "beam": "closed",
+   "work_area_mm": {
+    "length": 1300,
+    "width": 800,
+    "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 4"
+   },
+   "price_from": {
+    "value_rub": 10805111.65,
+    "source": "https://lassard.ru/products/equipment/cutting/sheets/smart-xl"
+   },
+   "source": "https://lassard.ru/products/equipment/cutting/sheets/smart-xl",
+   "in_current_showroom": false,
+   "note": "Цена «от» дана на модель SMART XL, не на исполнение. Класс лазерной опасности не опубликован [СПРОСИТЬ]."
+  },
+  {
+   "id": "smart-xl-1300x1000",
+   "name": "SMART XL 1300×1000",
+   "category": "cutting",
+   "size_mm": {
+    "length": 3000,
+    "width": 2350,
+    "height": 2300
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 4",
+   "estimate": false,
+   "laser_class": null,
+   "beam": "closed",
+   "work_area_mm": {
+    "length": 1300,
+    "width": 1000,
+    "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 4"
+   },
+   "price_from": {
+    "value_rub": 10805111.65,
+    "source": "https://lassard.ru/products/equipment/cutting/sheets/smart-xl"
+   },
+   "source": "https://lassard.ru/products/equipment/cutting/sheets/smart-xl",
+   "in_current_showroom": false,
+   "note": "Цена «от» дана на модель SMART XL, не на исполнение. Класс лазерной опасности не опубликован [СПРОСИТЬ]."
+  },
+  {
+   "id": "smart-xl-1300x1300",
+   "name": "SMART XL 1300×1300",
+   "category": "cutting",
+   "size_mm": {
+    "length": 2200,
+    "width": 3000,
+    "height": 2020
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 4",
+   "estimate": false,
+   "laser_class": null,
+   "beam": "closed",
+   "work_area_mm": {
+    "length": 1300,
+    "width": 1300,
+    "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 4"
+   },
+   "price_from": {
+    "value_rub": 10805111.65,
+    "source": "https://lassard.ru/products/equipment/cutting/sheets/smart-xl"
+   },
+   "source": "https://lassard.ru/products/equipment/cutting/sheets/smart-xl",
+   "in_current_showroom": false,
+   "note": "Цена «от» дана на модель SMART XL, не на исполнение. Класс лазерной опасности не опубликован [СПРОСИТЬ]."
+  },
+  {
+   "id": "optimum",
+   "name": "OPTIMUM",
+   "category": "cutting",
+   "size_mm": {
+    "length": 6500,
+    "width": 9500,
+    "height": null
+   },
+   "estimate": true,
+   "estimate_basis": "Общие габариты не опубликованы. Взят контур зоны станка с периферией (схема размещения, каталог стр. 7); координатный стол 4100×2500. Высота: [СПРОСИТЬ].",
+   "laser_class": null,
+   "beam": "open",
+   "power_w": {
+    "min": 500,
+    "max": 4000,
+    "source": "https://lassard.ru/products/minpromtorg (OPTIMUM 500–4000 Вт)"
+   },
+   "price_from": {
+    "value_rub": 14571340,
+    "source": "https://lassard.ru/products/equipment/cutting/sheets/optimum"
+   },
+   "source": "https://lassard.ru/products/equipment/cutting/sheets/optimum",
+   "in_current_showroom": true,
+   "note": "Открытый стол в базовой комплектации; кабинетная защита — опция. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Луч открытый. В шоуруме луча нет (D-001): в зале изделие стоит без питания, ключ снят (TRAP-4)."
+  },
+  {
+   "id": "leader",
+   "name": "LEADER (2000×6000 и 1500×3000)",
+   "category": "cutting",
+   "size_mm": {
+    "length": 10200,
+    "width": 2500,
+    "height": 2315
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 9 (в каталоге не сказано, для какого поля)",
+   "estimate": false,
+   "laser_class": null,
+   "beam": "closed",
+   "power_w": {
+    "min": 2000,
+    "max": 60000,
+    "source": "https://lassard.ru/products/equipment/cutting/sheets/leader"
+   },
+   "price_from": {
+    "value_rub": 23428844.46,
+    "source": "https://lassard.ru/products/equipment/cutting/sheets/leader"
+   },
+   "source": "https://lassard.ru/products/equipment/cutting/sheets/leader",
+   "in_current_showroom": true,
+   "note": "Цена «от»: 1500×3000 — 23 428 844,46 ₽; 2000×6000 — 29 286 055,57 ₽. Габарит без привязки к исполнению; вероятно 2000×6000 (вывод research). Оба исполнения стоят в действующем шоуруме. Класс лазерной опасности не опубликован [СПРОСИТЬ]."
+  },
+  {
+   "id": "leader-y",
+   "name": "LEADER Y",
+   "category": "cutting",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "Габарит не опубликован [СПРОСИТЬ]. Ориентир по аналогу LEADER: 10200×2500×2315 (не данные компании).",
+   "laser_class": null,
+   "beam": "closed",
+   "power_w": {
+    "min": 2000,
+    "max": 60000,
+    "source": "https://lassard.ru/products/equipment/cutting/sheets/leader-y"
+   },
+   "source": "https://lassard.ru/products/equipment/cutting/sheets/leader-y",
+   "in_current_showroom": false,
+   "note": "Цена по запросу. Класс лазерной опасности не опубликован [СПРОСИТЬ]."
+  },
+  {
+   "id": "sirius",
+   "name": "SIRIUS",
+   "category": "cutting",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 2 (оглавление)",
+   "in_current_showroom": false,
+   "note": "Портальный станок для судостроения. Позиция каталога 2026; габариты, класс и луч не найдены в research. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Тип луча в источниках не указан [СПРОСИТЬ]."
+  },
+  {
+   "id": "optimum-tube",
+   "name": "OPTIMUM TUBE",
+   "category": "cutting",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 2 (оглавление)",
+   "in_current_showroom": false,
+   "note": "Позиция каталога 2026; габариты, класс и луч не найдены в research. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Тип луча в источниках не указан [СПРОСИТЬ]."
+  },
+  {
+   "id": "tube-long",
+   "name": "TUBE LONG",
+   "category": "cutting",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 2 (оглавление)",
+   "in_current_showroom": false,
+   "note": "Труборез. Позиция каталога 2026; габариты, класс и луч не найдены в research. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Тип луча в источниках не указан [СПРОСИТЬ]."
+  },
+  {
+   "id": "tube-prime",
+   "name": "TUBE PRIME",
+   "category": "cutting",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 2 (оглавление)",
+   "in_current_showroom": false,
+   "note": "Позиция каталога 2026; габариты, класс и луч не найдены в research. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Тип луча в источниках не указан [СПРОСИТЬ]."
+  },
+  {
+   "id": "smart-turn",
+   "name": "SMART TURN",
+   "category": "cutting",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 2 (оглавление)",
+   "in_current_showroom": false,
+   "note": "Позиция каталога 2026; габариты, класс и луч не найдены в research. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Тип луча в источниках не указан [СПРОСИТЬ]."
+  },
+  {
+   "id": "smart-round",
+   "name": "SMART ROUND",
+   "category": "cutting",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 2 (оглавление)",
+   "in_current_showroom": false,
+   "note": "Позиция каталога 2026; габариты, класс и луч не найдены в research. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Тип луча в источниках не указан [СПРОСИТЬ]."
+  },
+  {
+   "id": "smart-5d",
+   "name": "SMART 5D",
+   "category": "cutting",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 2 (оглавление)",
+   "in_current_showroom": true,
+   "note": "Позиция каталога 2026; габариты, класс и луч не найдены в research. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Тип луча в источниках не указан [СПРОСИТЬ]."
+  },
+  {
+   "id": "premium-5d",
+   "name": "PREMIUM 5D",
+   "category": "cutting",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 2 (оглавление)",
+   "in_current_showroom": false,
+   "note": "Позиция каталога 2026; габариты, класс и луч не найдены в research. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Тип луча в источниках не указан [СПРОСИТЬ]."
+  },
+  {
+   "id": "master",
+   "name": "МАСТЕР",
+   "category": "cutting",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 2 (оглавление)",
+   "in_current_showroom": false,
+   "note": "Позиция каталога 2026; габариты, класс и луч не найдены в research. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Тип луча в источниках не указан [СПРОСИТЬ]."
+  },
+  {
+   "id": "paladin",
+   "name": "PALADIN",
+   "category": "hardening",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": "closed",
+   "price_from": {
+    "value_rub": 350000000,
+    "source": "https://lassard.ru/products/equipment/hardening/paladin"
+   },
+   "source": "https://lassard.ru/products/equipment/hardening/paladin",
+   "in_current_showroom": false,
+   "note": "Закрытая ячейка. Ударное упрочнение. Класс лазерной опасности не опубликован [СПРОСИТЬ]."
+  },
+  {
+   "id": "laserhard",
+   "name": "LASERHARD",
+   "category": "hardening",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "power_w": {
+    "min": 5000,
+    "max": 5000,
+    "source": "https://lassard.ru/products/equipment/hardening/laserhard"
+   },
+   "source": "https://lassard.ru/products/equipment/hardening/laserhard",
+   "in_current_showroom": false,
+   "note": "Диодный лазер 5000 Вт, робот FANUC/ROKAE/Yaskawa. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Тип луча в источниках не указан [СПРОСИТЬ]."
+  },
+  {
+   "id": "lfilter-smart",
+   "name": "LFILTER SMART",
+   "category": "ventilation",
+   "size_mm": {
+    "length": 920,
+    "width": 955,
+    "height": 1475
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 40–41",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "price_from": {
+    "value_rub": 700000,
+    "source": "https://lassard.ru/products/equipment/ventilation/lfilter-smart"
+   },
+   "source": "https://lassard.ru/products/equipment/ventilation/lfilter-smart",
+   "in_current_showroom": false,
+   "note": "Фильтровентиляционная установка, лазера нет. Масса 150 кг."
+  },
+  {
+   "id": "lfilter-optimum",
+   "name": "LFILTER OPTIMUM",
+   "category": "ventilation",
+   "size_mm": {
+    "length": 1185,
+    "width": 1036,
+    "height": 1500
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf (чертёж LFILTER OPTIMUM)",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "price_from": {
+    "value_rub": 1200000,
+    "source": "https://lassard.ru/products/equipment/ventilation/lfilter-optimum"
+   },
+   "source": "https://lassard.ru/products/equipment/ventilation/lfilter-optimum",
+   "in_current_showroom": false,
+   "note": "Фильтровентиляционная установка. Масса 284 кг."
+  },
+  {
+   "id": "lfilter-leader",
+   "name": "LFILTER LEADER",
+   "category": "ventilation",
+   "size_mm": {
+    "length": 2100,
+    "width": 1000,
+    "height": 2375
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf (чертёж LFILTER LEADER)",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/products/equipment/ventilation/lfilter-leader",
+   "in_current_showroom": false,
+   "note": "Фильтровентиляционная установка. Масса 640 кг."
+  },
+  {
+   "id": "graver-3d",
+   "name": "GRAVER 3D",
+   "category": "engraving",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": "closed",
+   "price_from": {
+    "value_rub": 3403237,
+    "source": "https://lassard.ru/products/equipment/engraving/graver-3d"
+   },
+   "source": "https://lassard.ru/products/equipment/engraving/graver-3d",
+   "in_current_showroom": true,
+   "plan_type": "ot_graver_3d",
+   "note": "Закрытый корпус с дверью и смотровым окном (по фото каталога, стр. 52–53). Поле 200×200; 300×300. Класс лазерной опасности не опубликован [СПРОСИТЬ]. В демо-зоне стоит без питания, луча нет (D-001)."
+  },
+  {
+   "id": "graver-compact",
+   "name": "GRAVER COMPACT",
+   "category": "engraving",
+   "size_mm": {
+    "length": null,
+    "width": 524,
+    "height": 1003
+   },
+   "estimate": true,
+   "estimate_basis": "Частично: высота 825 и 1003 (два исполнения стойки), ширина основания 524–527; глубина не опубликована [СПРОСИТЬ] (каталог стр. 46–47).",
+   "laser_class": null,
+   "beam": "open",
+   "power_w": {
+    "min": 20,
+    "max": 100,
+    "source": "https://lassard.ru/products/equipment/engraving/graver-compact"
+   },
+   "price_from": {
+    "value_rub": 1847670.85,
+    "source": "https://lassard.ru/products/equipment/engraving/graver-compact"
+   },
+   "source": "https://lassard.ru/products/equipment/engraving/graver-compact",
+   "in_current_showroom": false,
+   "plan_type": "ot_graver_table",
+   "note": "Открытый настольный. Масса 20 кг. В size_mm: width — ширина основания, height — высота старшего исполнения стойки; length (глубина) не опубликована. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Луч открытый. В шоуруме луча нет (D-001): в зале изделие стоит без питания, ключ снят (TRAP-4)."
+  },
+  {
+   "id": "graver-line",
+   "name": "GRAVER LINE",
+   "category": "engraving",
+   "size_mm": {
+    "length": 525,
+    "width": 525,
+    "height": 190
+   },
+   "size_source": "https://lassard.ru/products/equipment/engraving/graver-line (сайт, без конвейерной линии)",
+   "estimate": false,
+   "laser_class": null,
+   "beam": "open",
+   "price_from": {
+    "value_rub": 2618991,
+    "source": "https://lassard.ru/products/equipment/engraving/graver-line"
+   },
+   "source": "https://lassard.ru/products/equipment/engraving/graver-line",
+   "in_current_showroom": false,
+   "note": "Открытый, над конвейером. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Луч открытый. В шоуруме луча нет (D-001): в зале изделие стоит без питания, ключ снят (TRAP-4)."
+  },
+  {
+   "id": "graver-mobile",
+   "name": "GRAVER MOBILE",
+   "category": "engraving",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": "open",
+   "power_w": {
+    "min": 20,
+    "max": 100,
+    "source": "https://lassard.ru/products/equipment/engraving/graver-mobile"
+   },
+   "price_from": {
+    "value_rub": 2161893,
+    "source": "https://lassard.ru/products/equipment/engraving/graver-mobile"
+   },
+   "source": "https://lassard.ru/products/equipment/engraving/graver-mobile",
+   "in_current_showroom": false,
+   "note": "Мобильная стойка на колёсах. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Луч открытый. В шоуруме луча нет (D-001): в зале изделие стоит без питания, ключ снят (TRAP-4)."
+  },
+  {
+   "id": "graver-portal",
+   "name": "GRAVER PORTAL",
+   "category": "engraving",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": "closed",
+   "power_w": {
+    "min": 20,
+    "max": 300,
+    "source": "https://lassard.ru/products/equipment/engraving/graver-portal"
+   },
+   "price_from": {
+    "value_rub": 5833913.5,
+    "source": "https://lassard.ru/products/equipment/engraving/graver-portal"
+   },
+   "source": "https://lassard.ru/products/equipment/engraving/graver-portal",
+   "in_current_showroom": false,
+   "plan_type": "ot_graver_portal",
+   "note": "Закрыт, кабинетная защита; опция — открытое исполнение с увеличенным полем. Стол 950×750. Класс лазерной опасности не опубликован [СПРОСИТЬ]."
+  },
+  {
+   "id": "graver-uv",
+   "name": "GRAVER UV",
+   "category": "engraving",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": "open",
+   "power_w": {
+    "min": 5,
+    "max": 5,
+    "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 50–51"
+   },
+   "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 50–51",
+   "in_current_showroom": false,
+   "note": "Открытый настольный (по фото). Стол 520×520, масса 50 кг, УФ 355 нм, 5 Вт. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Луч открытый. В шоуруме луча нет (D-001): в зале изделие стоит без питания, ключ снят (TRAP-4)."
+  },
+  {
+   "id": "multi-hero",
+   "name": "MULTI HERO",
+   "category": "welding",
+   "size_mm": {
+    "length": 1170,
+    "width": 706,
+    "height": 1119
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 60–61 (чертёж)",
+   "size_alt": [
+    {
+     "size_mm": {
+      "length": 1102,
+      "width": 700,
+      "height": 1266
+     },
+     "size_source": "https://lassard.ru/products/equipment/welding/multi-hero (сайт)"
+    }
+   ],
+   "estimate": false,
+   "laser_class": null,
+   "beam": "open",
+   "power_w": {
+    "min": 1000,
+    "max": 3000,
+    "source": "https://lassard.ru/products/equipment/welding/multi-hero; https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 60–61"
+   },
+   "price_from": {
+    "value_rub": 2970000,
+    "source": "https://lassard.ru/products/equipment/welding/multi-hero"
+   },
+   "source": "https://lassard.ru/products/equipment/welding/multi-hero",
+   "in_current_showroom": true,
+   "plan_type": "ot_multi_hero",
+   "note": "Два опубликованных габарита: каталог 1170×706×1119 (size_mm) и сайт 1102×700×1266 (size_alt). Какой актуален — [СПРОСИТЬ]. Чертёж каталога совпадает с CLEANER PROM; перед планировкой нужен замер. Ручная головка 3 в 1, масса 300 кг. Класс лазерной опасности не опубликован [СПРОСИТЬ]; волоконный источник от сотен ватт — класс 4 по ГОСТ IEC 60825-1 (вывод research, раздел 2). Луч открытый. В шоуруме луча нет (D-001): в зале изделие стоит без питания, ключ снят (TRAP-4)."
+  },
+  {
+   "id": "welder-mini",
+   "name": "WELDER MINI",
+   "category": "welding",
+   "size_mm": {
+    "length": 640,
+    "width": 400,
+    "height": 660
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 62–63 (чертёж)",
+   "estimate": false,
+   "laser_class": null,
+   "beam": "open",
+   "power_w": {
+    "min": 1500,
+    "max": 2000,
+    "source": "https://lassard.ru/products/equipment/welding/welder-mini"
+   },
+   "price_from": {
+    "value_rub": 1500000,
+    "source": "https://lassard.ru/products/equipment/welding/welder-mini"
+   },
+   "source": "https://lassard.ru/products/equipment/welding/welder-mini",
+   "in_current_showroom": true,
+   "plan_type": "ot_welder_mini",
+   "note": "Ручной пистолет. Класс лазерной опасности не опубликован [СПРОСИТЬ]; волоконный источник от сотен ватт — класс 4 по ГОСТ IEC 60825-1 (вывод research, раздел 2). Луч открытый. В шоуруме луча нет (D-001): в зале изделие стоит без питания, ключ снят (TRAP-4)."
+  },
+  {
+   "id": "welder-mini-2000",
+   "name": "WELDER MINI 2000",
+   "category": "welding",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 2 (оглавление)",
+   "in_current_showroom": false,
+   "note": "Позиция каталога 2026; данные не найдены в research. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Тип луча в источниках не указан [СПРОСИТЬ]."
+  },
+  {
+   "id": "welder-tt",
+   "name": "WELDER TT",
+   "category": "welding",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 2 (оглавление)",
+   "in_current_showroom": false,
+   "note": "Позиция каталога 2026; данные не найдены в research. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Тип луча в источниках не указан [СПРОСИТЬ]."
+  },
+  {
+   "id": "scanwelder",
+   "name": "SCANWELDER",
+   "category": "welding",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 2 (оглавление)",
+   "in_current_showroom": false,
+   "note": "Позиция каталога 2026; данные не найдены в research. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Тип луча в источниках не указан [СПРОСИТЬ]."
+  },
+  {
+   "id": "cleaner-case",
+   "name": "CLEANER CASE",
+   "category": "cleaning",
+   "size_mm": {
+    "length": 615,
+    "width": 495,
+    "height": 245
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 70–71 (кейс)",
+   "estimate": false,
+   "laser_class": null,
+   "beam": "open",
+   "price_from": {
+    "value_rub": 2021000,
+    "source": "https://lassard.ru/products/equipment/cleaning/cleaner-case"
+   },
+   "source": "https://lassard.ru/products/equipment/cleaning/cleaner-case",
+   "in_current_showroom": true,
+   "note": "Ручная очистка. Класс лазерной опасности не опубликован [СПРОСИТЬ]. Луч открытый. В шоуруме луча нет (D-001): в зале изделие стоит без питания, ключ снят (TRAP-4)."
+  },
+  {
+   "id": "cleaner-prom",
+   "name": "CLEANER PROM",
+   "category": "cleaning",
+   "size_mm": {
+    "length": 1170,
+    "width": 706,
+    "height": 1119
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 72–73",
+   "estimate": false,
+   "laser_class": null,
+   "beam": "open",
+   "price_from": {
+    "value_rub": 3350000,
+    "source": "https://lassard.ru/products/equipment/cleaning/cleaner-prom"
+   },
+   "source": "https://lassard.ru/products/equipment/cleaning/cleaner-prom",
+   "in_current_showroom": false,
+   "plan_type": "ot_cleaner_prom",
+   "note": "Ручная очистка. Масса 230 кг. Класс лазерной опасности не опубликован [СПРОСИТЬ]; волоконный источник от сотен ватт — класс 4 по ГОСТ IEC 60825-1 (вывод research, раздел 2). Луч открытый. В шоуруме луча нет (D-001): в зале изделие стоит без питания, ключ снят (TRAP-4)."
+  },
+  {
+   "id": "cleaner-portal",
+   "name": "CLEANER PORTAL",
+   "category": "cleaning",
+   "size_mm": {
+    "length": 2900,
+    "width": 2498,
+    "height": 1163
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 74–75",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "power_w": {
+    "min": 1000,
+    "max": 2000,
+    "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 74–75"
+   },
+   "source": "https://lassard.ru/api/catalogs/file/Katalog_oborudovanie_2026_block_09-07_web.pdf стр. 74–75",
+   "in_current_showroom": false,
+   "note": "Класс лазерной опасности не опубликован [СПРОСИТЬ]. Тип луча в источниках не указан [СПРОСИТЬ]."
+  },
+  {
+   "id": "gaas-crystal",
+   "name": "Монокристаллы GaAs (VGF)",
+   "category": "component",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "Опубликован номинальный диаметр 100 мм; длина слитка не опубликована [СПРОСИТЬ].",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/products/components/monocrystals-gaal/monokristally-arsenida-galliya",
+   "in_current_showroom": false,
+   "note": ""
+  },
+  {
+   "id": "gaas-wafer",
+   "name": "Подложки GaAs",
+   "category": "component",
+   "size_mm": {
+    "length": 100,
+    "width": 100,
+    "height": 0.625
+   },
+   "size_source": "https://lassard.ru/products/components/semiconductors/gaas",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/products/components/semiconductors/gaas",
+   "in_current_showroom": false,
+   "note": "Ø100, толщина 450 и 625 мкм; h — максимальная толщина."
+  },
+  {
+   "id": "ls-dl02-808",
+   "name": "Лазерный диод LS-DL02-1-808",
+   "category": "component",
+   "size_mm": {
+    "length": 12,
+    "width": 11.3,
+    "height": 11.3
+   },
+   "size_source": "https://lassard.ru/products/components/diodes/laser-diodes/CW-laser-diodes",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/products/components/diodes/laser-diodes/CW-laser-diodes",
+   "in_current_showroom": false,
+   "note": "Ø11,3, L=12; ≥ 2 Вт."
+  },
+  {
+   "id": "ls-m-modules",
+   "name": "Диодные модули LS-M220/450",
+   "category": "component",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/products/components/diode-modules/ls-m450-780qcw",
+   "in_current_showroom": false,
+   "note": "220 и 450 Вт, 770–980 нм."
+  },
+  {
+   "id": "diode-bars",
+   "name": "Линейки и решётки диодов",
+   "category": "component",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 13",
+   "in_current_showroom": false,
+   "note": ""
+  },
+  {
+   "id": "quantron-qcw",
+   "name": "Квантрон QCW Nd:YAG",
+   "category": "component",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "Общие габариты не опубликованы; активный элемент Ø4–10 мм, длина 110–155 мм.",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/products/components/diode-pump-chambers/QCW-Nd-YAG",
+   "in_current_showroom": false,
+   "note": ""
+  },
+  {
+   "id": "ndyag-ls-l05",
+   "name": "Nd:YAG LS-L05-1064 / LS-S02-532",
+   "category": "component",
+   "size_mm": {
+    "length": 933,
+    "width": 296,
+    "height": 149
+   },
+   "size_source": "https://lassard.ru/products/components/ndyag/qCW-solid-state-lasers",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/products/components/ndyag/qCW-solid-state-lasers",
+   "in_current_showroom": false,
+   "plan_type": "ot_ndyag",
+   "note": "Лазер 933×296×149; блок питания 370×435×270; задающий генератор 295×290×105. В зале стоит миниатюра 1:5 под стеклом (D-001). Размеры size_mm — лазера, не миниатюры."
+  },
+  {
+   "id": "ls-fl1000-1070",
+   "name": "LS-FL1000-1070",
+   "category": "component",
+   "size_mm": {
+    "length": 818,
+    "width": 490,
+    "height": 169
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 3",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "power_w": {
+    "min": 1000,
+    "max": 1000,
+    "source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 3"
+   },
+   "source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 3",
+   "in_current_showroom": false,
+   "note": ""
+  },
+  {
+   "id": "ls-fl1500-1070",
+   "name": "LS-FL1500-1070",
+   "category": "component",
+   "size_mm": {
+    "length": 879,
+    "width": 490,
+    "height": 190
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 3",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "power_w": {
+    "min": 1500,
+    "max": 1500,
+    "source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 3"
+   },
+   "source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 3",
+   "in_current_showroom": false,
+   "note": ""
+  },
+  {
+   "id": "ls-fl2000-1070",
+   "name": "LS-FL2000-1070",
+   "category": "component",
+   "size_mm": {
+    "length": 879,
+    "width": 490,
+    "height": 190
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 3",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "power_w": {
+    "min": 2000,
+    "max": 2000,
+    "source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 3"
+   },
+   "source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 3",
+   "in_current_showroom": false,
+   "note": ""
+  },
+  {
+   "id": "ls-fl3000-1070",
+   "name": "LS-FL3000-1070",
+   "category": "component",
+   "size_mm": {
+    "length": 950,
+    "width": 490,
+    "height": 190
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 3",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "power_w": {
+    "min": 3000,
+    "max": 3000,
+    "source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 3"
+   },
+   "source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 3",
+   "in_current_showroom": false,
+   "note": ""
+  },
+  {
+   "id": "ls-fl9000",
+   "name": "LS-FL9000",
+   "category": "component",
+   "size_mm": {
+    "length": 800,
+    "width": 1100,
+    "height": 1200
+   },
+   "size_source": "https://lassard.ru/products/components/fiber-lasers/LS-FL9000",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "power_w": {
+    "min": 9000,
+    "max": 9000,
+    "source": "https://lassard.ru/products/components/fiber-lasers/LS-FL9000"
+   },
+   "source": "https://lassard.ru/products/components/fiber-lasers/LS-FL9000",
+   "in_current_showroom": false,
+   "plan_type": "ot_ls_fl9000",
+   "note": "Масса до 550 кг. В зале стоит миниатюра 1:5 под стеклом (D-001). Размеры size_mm — изделия, не миниатюры."
+  },
+  {
+   "id": "ls-fl20000",
+   "name": "LS-FL20000",
+   "category": "component",
+   "size_mm": {
+    "length": 1500,
+    "width": 1200,
+    "height": 1620
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 4",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "power_w": {
+    "min": 20000,
+    "max": 20000,
+    "source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 4"
+   },
+   "source": "https://lassard.ru/products/components/fiber-lasers/LS-FL20000",
+   "in_current_showroom": false,
+   "plan_type": "ot_ls_fl20000",
+   "note": "В зале стоит миниатюра 1:5 под стеклом (D-001). Размеры size_mm — изделия, не миниатюры."
+  },
+  {
+   "id": "ls-fl30000",
+   "name": "LS-FL30000",
+   "category": "component",
+   "size_mm": {
+    "length": 1600,
+    "width": 1200,
+    "height": 1620
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 4",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "power_w": {
+    "min": 30000,
+    "max": 30000,
+    "source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 4"
+   },
+   "source": "https://lassard.ru/products/components/fiber-lasers/LS-FL20000",
+   "in_current_showroom": false,
+   "note": ""
+  },
+  {
+   "id": "ls-fl50000",
+   "name": "LS-FL50000",
+   "category": "component",
+   "size_mm": {
+    "length": 2050,
+    "width": 1200,
+    "height": 1620
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 4",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "power_w": {
+    "min": 50000,
+    "max": 50000,
+    "source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 4"
+   },
+   "source": "https://lassard.ru/products/components/fiber-lasers/LS-FL20000",
+   "in_current_showroom": false,
+   "note": ""
+  },
+  {
+   "id": "ls-fl-mopa",
+   "name": "Импульсные MOPA LS-FL30/50/100-1064-M",
+   "category": "component",
+   "size_mm": {
+    "length": 266,
+    "width": 383,
+    "height": 99
+   },
+   "size_source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 5",
+   "size_alt": [
+    {
+     "size_mm": {
+      "length": 266,
+      "width": 479,
+      "height": 99
+     },
+     "size_source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 5"
+    }
+   ],
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "power_w": {
+    "min": 30,
+    "max": 100,
+    "source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 5"
+   },
+   "source": "https://lassard.ru/api/catalogs/file/lazery_2025_web-1.pdf стр. 5",
+   "in_current_showroom": false,
+   "note": "Два размера на три модели; соответствие моделям в источнике не указано."
+  },
+  {
+   "id": "optical-table-63ot-122420",
+   "name": "Оптический стол: плита 63OT122420",
+   "category": "optomechanics",
+   "size_mm": {
+    "length": 2400,
+    "width": 1200,
+    "height": 200
+   },
+   "size_source": "https://opto.lassard.ru/products/optical-tables/plates/63ot",
+   "estimate": false,
+   "laser_class": null,
+   "beam": null,
+   "source": "https://opto.lassard.ru/products/optical-tables/plates/63ot",
+   "in_current_showroom": false,
+   "plan_type": "ot_optical_table",
+   "note": "Размер плиты. Опоры 65APTS07F0813 добавляют высоту. Проход вокруг стола — 1 м (каталог оптомеханики стр. 5)."
+  },
+  {
+   "id": "support-64ots",
+   "name": "Опора 64OTS",
+   "category": "optomechanics",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "Высота 560–960 мм опубликована; длина и ширина не опубликованы [СПРОСИТЬ].",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://opto.lassard.ru/products/optical-tables/optical-table-support/64ots",
+   "in_current_showroom": false,
+   "note": ""
+  },
+  {
+   "id": "support-65pts",
+   "name": "Опора 65PTS (пассивная пневмоизоляция)",
+   "category": "optomechanics",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "Высота 700 или 800 мм опубликована; длина и ширина не опубликованы [СПРОСИТЬ].",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://opto.lassard.ru/products/optical-tables/optical-table-support/65pts",
+   "in_current_showroom": false,
+   "note": ""
+  },
+  {
+   "id": "support-65apts",
+   "name": "Опора 65APTS (активная пневмоизоляция)",
+   "category": "optomechanics",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "Высота 450, 600, 700 мм опубликована; длина и ширина не опубликованы [СПРОСИТЬ].",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://opto.lassard.ru/products/optical-tables/optical-table-support/65apts",
+   "in_current_showroom": false,
+   "note": "Нужен компрессор."
+  },
+  {
+   "id": "laminar-66lb-alm",
+   "name": "Ламинарная станция 66LB-ALM",
+   "category": "optomechanics",
+   "size_mm": {
+    "length": 1660,
+    "width": 1140,
+    "height": null
+   },
+   "estimate": true,
+   "estimate_basis": "Длина 1660–3160 и ширина 1140–1660 мм по рядам; взят минимальный вариант. Высота не опубликована [СПРОСИТЬ]; подходит для потолка 2,5 м.",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://opto.lassard.ru/products/optical-tables/laminar-workstations/66lb-alm",
+   "in_current_showroom": false,
+   "plan_type": "ot_kit_stand",
+   "note": ""
+  },
+  {
+   "id": "mirea-kit",
+   "name": "Набор МИРЭА",
+   "category": "education",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/news/education",
+   "in_current_showroom": false,
+   "plan_type": "ot_kit_stand",
+   "note": "Учебный комплект по оптической спектроскопии с РТУ МИРЭА (18.03.2026). Собирается на оптической столешнице."
+  },
+  {
+   "id": "laser-class",
+   "name": "Лазерный класс",
+   "category": "education",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2, Gaps)",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/laserclass",
+   "in_current_showroom": false,
+   "note": "Модуль из 3–8 малых станков и парт. Габариты парты и модуля не опубликованы. По опубликованным габаритам SMART BASE 1750×1750×2200 больше других предметов модуля (вывод research)."
+  },
+  {
+   "id": "robot-graver-cell",
+   "name": "Роботизированная ячейка с гравёром",
+   "category": "engraving",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2). Ячейка 3 × 3 × 2,2 м с ограждением — оценка. В зале её нет в полный размер (D-001).",
+   "laser_class": null,
+   "beam": "open",
+   "source": "https://lassard.ru/products/equipment/engraving/graver-compact",
+   "in_current_showroom": false,
+   "plan_type": "ot_robot_cell",
+   "note": "Робот-манипулятор с гравёром для зоны роботов (кейс, слайд 3). Опубликована только опция «Робот для перемещения заготовок» у GRAVER COMPACT. Класс лазерной опасности и тип луча не опубликованы [СПРОСИТЬ]. Луч считаем открытым. В шоуруме луча нет (D-001, TRAP-4): в зале стоит миниатюра ячейки 1:5 под стеклом, без лазера. Работу ячейки показывает видео 1:1. Размеры миниатюры — в плане (ot_robot_cell), оценка."
+  },
+  {
+   "id": "listopad-vgf",
+   "name": "Установка выращивания VGF «Листопад»",
+   "category": "component",
+   "size_mm": null,
+   "estimate": true,
+   "estimate_basis": "[СПРОСИТЬ] габарит не опубликован (research/notes/lassard_facts.md, раздел 2). Установка 1,5 × 1,5 × 2,5 м — оценка. В зале её нет в полный размер (D-001).",
+   "laser_class": null,
+   "beam": null,
+   "source": "https://lassard.ru/news/CSEAC-2026",
+   "in_current_showroom": false,
+   "plan_type": "ot_vgf",
+   "note": "Установка VGF для GaAs и Ge, три кристалла за цикл. В зале стоит миниатюра 1:5 под стеклом (D-001): нагрева и расплава нет. Работу установки показывает видео 1:1. Габариты установки не опубликованы [СПРОСИТЬ]; размеры миниатюры — в плане (ot_vgf), оценка. Источники: новости ЛАССАРД от 19.08.2026 и 18.02.2026 (research, раздел 2)."
+  }
+ ]
+}

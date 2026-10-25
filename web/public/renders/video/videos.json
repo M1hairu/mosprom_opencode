@@ -1,0 +1,37 @@
+{
+ "flythrough": [
+  "flythrough_1.mp4",
+  "flythrough_2.mp4",
+  "flythrough_3.mp4"
+ ],
+ "S01_koridor": [
+  "S01_koridor.mp4"
+ ],
+ "S02_portal": [
+  "S02_portal.mp4"
+ ],
+ "S12_zal": [
+  "S12_zal.mp4"
+ ],
+ "S03_kristally": [
+  "S03_kristally.mp4"
+ ],
+ "S04_kvantrony": [
+  "S04_kvantrony.mp4"
+ ],
+ "S05_diody": [
+  "S05_diody.mp4"
+ ],
+ "S07_roboty": [
+  "S07_roboty.mp4"
+ ],
+ "S08_gravery": [
+  "S08_gravery.mp4"
+ ],
+ "S09_ruchnye": [
+  "S09_ruchnye.mp4"
+ ],
+ "S10_optika": [
+  "S10_optika.mp4"
+ ]
+}
