@@ -196,7 +196,7 @@ class RealEstimateTest(unittest.TestCase):
         }
         self.assertTrue(required <= articles, required - articles)
         self.assertNotIn("Кабины", articles)
-        for needed in ("eiw_workshop", "laser_layer_workshop", "aup_live_zone",
+        for needed in ("eiw_workshop", "laser_layer_workshop", "glass_live_zone",
                        "sps_hall", "general_ventilation", "mini_models",
                        "mini_hoods", "video_stands"):
             self.assertIn(needed, self.ids)
@@ -222,14 +222,18 @@ class RealEstimateTest(unittest.TestCase):
                     "cleaning_exhaust", "engraver_exhaust"):
             self.assertNotIn(key, self.assumptions)
 
-    def test_demo_zone_fire_lines_kept_until_answer(self):
-        # Review of #175: the EIW 45 walls and the water АУП of the demo zone
-        # stay as an assumption until question 17 (Ф5.1) is answered.
-        for kept in ("eiw_live_zone", "aup_live_zone", "aupt_project"):
+    def test_demo_zone_behind_plain_glass(self):
+        # Human decision 25.10 (#497) answers question 17: no dangerous process in
+        # the demo zone, it stays in the hall class behind plain glass. The EIW 45
+        # walls and the water АУП of the zone are gone; the workshop glass stays.
+        self.assertIn("glass_live_zone", self.ids)
+        for gone in ("eiw_live_zone", "aup_live_zone", "aupt_project"):
+            self.assertNotIn(gone, self.ids)
+        for kept in ("eiw_workshop", "laser_layer_workshop", "sps_hall"):
             self.assertIn(kept, self.ids)
         text = self.assumptions["live_zone"]["text"]
         self.assertIn("вопрос 17", text)
-        self.assertIn("допущение до ответа", text)
+        self.assertIn("решение человека 25.10", text)
         self.assertNotIn("лазерн", text.lower())
 
     def test_no_old_d001_wording(self):
@@ -256,11 +260,18 @@ class RealEstimateTest(unittest.TestCase):
             zones = {o["zoneId"] for o in doc["objects"] if o["label"].startswith("Миниатюра")}
             self.assertEqual(self.by_id["video_stands"]["qty"], len(zones), plan.name)
 
+    def test_manufacturer_items_out_of_total(self):
+        # Human decision 25.10 (#497): miniatures and the «Лазерный класс» kit are
+        # ЛАССАРД products, like the exhibits; the line stays for the plan, price 0.
+        for own in ("mini_models", "laser_class_kit"):
+            self.assertEqual(self.by_id[own]["unit_price"], 0, own)
+            self.assertIn("в сумму не входит", self.by_id[own]["name"], own)
+
     def test_known_research_gaps_are_estimates(self):
         # Trap: research has no per-m² price for laser windows and no price of
         # scale models or museum hoods; the АУПТ project is a search snippet
         # without a checked URL. These lines must not pretend to have a source.
-        for gap in ("laser_layer_workshop", "aupt_project", "mini_models",
+        for gap in ("laser_layer_workshop", "mini_models",
                     "mini_hoods"):
             self.assertIs(self.by_id[gap].get("estimate"), True, gap)
             self.assertNotIn("source", self.by_id[gap])
